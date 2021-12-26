@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using SolarisRec.UI.Data;
 using SolarisRec.Persistence.Configuration;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SolarisRec.Core.Configuration;
 
 namespace SolarisRec.UI
 {
@@ -25,6 +26,7 @@ namespace SolarisRec.UI
             var connectionString = "Server=.;Database=SolarisRec;Trusted_Connection=True;";
 
             services.UseSolarisRecPersistenceAdapters(connectionString);
+            services.UseSolarisRecCore();
 
             services.AddRazorPages();
             services.AddServerSideBlazor();

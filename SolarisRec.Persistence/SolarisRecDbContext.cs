@@ -15,8 +15,11 @@ namespace SolarisRec.Persistence
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new AccountConfiguration());
+            modelBuilder.ApplyConfiguration(new DeckConfiguration());
         }
 
-        public DbSet<Account> Accounts { get; set; }        
+        public DbSet<Account> Accounts { get; set; }
+        
+        public DbSet<Deck> Decks { get; set; }
     }
 }
