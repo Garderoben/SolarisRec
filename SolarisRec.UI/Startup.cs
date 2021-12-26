@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SolarisRec.UI.Data;
 using SolarisRec.Persistence.Configuration;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace SolarisRec.UI
 {
@@ -27,6 +28,7 @@ namespace SolarisRec.UI
 
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Pages");
             services.AddSingleton<WeatherForecastService>();
         }
 
