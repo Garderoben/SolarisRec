@@ -1,6 +1,7 @@
 ﻿namespace SolarisRec.Persistence.PersistenceModel
 {
-    class Deck
+    public class Deck
     {
+        public int Id { get; set; }
     }
 }
