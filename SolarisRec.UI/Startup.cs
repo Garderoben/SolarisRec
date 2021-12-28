@@ -26,7 +26,7 @@ namespace SolarisRec.UI
             var connectionString = "Server=.;Database=SolarisRec;Trusted_Connection=True;";
 
             services.UseSolarisRecPersistenceAdapters(connectionString);
-            services.UseSolarisRecCore();
+            services.UseSolarisRecCore();            
 
             services.AddRazorPages();
             services.AddServerSideBlazor();
