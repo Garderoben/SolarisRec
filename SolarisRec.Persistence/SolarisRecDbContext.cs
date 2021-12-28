@@ -8,7 +8,11 @@ namespace SolarisRec.Persistence
     {
         public SolarisRecDbContext(DbContextOptions options) : base(options)
         {            
-        }
+        }        
+
+        public DbSet<Account> Accounts { get; set; }
+        
+        public DbSet<Deck> Decks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -17,9 +21,5 @@ namespace SolarisRec.Persistence
             modelBuilder.ApplyConfiguration(new AccountConfiguration());
             modelBuilder.ApplyConfiguration(new DeckConfiguration());
         }
-
-        public DbSet<Account> Accounts { get; set; }
-        
-        public DbSet<Deck> Decks { get; set; }
     }
 }

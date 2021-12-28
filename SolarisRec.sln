@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarisRec.UI", "SolarisRec.UI\SolarisRec.UI.csproj", "{ECB61B54-A868-4C0D-B78F-5BB775A2BCF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarisRec.UI", "SolarisRec.UI\SolarisRec.UI.csproj", "{ECB61B54-A868-4C0D-B78F-5BB775A2BCF5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{07A259D7-0005-4531-B94B-0A84DA30588E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarisRec.Core", "SolarisRec.Core\SolarisRec.Core.csproj", "{17826BB8-A30E-4069-9D82-94D3C0C8CD09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarisRec.Core", "SolarisRec.Core\SolarisRec.Core.csproj", "{17826BB8-A30E-4069-9D82-94D3C0C8CD09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarisRec.Persistence", "SolarisRec.Persistence\SolarisRec.Persistence.csproj", "{3D2D2137-6A67-4E18-B7C2-37AC5B4B7B2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarisRec.Persistence", "SolarisRec.Persistence\SolarisRec.Persistence.csproj", "{3D2D2137-6A67-4E18-B7C2-37AC5B4B7B2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarisRec.Core.Tests", "SolarisRec.Core.Tests\SolarisRec.Core.Tests.csproj", "{BA96151C-3952-4DD1-848C-28A48BAA3AD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarisRec.Persistence.Tests", "SolarisRec.Persistence.Tests\SolarisRec.Persistence.Tests.csproj", "{D837FA9B-9B8A-4A13-B25D-499C87AB8F8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarisRec.UI.Tests", "SolarisRec.UI.Tests\SolarisRec.UI.Tests.csproj", "{D36FC3DB-43BF-463A-9097-CC1FA1B73CF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,9 +35,26 @@ Global
 		{3D2D2137-6A67-4E18-B7C2-37AC5B4B7B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D2D2137-6A67-4E18-B7C2-37AC5B4B7B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D2D2137-6A67-4E18-B7C2-37AC5B4B7B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA96151C-3952-4DD1-848C-28A48BAA3AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA96151C-3952-4DD1-848C-28A48BAA3AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA96151C-3952-4DD1-848C-28A48BAA3AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA96151C-3952-4DD1-848C-28A48BAA3AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D837FA9B-9B8A-4A13-B25D-499C87AB8F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D837FA9B-9B8A-4A13-B25D-499C87AB8F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D837FA9B-9B8A-4A13-B25D-499C87AB8F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D837FA9B-9B8A-4A13-B25D-499C87AB8F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D36FC3DB-43BF-463A-9097-CC1FA1B73CF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D36FC3DB-43BF-463A-9097-CC1FA1B73CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D36FC3DB-43BF-463A-9097-CC1FA1B73CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D36FC3DB-43BF-463A-9097-CC1FA1B73CF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BA96151C-3952-4DD1-848C-28A48BAA3AD5} = {07A259D7-0005-4531-B94B-0A84DA30588E}
+		{D837FA9B-9B8A-4A13-B25D-499C87AB8F8A} = {07A259D7-0005-4531-B94B-0A84DA30588E}
+		{D36FC3DB-43BF-463A-9097-CC1FA1B73CF4} = {07A259D7-0005-4531-B94B-0A84DA30588E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B8610AE-0F7B-4518-9B29-CDD63A0603A1}

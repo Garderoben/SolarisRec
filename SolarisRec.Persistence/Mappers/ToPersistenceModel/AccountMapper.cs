@@ -6,12 +6,15 @@ namespace SolarisRec.Persistence.Mappers.ToPersistenceModel
     {
         public void Apply(Account domainModel, PersistenceModel.Account data)
         {
-            throw new System.NotImplementedException();
+            data.AccountName = domainModel.AccountName;
+            data.Email = domainModel.Email;
+            data.Password = domainModel.Password;
+            data.Salt = domainModel.Salt;
         }
 
         public PersistenceModel.Account CreateNew()
         {
-            throw new System.NotImplementedException();
+            return new PersistenceModel.Account();
         }
     }
 }
