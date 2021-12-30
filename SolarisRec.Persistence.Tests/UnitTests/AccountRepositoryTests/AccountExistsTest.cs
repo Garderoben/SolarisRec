@@ -5,28 +5,29 @@ using Xunit;
 
 namespace SolarisRec.Persistence.Tests.UnitTests.AccountRepositoryTests
 {
-    public sealed class EmailExistsTest : AccountRepositoryTestBase
+    public sealed class AccountExistsTest : AccountRepositoryTestBase
     {
         [Fact]
-        public async Task EmailExistsReturnsTrue()
+        public async Task AccountExistsReturnsTrue()
         {
             using (var dbContext = CreateDbContext())
             {
                 sut = new AccountRepository(dbContext, persistenceModelMapper, domainModelMapper);
 
-                var exists = await sut.EmailExists("unit@test.com");
+                var exists = await sut.AccountExists("Unit Test");
 
                 exists.Should().Be(true);
             }
         }
 
         [Fact]
-        public async Task EmailDoesNotExistsReturnsFalse()
+        public async Task AccountDoesNotExistsReturnsFalse()
         {
             using (var dbContext = CreateDbContext())
             {
                 sut = new AccountRepository(dbContext, persistenceModelMapper, domainModelMapper);
-                var exists = await sut.EmailExists("unit@test.");
+
+                var exists = await sut.AccountExists("Unut Test");
 
                 exists.Should().Be(false);
             }

@@ -1,34 +1,47 @@
 ﻿using FluentAssertions;
 using SolarisRec.Persistence.Repositories;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace SolarisRec.Persistence.Tests.UnitTests.AccountRepositoryTests
 {
-    public sealed class EmailExistsTest : AccountRepositoryTestBase
+    public sealed class GetTest : AccountRepositoryTestBase
     {
         [Fact]
-        public async Task EmailExistsReturnsTrue()
+        public async Task ExistingAccountReturnsAccount()
         {
+            var expected = new PersistenceModel.Account
+            {
+                Id = 1,
+                AccountName = "Unit Test",
+                Password = "unittest",
+                Email = "unit@test.com"
+            };
+
             using (var dbContext = CreateDbContext())
             {
                 sut = new AccountRepository(dbContext, persistenceModelMapper, domainModelMapper);
 
-                var exists = await sut.EmailExists("unit@test.com");
+                var result = await sut.Get("Unit Test");
 
-                exists.Should().Be(true);
+                result.Should().BeEquivalentTo(expected);
             }
         }
 
         [Fact]
-        public async Task EmailDoesNotExistsReturnsFalse()
+        public async Task NotExistingAccountThrowsException()
         {
             using (var dbContext = CreateDbContext())
             {
                 sut = new AccountRepository(dbContext, persistenceModelMapper, domainModelMapper);
-                var exists = await sut.EmailExists("unit@test.");
 
-                exists.Should().Be(false);
+                Func<Task> act = async () => await sut.Get("Unut Tust");
+
+                await act.Should()
+                    .ThrowAsync<KeyNotFoundException>()
+                    .WithMessage("Account with Account Name Unut Tust does not exist.");
             }
         }
 
@@ -36,6 +49,7 @@ namespace SolarisRec.Persistence.Tests.UnitTests.AccountRepositoryTests
         {
             var account = new PersistenceModel.Account
             {
+                Id = 1,
                 AccountName = "Unit Test",
                 Password = "unittest",
                 Email = "unit@test.com"
