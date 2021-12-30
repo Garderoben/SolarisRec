@@ -5,12 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DomainDrivenDesign.DomainObjects" Version="0.1.5" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Card\Processes\" />
   </ItemGroup>
 
 </Project>

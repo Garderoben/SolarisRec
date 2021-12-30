@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using SolarisRec.Core.Account;
 using SolarisRec.Core.Account.Processes.SecondaryPorts;
+using SolarisRec.Core.Card.Processes.SecondaryPorts;
 using SolarisRec.Core.Deck.Processes.SecondaryPorts;
 using SolarisRec.Persistence.Mappers;
 using SolarisRec.Persistence.Repositories;
@@ -18,7 +19,8 @@ namespace SolarisRec.Persistence.Configuration
                 .AddTransient<IAccountRepository, AccountRepository>()
                 .AddTransient<IMapToDomainModel<PersistenceModel.Account, Account>, Mappers.ToDomainModel.AccountMapper>()
                 .AddTransient<IMapToPersistenceModel<Account, PersistenceModel.Account>, Mappers.ToPersistenceModel.AccountMapper>()
-                .AddTransient<IDeckRepo, DeckRepository>();
+                .AddTransient<IDeckRepository, DeckRepository>()
+                .AddTransient<ICardRepository, CardRepository>();
         }
 
         private static SolarisRecDbContext CreateSolarisDbContext(string connectionstring)

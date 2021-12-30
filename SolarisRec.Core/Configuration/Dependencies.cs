@@ -3,6 +3,8 @@ using SolarisRec.Core.Account;
 using SolarisRec.Core.Account.Processes;
 using SolarisRec.Core.Account.Processes.PrimaryPorts;
 using SolarisRec.Core.Account.Processes.SecondaryPorts;
+using SolarisRec.Core.Card.Processes;
+using SolarisRec.Core.Card.Processes.PrimaryPorts;
 using SolarisRec.Core.Deck.Processes;
 using SolarisRec.Core.Deck.Processes.PrimaryPorts;
 
@@ -16,7 +18,8 @@ namespace SolarisRec.Core.Configuration
                 .AddTransient<IDeckBuilderService, DeckBuilderService>()
                 .AddTransient<IRegisterAccountService, RegisterAccountService>()
                 .AddTransient<ILoginService, LoginService>()
-                .AddTransient<IHashPassword, PasswordHasher>();
+                .AddTransient<IHashPassword, PasswordHasher>()
+                .AddTransient<IProvideCardService, ProvideCardService>();
         }
     }
 }

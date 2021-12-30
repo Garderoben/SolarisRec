@@ -2,7 +2,7 @@
 
 namespace SolarisRec.Persistence.Repositories
 {
-    class DeckRepository : IDeckRepo
+    internal class DeckRepository : IDeckRepository
     {
     }
 }

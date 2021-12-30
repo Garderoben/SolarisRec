@@ -1,12 +1,7 @@
-﻿using DomainDrivenDesign.DomainObjects;
-
-namespace SolarisRec.Core.Deck
+﻿namespace SolarisRec.Core.Deck
 {
-    public class Deck : Entity<Deck>
+    public class Deck
     {
-        public Deck(Id<Deck> id) : base(id)
-        {
-
-        }
+       
     }
 }
