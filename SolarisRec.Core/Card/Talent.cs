@@ -1,9 +1,11 @@
-﻿namespace SolarisRec.Core.Card
+﻿using SolarisRec.Core.Card.Enums;
+
+namespace SolarisRec.Core.Card
 {
     public class Talent
     {
         public int Quantity { get; set; }
 
-        public TalentType TalentType { get; set; }
+        public Enums.Talent TalentType { get; set; }
     }
 }

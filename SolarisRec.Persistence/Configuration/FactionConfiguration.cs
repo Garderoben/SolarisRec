@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SolarisRec.Persistence.PersistenceModel;
+using Enum = SolarisRec.Core.Card.Enums;
 
 namespace SolarisRec.Persistence.Configuration
 {
@@ -18,36 +19,41 @@ namespace SolarisRec.Persistence.Configuration
             builder.Property(f => f.Name)
                 .HasMaxLength(24);
 
+            Seed(builder);
+        }
+
+        private static void Seed(EntityTypeBuilder<Faction> builder)
+        {
             builder.HasData
             (
                 new Faction
                 {
-                    Id = 1,
+                    Id = (int)Enum.Faction.Mars,
                     Name = "Mars"
                 },
                 new Faction
                 {
-                    Id = 2,
+                    Id = (int)Enum.Faction.Mercury,
                     Name = "Mercury"
                 },
                 new Faction
                 {
-                    Id = 3,
+                    Id = (int)Enum.Faction.Titan,
                     Name = "Titan"
                 },
                 new Faction
                 {
-                    Id = 4,
-                    Name = "Bel"
+                    Id = (int)Enum.Faction.Belt,
+                    Name = "Belt"
                 },
                 new Faction
                 {
-                    Id = 5,
+                    Id = (int)Enum.Faction.Earth,
                     Name = "Earth"
                 },
                 new Faction
                 {
-                    Id = 6,
+                    Id = (int)Enum.Faction.Venus,
                     Name = "Venus"
                 }
             );

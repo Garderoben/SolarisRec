@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SolarisRec.Persistence.PersistenceModel.JoiningTables;
+using System.Collections.Generic;
 
 namespace SolarisRec.Persistence.PersistenceModel
 {
@@ -6,13 +7,13 @@ namespace SolarisRec.Persistence.PersistenceModel
     {
         public Faction()
         {
-            Cards = new HashSet<Card>();
+            CardFactions = new HashSet<CardFaction>();
         }
 
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public virtual ICollection<Card> Cards { get; set; }
+        public virtual ICollection<CardFaction> CardFactions { get; set; }
     }
 }

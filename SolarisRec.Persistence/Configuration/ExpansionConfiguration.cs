@@ -18,7 +18,13 @@ namespace SolarisRec.Persistence.Configuration
             builder.Property(e => e.Name)
                 .HasMaxLength(48);
 
-            builder.HasData(
+            Seed(builder);
+        }
+
+        private static void Seed(EntityTypeBuilder<Expansion> builder)
+        {
+            builder.HasData
+            (
                 new Expansion
                 {
                     Id = 1,

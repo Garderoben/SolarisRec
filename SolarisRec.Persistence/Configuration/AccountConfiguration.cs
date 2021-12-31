@@ -25,8 +25,13 @@ namespace SolarisRec.Persistence.Configuration
             builder.Property(a => a.AccountName)
                 .HasMaxLength(24);
 
-            builder.Property(e => e.Email).HasColumnType("VARCHAR").HasMaxLength(320);
+            builder.Property(a => a.Email).HasColumnType("VARCHAR").HasMaxLength(320);
 
+            Seed(builder);
+        }
+
+        private static void Seed(EntityTypeBuilder<Account> builder)
+        {
             builder.HasData
             (
                 new Account

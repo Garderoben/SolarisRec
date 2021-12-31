@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SolarisRec.Persistence.PersistenceModel.JoiningTables;
+using Enum = SolarisRec.Core.Card.Enums;
 
 namespace SolarisRec.Persistence.Configuration.JoiningTables
 {
@@ -22,6 +23,45 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
 
             builder.Property(cr => cr.Quantity)
                 .IsRequired(true);
+
+            Seed(builder);
+        }
+
+        private static void Seed(EntityTypeBuilder<CardResource> builder)
+        {
+            builder.HasData
+            (                
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.Turncoat,
+                    ResourceId = (int)Enum.Resource.Beltian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CyberBankOfTitan,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CyberBankOfTitan,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ChemicalWarfare,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ChemicalWarfare,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                }
+            );
         }
     }
 }

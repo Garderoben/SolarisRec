@@ -34,13 +34,14 @@ namespace SolarisRec.Persistence
             modelBuilder.ApplyConfiguration(new FactionConfiguration());
             modelBuilder.ApplyConfiguration(new ExpansionConfiguration());
 
-            ApplyJoiningTableConfiguration(modelBuilder);
+            ApplyJoiningTableConfigurations(modelBuilder);
         }
 
-        private static void ApplyJoiningTableConfiguration (ModelBuilder modelBuilder)
+        private static void ApplyJoiningTableConfigurations (ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CardTalentConfiguration());
             modelBuilder.ApplyConfiguration(new CardResourceConfiguration());
+            modelBuilder.ApplyConfiguration(new CardFactionConfiguration());
         }
     }
 }

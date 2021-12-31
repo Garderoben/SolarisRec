@@ -1,4 +1,4 @@
-﻿namespace SolarisRec.Core.Card
+﻿namespace SolarisRec.Core.Card.Enums
 {
     public enum CardType
     {
