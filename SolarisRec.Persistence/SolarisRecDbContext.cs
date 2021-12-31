@@ -9,10 +9,10 @@ namespace SolarisRec.Persistence
     internal class SolarisRecDbContext : DbContext
     {
         public SolarisRecDbContext(DbContextOptions options) : base(options)
-        {            
-        }        
+        {
+        }
 
-        public DbSet<Account> Accounts { get; set; }        
+        public DbSet<Account> Accounts { get; set; }
         public DbSet<Deck> Decks { get; set; }
         public DbSet<Card> Cards { get; set; }
         public DbSet<Talent> Talents { get; set; }
@@ -21,6 +21,8 @@ namespace SolarisRec.Persistence
         public DbSet<Expansion> Expansions { get; set; }
 
         public DbSet<CardTalent> CardTalents { get; set; }
+        public DbSet<CardFaction> CardFactions { get; set; }
+        public DbSet<CardResource> CardResources { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

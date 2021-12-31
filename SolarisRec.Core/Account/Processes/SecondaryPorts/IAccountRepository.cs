@@ -8,7 +8,7 @@ namespace SolarisRec.Core.Account.Processes.SecondaryPorts
 
         Task<bool> EmailExists(string email);
 
-        public Task<Account> Get(string accountName);
+        Task<Account> Get(string accountName);
 
         Task CreateAccount(Account account);
     }

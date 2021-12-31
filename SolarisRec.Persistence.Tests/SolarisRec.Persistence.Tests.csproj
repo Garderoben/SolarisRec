@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="UnitTests\DeckRepositoryTests\" />
-    <Folder Include="UnitTests\CardRepositoryTests\" />
   </ItemGroup>
 
   <ItemGroup>

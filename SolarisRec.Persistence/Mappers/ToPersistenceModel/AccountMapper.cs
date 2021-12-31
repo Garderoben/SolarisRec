@@ -2,7 +2,7 @@
 
 namespace SolarisRec.Persistence.Mappers.ToPersistenceModel
 {
-    class AccountMapper : IMapToPersistenceModel<Account, PersistenceModel.Account>
+    internal class AccountMapper : IMapToPersistenceModel<Account, PersistenceModel.Account>
     {
         public void Apply(Account domainModel, PersistenceModel.Account data)
         {
