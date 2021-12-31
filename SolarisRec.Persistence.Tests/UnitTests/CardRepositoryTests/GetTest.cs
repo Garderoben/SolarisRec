@@ -46,12 +46,12 @@ namespace SolarisRec.Persistence.Tests.UnitTests.CardRepositoryTests
                 { 
                     new Talent
                     {
-                        TalentType = Enum.Talent.Green,
+                        TalentType = Enum.Talent.Diplomacy,
                         Quantity = 1
                     },
                     new Talent
                     {
-                        TalentType = Enum.Talent.Black,
+                        TalentType = Enum.Talent.Espionage,
                         Quantity = 2
                     }
                 }
@@ -141,29 +141,29 @@ namespace SolarisRec.Persistence.Tests.UnitTests.CardRepositoryTests
                 Quantity = 1
             };
 
-            var greenTalent = new PersistenceModel.Talent
+            var diplomacyTalent = new PersistenceModel.Talent
             {
-                Id = (int)Enum.Talent.Green,
-                Name = "Green"
+                Id = (int)Enum.Talent.Diplomacy,
+                Name = "Diplomacy"
             };
 
-            var blackTalent = new PersistenceModel.Talent
+            var espionageTalent = new PersistenceModel.Talent
             {
-                Id = (int)Enum.Talent.Black,
-                Name = "Black"
+                Id = (int)Enum.Talent.Espionage,
+                Name = "Espionage"
             };
 
-            var greenCardTalent = new PersistenceModel.JoiningTables.CardTalent
+            var diplomacyCardTalent = new PersistenceModel.JoiningTables.CardTalent
             {
                 CardId = card.Id,
-                TalentId = greenTalent.Id,
+                TalentId = diplomacyTalent.Id,
                 Quantity = 1
             };
 
-            var blackCardTalent = new PersistenceModel.JoiningTables.CardTalent
+            var espionageCardTalent = new PersistenceModel.JoiningTables.CardTalent
             {
                 CardId = card.Id,
-                TalentId = blackTalent.Id,
+                TalentId = espionageTalent.Id,
                 Quantity = 2
             };
 
@@ -176,10 +176,10 @@ namespace SolarisRec.Persistence.Tests.UnitTests.CardRepositoryTests
                 .WithResource(anyResource)
                 .WithCardResource(earthCardResource)
                 .WithCardResource(anyCardResource)
-                .WithTalent(greenTalent)
-                .WithTalent(blackTalent)
-                .WithCardTalent(greenCardTalent)
-                .WithCardTalent(blackCardTalent)
+                .WithTalent(diplomacyTalent)
+                .WithTalent(espionageTalent)
+                .WithCardTalent(diplomacyCardTalent)
+                .WithCardTalent(espionageCardTalent)
                 .Build();
         }
     }

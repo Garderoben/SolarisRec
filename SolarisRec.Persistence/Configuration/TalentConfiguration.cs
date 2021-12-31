@@ -28,33 +28,33 @@ namespace SolarisRec.Persistence.Configuration
             (
                 new Talent
                 {
-                    Id = (int)Enum.Talent.Yellow,
-                    Name = "Yellow"
+                    Id = (int)Enum.Talent.Mining,
+                    Name = "Mining"
                 },
                 new Talent
                 {
-                    Id = (int)Enum.Talent.Blue,
-                    Name = "Blue"
+                    Id = (int)Enum.Talent.Data,
+                    Name = "Data"
                 },
                 new Talent
                 {
-                    Id = (int)Enum.Talent.Red,
-                    Name = "Red"
+                    Id = (int)Enum.Talent.Military,
+                    Name = "Military"
                 },
                 new Talent
                 {
-                    Id = (int)Enum.Talent.Black,
-                    Name = "Black"
+                    Id = (int)Enum.Talent.Espionage,
+                    Name = "Espionage"
                 },
                 new Talent
                 {
-                    Id = (int)Enum.Talent.Green,
-                    Name = "Green"
+                    Id = (int)Enum.Talent.Diplomacy,
+                    Name = "Diplomacy"
                 },
                 new Talent
                 {
-                    Id = (int)Enum.Talent.Purple,
-                    Name = "Purple"
+                    Id = (int)Enum.Talent.Research,
+                    Name = "Research"
                 },
                 new Talent
                 {

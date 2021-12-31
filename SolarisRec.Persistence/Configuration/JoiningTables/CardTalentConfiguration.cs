@@ -34,19 +34,19 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 new CardTalent
                 {
                     CardId = (int)Enum.CardId.Turncoat,
-                    TalentId = (int)Enum.Talent.Black,
+                    TalentId = (int)Enum.Talent.Espionage,
                     Quantity = 1
                 },
                 new CardTalent
                 {
                     CardId = (int)Enum.CardId.Redistribution,
-                    TalentId = (int)Enum.Talent.Green,
+                    TalentId = (int)Enum.Talent.Diplomacy,
                     Quantity = 4
                 },
                 new CardTalent
                 {
                     CardId = (int)Enum.CardId.Redistribution,
-                    TalentId = (int)Enum.Talent.Black,
+                    TalentId = (int)Enum.Talent.Espionage,
                     Quantity = 4
                 },
                 new CardTalent
