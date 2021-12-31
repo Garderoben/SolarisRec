@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SolarisRec.Persistence;
 
@@ -11,9 +12,10 @@ using SolarisRec.Persistence;
 namespace SolarisRec.Persistence.Migrations
 {
     [DbContext(typeof(SolarisRecDbContext))]
-    partial class SolarisRecDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211231091044_CardEntitiesOne")]
+    partial class CardEntitiesOne
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,21 +23,6 @@ namespace SolarisRec.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("CardFaction", b =>
-                {
-                    b.Property<int>("CardsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FactionsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CardsId", "FactionsId");
-
-                    b.HasIndex("FactionsId");
-
-                    b.ToTable("CardFaction");
-                });
 
             modelBuilder.Entity("SolarisRec.Persistence.PersistenceModel.Account", b =>
                 {
@@ -100,9 +87,6 @@ namespace SolarisRec.Persistence.Migrations
                     b.Property<int?>("AttackValue")
                         .HasColumnType("int");
 
-                    b.Property<int>("ExpansionId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("HealthValue")
                         .HasColumnType("int");
 
@@ -115,8 +99,6 @@ namespace SolarisRec.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ExpansionId");
 
                     b.ToTable("Cards", (string)null);
                 });
@@ -217,24 +199,6 @@ namespace SolarisRec.Persistence.Migrations
                             Id = 6,
                             Name = "Venus"
                         });
-                });
-
-            modelBuilder.Entity("SolarisRec.Persistence.PersistenceModel.JoiningTables.CardResource", b =>
-                {
-                    b.Property<int>("CardId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ResourceId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("CardId", "ResourceId");
-
-                    b.HasIndex("ResourceId");
-
-                    b.ToTable("CardResources", (string)null);
                 });
 
             modelBuilder.Entity("SolarisRec.Persistence.PersistenceModel.JoiningTables.CardTalent", b =>
@@ -375,51 +339,6 @@ namespace SolarisRec.Persistence.Migrations
                         });
                 });
 
-            modelBuilder.Entity("CardFaction", b =>
-                {
-                    b.HasOne("SolarisRec.Persistence.PersistenceModel.Card", null)
-                        .WithMany()
-                        .HasForeignKey("CardsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SolarisRec.Persistence.PersistenceModel.Faction", null)
-                        .WithMany()
-                        .HasForeignKey("FactionsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("SolarisRec.Persistence.PersistenceModel.Card", b =>
-                {
-                    b.HasOne("SolarisRec.Persistence.PersistenceModel.Expansion", "Expansion")
-                        .WithMany("Cards")
-                        .HasForeignKey("ExpansionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Expansion");
-                });
-
-            modelBuilder.Entity("SolarisRec.Persistence.PersistenceModel.JoiningTables.CardResource", b =>
-                {
-                    b.HasOne("SolarisRec.Persistence.PersistenceModel.Card", "Card")
-                        .WithMany("CardResources")
-                        .HasForeignKey("CardId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SolarisRec.Persistence.PersistenceModel.Resource", "Resource")
-                        .WithMany("CardResources")
-                        .HasForeignKey("ResourceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Card");
-
-                    b.Navigation("Resource");
-                });
-
             modelBuilder.Entity("SolarisRec.Persistence.PersistenceModel.JoiningTables.CardTalent", b =>
                 {
                     b.HasOne("SolarisRec.Persistence.PersistenceModel.Card", "Card")
@@ -441,19 +360,7 @@ namespace SolarisRec.Persistence.Migrations
 
             modelBuilder.Entity("SolarisRec.Persistence.PersistenceModel.Card", b =>
                 {
-                    b.Navigation("CardResources");
-
                     b.Navigation("CardTalents");
-                });
-
-            modelBuilder.Entity("SolarisRec.Persistence.PersistenceModel.Expansion", b =>
-                {
-                    b.Navigation("Cards");
-                });
-
-            modelBuilder.Entity("SolarisRec.Persistence.PersistenceModel.Resource", b =>
-                {
-                    b.Navigation("CardResources");
                 });
 
             modelBuilder.Entity("SolarisRec.Persistence.PersistenceModel.Talent", b =>

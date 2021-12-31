@@ -14,7 +14,7 @@ namespace SolarisRec.Core.Card
 
         public string Faction { get; set; }
 
-        public string Type { get; set; }
+        public int Type { get; set; }
 
         public int AttackValue { get; set; }
 
