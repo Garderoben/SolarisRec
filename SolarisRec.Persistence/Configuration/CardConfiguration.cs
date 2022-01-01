@@ -729,23 +729,378 @@ namespace SolarisRec.Persistence.Configuration
             #endregion
 
             #region Mars
-
+                
+                new Card
+                {
+                    Id = (int)Enum.CardId.MartianDiplomat,
+                    Name = "Martian Diplomat",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 0,
+                    HealthValue = 2,
+                    Ability = "Use: Choose a Talent on another Agent"
+                        + Environment.NewLine
+                        + "on this Mission, give that Agent on more"
+                        + Environment.NewLine
+                        + "of that Talent until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "047"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CrimsonGrenadier,
+                    Name = "Crimson Grenadier",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 1,
+                    HealthValue = 1,
+                    Ability = "Reaction: After this Agent leaves"
+                        + Environment.NewLine
+                        + "play, each player deals 1 damage"
+                        + Environment.NewLine
+                        + "to target enemy Agent on this"
+                        + Environment.NewLine
+                        + "Mission.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "048"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CrimsonLegionInfantry,
+                    Name = "Crimson Legion Infantry",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 1,
+                    HealthValue = 1,
+                    Ability = "Reaction: After this Agent leaves play,"
+                        + Environment.NewLine
+                        + "search your deck for a card named"
+                        + Environment.NewLine
+                        + "Crimson Legion Infantry, reveal it and"
+                        + Environment.NewLine
+                        + "add it to your hand. Shuffle.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "049"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.SpecialOps,
+                    Name = "Special Ops",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 1,
+                    Ability = "Reaction, [Ma]: After this Agent is"
+                        + Environment.NewLine
+                        + "deployed to a Mission, search your deck"
+                        + Environment.NewLine
+                        + "or hand for a card named Special Ops,"
+                        + Environment.NewLine
+                        + "put it into play on this Mission Used."
+                        + Environment.NewLine
+                        + "Shuffle."
+                        + Environment.NewLine
+                        + "[Limit once per phase.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "050"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CrimsonShockTroops,
+                    Name = "Crimson Shock Troops",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "[Ma][A1]: This Agent gains"
+                        + Environment.NewLine
+                        + "+1/+0 until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "051"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CrimsonLegionScout,
+                    Name = "Crimson Legion Scout",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 1,
+                    Ability = "Reaction: After this Agent leaves play,"
+                        + Environment.NewLine
+                        + "target Agent gains a Talent of your"
+                        + Environment.NewLine
+                        + "choice until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "052"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.SergeantJoseph,
+                    Name = "Sergeant Joseph",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 3,
+                    Ability = "Reaction: After this Agent deals"
+                        + Environment.NewLine
+                        + "attack damage to an enemy Agent,"
+                        + Environment.NewLine
+                        + "deal 1 damage to target Agent on"
+                        + Environment.NewLine
+                        + "this Mission.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "053"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.ChefuMilitia,
+                    Name = "Chefu Militia",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "[Ma][Ma][A1]: Deal 1 damage"
+                        + Environment.NewLine
+                        + "to target Agent on this Mission.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "054"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.TarakanGuard,
+                    Name = "Tarakan Guard",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 2,
+                    Ability = "[Ma][Ma]: This Agent gains [Military]"
+                        + Environment.NewLine
+                        + "until the end of this phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "055"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.ChameleonCorps,
+                    Name = "Chameleon Corps",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 3,
+                    Ability = "[A2]: This Agent gains a Talent of"
+                        + Environment.NewLine
+                        + "your choice until the end"
+                        + Environment.NewLine
+                        + "of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "056"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.ExplosiveExpert,
+                    Name = "Explosive Expert",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "Reaction: After this Agent is deployed"
+                        + Environment.NewLine
+                        + "to a Mission, deal 1 damage to each"
+                        + Environment.NewLine
+                        + "enemy Agent on this Mission.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "057"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.SupplyLineOfficer,
+                    Name = "Supply Line Officer",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 4,
+                    HealthValue = 3,
+                    Ability = "Reaction: After this Agent is deployed"
+                        + Environment.NewLine
+                        + "to a Mission, look at the top 3 cards of"
+                        + Environment.NewLine
+                        + "your deck, you may reveal an Agent"
+                        + Environment.NewLine
+                        + "card and add it to your hand. Shuffle.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "058"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.IrharenVeteran,
+                    Name = "Irharen Veteran",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 4,
+                    HealthValue = 3,
+                    Ability = "[Ma][Ma][A2]: Deal 2 damage"
+                        + Environment.NewLine
+                        + "to target agent on this Mission.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "059"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.GeneralRwanda,
+                    Name = "General Rwanda",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 6,
+                    Ability = "Reaction: After this Agent is deployed to"
+                        + Environment.NewLine
+                        + "a Mission, put a 1/1 Infantry Agent token"
+                        + Environment.NewLine
+                        + "with [Military] into play on this Mission.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "060"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.Headshot,
+                    Name = "Headshot",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Hasty"
+                        + Environment.NewLine
+                        + "[If you play this card during the"
+                        + Environment.NewLine
+                        + "Conflict phase, pay [A1] more.]"
+                        + Environment.NewLine
+                        + "Deal 2 damage to target Agent.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "061"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.PreparedAmbush,
+                    Name = "Prepared Ambush",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Conflict Maneuver"
+                        + Environment.NewLine
+                        + "Use an Agent: Deal its attack value to"
+                        + Environment.NewLine
+                        + "target Agent on the same mission.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "062"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.UnexpectedCourage,
+                    Name = "Unexpected Courage",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Conflict Maneuver"
+                        + Environment.NewLine
+                        + "Target friendly Agent deals its attack value to"
+                        + Environment.NewLine
+                        + "target Agent on the same mission.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "063"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.DevotedLearning,
+                    Name = "Devoted Learning",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Reaction: After completing a Mission,"
+                        + Environment.NewLine
+                        + "draw 3 cards."
+                        + Environment.NewLine
+                        + "[Limit once per mission.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "064"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.MartianEducation,
+                    Name = "Martian Education",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Target Agent gains a Talent of your"
+                        + Environment.NewLine
+                        + "choice until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "065"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.Aftermath,
+                    Name = "Aftermath",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Reaction: After completing a Mission,"
+                        + Environment.NewLine
+                        + "deal 3 damage to target Agent in play.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "066"
+                },
                 new Card
                 {
                     Id = (int)Enum.CardId.ChemicalWarfare,
-                    Name = "ChemicalWarfare",
+                    Name = "Chemical Warfare",
                     Unique = false,
                     Type = (int)Enum.CardType.Maneuver,
                     Ability = "Deal 1 damage to each Agent on a Mission.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "067"
                 },
+                new Card
+                {
+                    Id = (int)Enum.CardId.WarPropaganda,
+                    Name = "War Propaganda",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Reaction: After you claim a Mission,"
+                        + Environment.NewLine
+                        + "instead of your opponent, you put the new"
+                        + Environment.NewLine
+                        + "Mission from your Mission Deck into play.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "068"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.OlympusUniversity,
+                    Name = "Olympus University",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Construction,
+                    Ability = "Use: Target Agent gains a"
+                        + Environment.NewLine
+                        + "Talent of your choice"
+                        + Environment.NewLine
+                        + "until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "069"
+                },
 
             #endregion
 
             #region Mercury
 
-
+                //new Card
+                //{
+                //    Id = (int)Enum.CardId.MartianDiplomat,
+                //    Name = "Martian Diplomat",
+                //    Unique = false,
+                //    Type = (int)Enum.CardType.Agent,
+                //    AttackValue = 0,
+                //    HealthValue = 2,
+                //    Ability = "Use: Choose a Talent on another Agent"
+                //        + Environment.NewLine
+                //        + "on this Mission, give that Agent on more"
+                //        + Environment.NewLine
+                //        + "of that Talent until the end of the phase.",
+                //    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                //    ExpansionSerialNumber = "047"
+                //},
 
             #endregion
 

@@ -484,6 +484,198 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
 
                 new CardResource
                 {
+                    CardId = (int)Enum.CardId.MartianDiplomat,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CrimsonGrenadier,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CrimsonLegionInfantry,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SpecialOps,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CrimsonShockTroops,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CrimsonShockTroops,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CrimsonLegionScout,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CrimsonLegionScout,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SergeantJoseph,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ChefuMilitia,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ChefuMilitia,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.TarakanGuard,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.TarakanGuard,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ChameleonCorps,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ChameleonCorps,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ExplosiveExpert,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ExplosiveExpert,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SupplyLineOfficer,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SupplyLineOfficer,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.IrharenVeteran,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.IrharenVeteran,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.GeneralRwanda,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.GeneralRwanda,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.GeneralRwanda,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.Headshot,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.PreparedAmbush,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.UnexpectedCourage,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.UnexpectedCourage,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.DevotedLearning,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.DevotedLearning,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MartianEducation,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.Aftermath,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
                     CardId = (int)Enum.CardId.ChemicalWarfare,
                     ResourceId = (int)Enum.Resource.Martian,
                     Quantity = 1
@@ -493,6 +685,24 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     CardId = (int)Enum.CardId.ChemicalWarfare,
                     ResourceId = (int)Enum.Resource.Any,
                     Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.WarPropaganda,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.WarPropaganda,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.OlympusUniversity,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 2
                 },
 
             #endregion

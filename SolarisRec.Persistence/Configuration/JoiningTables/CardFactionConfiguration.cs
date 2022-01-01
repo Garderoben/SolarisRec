@@ -263,19 +263,129 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
 
                 new CardFaction
                 {
+                    CardId = (int)Enum.CardId.MartianDiplomat,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CrimsonGrenadier,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CrimsonLegionInfantry,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.SpecialOps,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CrimsonShockTroops,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CrimsonLegionScout,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.SergeantJoseph,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ChefuMilitia,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.TarakanGuard,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ChameleonCorps,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ExplosiveExpert,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.SupplyLineOfficer,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.IrharenVeteran,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.GeneralRwanda,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.Headshot,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.PreparedAmbush,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.UnexpectedCourage,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.DevotedLearning,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.MartianEducation,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.Aftermath,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
                     CardId = (int)Enum.CardId.ChemicalWarfare,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.WarPropaganda,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.OlympusUniversity,
                     FactionId = (int)Enum.Faction.Mars
                 },
 
             #endregion
 
-                #region Mercury
+            #region Mercury
 
 
 
-                #endregion
+            #endregion
 
-                #region Titan
+            #region Titan
 
                 new CardFaction
                 {

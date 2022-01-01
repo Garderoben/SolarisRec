@@ -53,7 +53,29 @@
         PoliticalAcademy = 46,
 
         //Mars
+        MartianDiplomat = 47,
+        CrimsonGrenadier = 48,
+        CrimsonLegionInfantry = 49,
+        SpecialOps = 50,
+        CrimsonShockTroops = 51,
+        CrimsonLegionScout = 52,
+        SergeantJoseph = 53,
+        ChefuMilitia = 54,
+        TarakanGuard = 55,
+        ChameleonCorps = 56,
+        ExplosiveExpert = 57,
+        SupplyLineOfficer = 58,
+        IrharenVeteran = 59,
+        GeneralRwanda = 60,
+        Headshot = 61,
+        PreparedAmbush = 62,
+        UnexpectedCourage = 63,
+        DevotedLearning = 64,
+        MartianEducation = 65,
+        Aftermath = 66,
         ChemicalWarfare = 67,
+        WarPropaganda = 68,
+        OlympusUniversity = 69,
 
         //Mercury
 
