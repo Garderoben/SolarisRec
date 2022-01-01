@@ -31,7 +31,8 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
         {
             builder.HasData
             (
-                #region Belt
+
+            #region Belt
 
                 new CardResource
                 {
@@ -262,7 +263,247 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     Quantity = 1
                 },
 
-                #endregion
+            #endregion
+
+            #region Earth
+
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.AcolyteinTraining,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MonkofSol,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SanctionedPriest,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.EarthseedActivist,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.EarthseedActivist,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.PeacefulRepresentative,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.PeacefulRepresentative,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ReveredMediator,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ReveredMediator,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.NegotiatorEld,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ExiledPaladin,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ExiledPaladin,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.InvestigatorPaladin,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.InvestigatorPaladin,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.GuardianPaladin,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.GuardianPaladin,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.PoliticalAdvisor,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.PoliticalAdvisor,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CosmicLinkManager,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CosmicLinkManager,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.HeroicRescue,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.HeroicRescue,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SawitComing,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ExpendableBodyguard,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.IntroducingtoTheFaith,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.IntroducingtoTheFaith,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CantTouchMe,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.TwistofFate,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.TwistofFate,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ScorchedEarthTactic,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ScorchedEarthTactic,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.PoliticalDelegation,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.PoliticalDelegation,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.PoliticalAcademy,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.PoliticalAcademy,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+
+            #endregion
+
+            #region Mars
+
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ChemicalWarfare,
+                    ResourceId = (int)Enum.Resource.Martian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ChemicalWarfare,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+
+            #endregion
+
+            #region Mercury
+
+
+
+            #endregion
+
+            #region Titan
 
                 new CardResource
                 {
@@ -275,19 +516,22 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     CardId = (int)Enum.CardId.CyberBankOfTitan,
                     ResourceId = (int)Enum.Resource.Any,
                     Quantity = 2
-                },
-                new CardResource
-                {
-                    CardId = (int)Enum.CardId.ChemicalWarfare,
-                    ResourceId = (int)Enum.Resource.Martian,
-                    Quantity = 1
-                },
-                new CardResource
-                {
-                    CardId = (int)Enum.CardId.ChemicalWarfare,
-                    ResourceId = (int)Enum.Resource.Any,
-                    Quantity = 1
                 }
+
+                #endregion
+
+                #region Venus
+
+
+
+                #endregion
+
+                #region Mission
+
+
+
+                #endregion
+
             );
         }
     }

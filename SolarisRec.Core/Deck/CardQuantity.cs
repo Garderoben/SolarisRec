@@ -4,7 +4,7 @@ namespace SolarisRec.Core.Deck
 {
     public struct CardQuantity
     {
-        private const int MAX_COUNT = 4;
+        private const int MAX_COUNT = 3;
         private const int MIN_COUNT = 1;
 
         private readonly int count;

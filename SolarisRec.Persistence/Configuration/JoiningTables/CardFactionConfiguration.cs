@@ -28,7 +28,8 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
         {
             builder.HasData
             (
-                #region Belt
+
+            #region Belt
 
                 new CardFaction
                 {
@@ -146,18 +147,156 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     FactionId = (int)Enum.Faction.Belt
                 },
 
+            #endregion
+
+            #region Earth
+
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.AcolyteinTraining,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.MonkofSol,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.SanctionedPriest,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.EarthseedActivist,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.PeacefulRepresentative,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ReveredMediator,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.NegotiatorEld,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ExiledPaladin,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.InvestigatorPaladin,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.GuardianPaladin,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.PoliticalAdvisor,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CosmicLinkManager,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.HeroicRescue,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.SawitComing,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ExpendableBodyguard,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.IntroducingtoTheFaith,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CantTouchMe,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.TwistofFate,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ScorchedEarthTactic,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.PoliticalDelegation,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.PoliticalAcademy,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+
+            #endregion
+
+            #region Mars
+
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ChemicalWarfare,
+                    FactionId = (int)Enum.Faction.Mars
+                },
+
+            #endregion
+
+                #region Mercury
+
+
+
                 #endregion
+
+                #region Titan
 
                 new CardFaction
                 {
                     CardId = (int)Enum.CardId.CyberBankOfTitan,
                     FactionId = (int)Enum.Faction.Titan
-                },
-                new CardFaction
-                {
-                    CardId = (int)Enum.CardId.ChemicalWarfare,
-                    FactionId = (int)Enum.Faction.Mars
                 }
+
+            #endregion
+
+            #region Venus
+
+
+
+            #endregion
+
+            #region Mission
+
+
+
+            #endregion
+                
             );
         }
     }

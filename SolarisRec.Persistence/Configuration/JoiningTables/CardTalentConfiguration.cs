@@ -31,7 +31,8 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
         {
             builder.HasData
             (
-                #region Belt
+
+            #region Belt
 
                 new CardTalent
                 {
@@ -214,7 +215,183 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     Quantity = 1
                 },
 
-                #endregion
+            #endregion
+
+            #region Earth
+
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.AcolyteinTraining,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MonkofSol,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.SanctionedPriest,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.SanctionedPriest,
+                    TalentId = (int)Enum.Talent.Research,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.EarthseedActivist,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.EarthseedActivist,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.PeacefulRepresentative,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ReveredMediator,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.NegotiatorEld,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.NegotiatorEld,
+                    TalentId = (int)Enum.Talent.Data,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ExiledPaladin,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ExiledPaladin,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ExiledPaladin,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.InvestigatorPaladin,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.InvestigatorPaladin,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.InvestigatorPaladin,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.GuardianPaladin,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.GuardianPaladin,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.GuardianPaladin,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.PoliticalAdvisor,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.PoliticalAdvisor,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CosmicLinkManager,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CosmicLinkManager,
+                    TalentId = (int)Enum.Talent.Research,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CosmicLinkManager,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 1
+                },
+                
+
+            #endregion
+
+            #region Mars
+
+
+
+            #endregion
+
+            #region Mercury
+
+
+
+            #endregion
+
+            #region Titan
+
+
+
+            #endregion
+
+            #region Venus
+
+
+
+            #endregion
+
+            #region Mission
 
                 new CardTalent
                 {
@@ -234,6 +411,9 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     TalentId = (int)Enum.Talent.Any,
                     Quantity = 5
                 }
+
+                #endregion
+
             );
         }
     }
