@@ -1,7 +1,9 @@
-﻿namespace SolarisRec.Persistence.Mappers
+﻿using System.Collections.Generic;
+
+namespace SolarisRec.Persistence.Mappers
 {
     interface IMapToDomainModel<TData, TDomain>
     {
-        TDomain Map(TData input);
+        TDomain Map(TData input);        
     }
 }

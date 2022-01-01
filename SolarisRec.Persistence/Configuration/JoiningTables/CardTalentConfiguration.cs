@@ -30,13 +30,192 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
         private static void Seed(EntityTypeBuilder<CardTalent> builder)
         {
             builder.HasData
-            (                
+            (
+                #region Belt
+
                 new CardTalent
                 {
                     CardId = (int)Enum.CardId.Turncoat,
                     TalentId = (int)Enum.Talent.Espionage,
                     Quantity = 1
                 },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.InsuredColleague,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.BeggarInformator,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.KoronisBelter,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.KoronisBelter,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Concubine,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Concubine,
+                    TalentId = (int)Enum.Talent.Data,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MadameKyung,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MadameKyung,
+                    TalentId = (int)Enum.Talent.Data,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Phisher,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Phisher,
+                    TalentId = (int)Enum.Talent.Data,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Phisher,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.VestaExtortionist,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.VestaExtortionist,
+                    TalentId = (int)Enum.Talent.Research,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.VestaExtortionist,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.YoungScum,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.YoungScum,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.YoungScum,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.VestaThug,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.VestaThug,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.VestaThug,
+                    TalentId = (int)Enum.Talent.Research,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.RebelSaboteur,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.RebelSaboteur,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.RebelSaboteur,
+                    TalentId = (int)Enum.Talent.Data,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.GangLeader,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.GangLeader,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.GangLeader,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MrYue,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MrYue,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 1
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MrYue,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 1
+                },
+
+                #endregion
+
                 new CardTalent
                 {
                     CardId = (int)Enum.CardId.Redistribution,
