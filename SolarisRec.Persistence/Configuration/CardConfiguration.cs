@@ -1085,27 +1085,755 @@ namespace SolarisRec.Persistence.Configuration
 
             #region Mercury
 
-                //new Card
-                //{
-                //    Id = (int)Enum.CardId.MartianDiplomat,
-                //    Name = "Martian Diplomat",
-                //    Unique = false,
-                //    Type = (int)Enum.CardType.Agent,
-                //    AttackValue = 0,
-                //    HealthValue = 2,
-                //    Ability = "Use: Choose a Talent on another Agent"
-                //        + Environment.NewLine
-                //        + "on this Mission, give that Agent on more"
-                //        + Environment.NewLine
-                //        + "of that Talent until the end of the phase.",
-                //    ExpansionId = (int)Enum.Expansion.SoItBegins,
-                //    ExpansionSerialNumber = "047"
-                //},
+                new Card
+                {
+                    Id = (int)Enum.CardId.MercurianRecruiter,
+                    Name = "Mercurian Recruiter",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 0,
+                    HealthValue = 1,
+                    Ability = "Preparing."
+                        + Environment.NewLine
+                        + "[This Agent enters play Used.]"
+                        + Environment.NewLine
+                        + "Use: Gain [Me].",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "070"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.ApollodorusMerc,
+                    Name = "Apollodorus Merc",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "[A2]: Take control of this Agent."
+                        + Environment.NewLine
+                        + "[Any player may pay for this ability.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "071"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.ApollodorusMerc,
+                    Name = "Apollodorus Merc",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "[A2]: Take control of this Agent."
+                        + Environment.NewLine
+                        + "[Any player may pay for this ability.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "071"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.NewDallasSapper,
+                    Name = "New Dallas Sapper",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "Use, [Me][Me][A2]: Destroy target"
+                        + Environment.NewLine
+                        + "Construction.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "072"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.SecondGenColonist,
+                    Name = "Second Gen. Colonist",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 1,
+                    HealthValue = 2,
+                    Ability = "Reaction: After this Agent enters"
+                        + Environment.NewLine
+                        + "play, ready one of your Resource"
+                        + Environment.NewLine
+                        + "cards.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "073"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.NoahtheArchitect,
+                    Name = "Noah, the Architect",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 4,
+                    Ability = "Spend 1 influence: Gain"
+                        + Environment.NewLine
+                        + "[Me][Me][Me] you can only spend this"
+                        + Environment.NewLine
+                        + "Resource to play Construction cards.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "074"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.MiningBeliever,
+                    Name = "MiningBeliever",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 2,
+                    Ability = "[Me][Me]: This Agent gains [Mining]"
+                        + Environment.NewLine
+                        + "until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "075"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.NewDallasOpportunist,
+                    Name = "New Dallas Opportunist",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 3,
+                    Ability = "Reaction, [A2]: After this Agent"
+                        + Environment.NewLine
+                        + "completes a Mission, gain 1"
+                        + Environment.NewLine
+                        + "Influence.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "076"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CalorisBasinTrader,
+                    Name = "Caloris Basin Trader",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 3,
+                    Ability = "Reaction: After you have 0 ready"
+                        + Environment.NewLine
+                        + "Resource cards the first time"
+                        + Environment.NewLine
+                        + "during your turn, gain 1 Influence.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "077"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.AMU,
+                    Name = "A.M.U.",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 4,
+                    HealthValue = 3,
+                    Ability = "[Me][Me][A2]: Gain +1/+1 until the"
+                        + Environment.NewLine
+                        + "end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "078"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.OutcastSmuggler,
+                    Name = "Outcast Smuggler",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "Reaction: After this Agent enters"
+                        + Environment.NewLine
+                        + "play, put a Resource card of your"
+                        + Environment.NewLine
+                        + "choice into play Used.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "079"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.MiningWalker,
+                    Name = "Mining Walker",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 0,
+                    HealthValue = 5,
+                    Ability = "Use: Gain 1 Influence.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "080"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.BobbyMcKendrickTheBoss,
+                    Name = "Bobby McKendrick, The Boss",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 4,
+                    HealthValue = 5,
+                    Ability = "Reaction: At the start of the"
+                        + Environment.NewLine
+                        + "Conflict phase, gain [A1] for each"
+                        + Environment.NewLine
+                        + "Construction you control.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "081"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CombatSteroids,
+                    Name = "Combat Steroids",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Target Agent gains +2/+2"
+                        + Environment.NewLine
+                        + "until the end of the Conflict round.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "082"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CombatSteroids,
+                    Name = "Combat Steroids",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Target Agent gains +2/+2"
+                        + Environment.NewLine
+                        + "until the end of the Conflict round.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "082"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.GiveUporGetUp,
+                    Name = "Give Up or Get Up!",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Ready target Agent on a Mission.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "083"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.MercifulLoan,
+                    Name = "Give Up or Get Up!",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Reaction: After your opponent plays a card, you"
+                        + Environment.NewLine
+                        + "may pay the card's converted Resource cost"
+                        + Environment.NewLine
+                        + "instead, gain Influence equal to the cost payed."
+                        + Environment.NewLine
+                        + "[up to 3 Influence.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "084"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.NabuInsurancePolicy,
+                    Name = "Nabu Insurance Policy",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "You can only play this card if you have 3 or more"
+                        + Environment.NewLine
+                        + "ready Resource cards."
+                        + Environment.NewLine
+                        + "Reaction: Cancel target Maneuver card, that is"
+                        + Environment.NewLine
+                        + "targeting one of your Agents or Constructions.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "085"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.InvestmentintheFuture,
+                    Name = "Investment in the Future",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Syndicate maneuver"
+                        + Environment.NewLine
+                        + "Put a Resource card of your"
+                        + Environment.NewLine
+                        + "choice into play Used.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "086"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.RecycleEverythingthatShines,
+                    Name = "Recycle Everything that Shines",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Syndicate maneuver"
+                        + Environment.NewLine
+                        + "Put a Mercury Resource"
+                        + Environment.NewLine
+                        + "card into play Used.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "087"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.PlannedDemolition,
+                    Name = "Planned Demolition",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Syndicate maneuver"
+                        + Environment.NewLine
+                        + "Destroy target Construction",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "088"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.BadQualityFuelCells,
+                    Name = "Bad Quality Fuel Cells",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Syndicate maneuver"
+                        + Environment.NewLine
+                        + "Target Shuttle cannot be deployed this"
+                        + Environment.NewLine
+                        + "round.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "089"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CalorStorage,
+                    Name = "Calor Storage",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Construction,
+                    Ability = "This card can't have more than"
+                        + Environment.NewLine
+                        + "3 material counters on it."
+                        + Environment.NewLine
+                        + "Use a Resource card: Put a material counter on"
+                        + Environment.NewLine
+                        + "this card."
+                        + Environment.NewLine
+                        + "Use: Remove all material counters from this card to"
+                        + Environment.NewLine
+                        + "gain that many [A].",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "090"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.ApollodorusDock,
+                    Name = "Apollodorus Dock",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Construction,
+                    Ability = "Use, [Me][A1]:"
+                        + Environment.NewLine
+                        + "Draw 1 card.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "091"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.WalkingFactory,
+                    Name = "Walking Factory",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Construction,
+                    Ability = "[A2]: Gain 1 Influence."
+                        + Environment.NewLine
+                        + "[Limit once per phase.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "092"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.GearingStation,
+                    Name = "Gearing Station",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Construction,
+                    Ability = "Reaction, Use: At the start of the"
+                        + Environment.NewLine
+                        + "Conflict phase target Agent gains"
+                        + Environment.NewLine
+                        + "+1/+0 until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "093"
+                },
 
             #endregion
 
             #region Titan
 
+                new Card
+                {
+                    Id = (int)Enum.CardId.DataMiner,
+                    Name = "Data Miner",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 0,
+                    HealthValue = 2,
+                    Ability = "Use: Discard the"
+                        + Environment.NewLine
+                        + "top 2 cards of your deck.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "094"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.OrdinaryServitor,
+                    Name = "Ordinary Servitor",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "Archive."
+                        + Environment.NewLine
+                        + "[You can play this card as a Resource from your"
+                        + Environment.NewLine
+                        + "discard pile.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "095"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.SinlapParasyte,
+                    Name = "Sinlap Parasyte",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 0,
+                    HealthValue = 2,
+                    Ability = "Conflict action, Use: Take control of"
+                        + Environment.NewLine
+                        + "target non-Unique Agent on this Mission"
+                        + Environment.NewLine
+                        + "with converted Resource cost 3 or lower"
+                        + Environment.NewLine
+                        + "until the end of the phase or until this"
+                        + Environment.NewLine
+                        + "card leaves this Mission. This Agent"
+                        + Environment.NewLine
+                        + "cannot ready until the end of the Round.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "096"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.OracleDroid,
+                    Name = "Oracle Droid",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "Reaction: After this Agent enters play"
+                        + Environment.NewLine
+                        + "return target card from your discard"
+                        + Environment.NewLine
+                        + "pile to the top of your deck. Shuffle.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "097"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.EbonyFranth,
+                    Name = "Ebony Franth",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 4,
+                    Ability = "Reaction: After this Agent deals"
+                        + Environment.NewLine
+                        + "damage to an enemy Agent, that Agent"
+                        + Environment.NewLine
+                        + "loses all of its Talents until the end of"
+                        + Environment.NewLine
+                        + "the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "098"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.BattleDroid,
+                    Name = "Battle Droid",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 3,
+                    Ability = "Archive."
+                        + Environment.NewLine
+                        + "[You can play this card as a Resource from your"
+                        + Environment.NewLine
+                        + "discard pile.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "099"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.LigeiaDeveloper,
+                    Name = "Ligeia Developer",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "Reaction: At the start of the Conflict"
+                        + Environment.NewLine
+                        + "phase, give target Agent on this Mission"
+                        + Environment.NewLine
+                        + "+1/+1 until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "100"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.XanaduLeadLibrarian,
+                    Name = "Xanadu Lead Librarian",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 3,
+                    Ability = "Reaction: After this Agent enters play"
+                        + Environment.NewLine
+                        + "reveal the top 5 cards of your deck. You"
+                        + Environment.NewLine
+                        + "may choose a Maneuver card among"
+                        + Environment.NewLine
+                        + "them and put it into your hand."
+                        + Environment.NewLine
+                        + "Discard the rest.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "101"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.LazarusProtocol,
+                    Name = "Lazarus Protocol",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 0,
+                    HealthValue = 0,
+                    Ability = "Archive."
+                        + Environment.NewLine
+                        + "Reaction: After this agent enters play"
+                        + Environment.NewLine
+                        + "choose a non-Unique Agent with converted"
+                        + Environment.NewLine
+                        + "Resource cost 3 or lower in your discard pile."
+                        + Environment.NewLine
+                        + "Put that Agent into play with a +1/+1 counter"
+                        + Environment.NewLine
+                        + "on it, it gains a [Data]. attach Lazarus Protocol"
+                        + Environment.NewLine
+                        + "to that Agent.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "102"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CyborgBodyguard,
+                    Name = "Cyborg Bodyguard",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 4,
+                    Ability = "Archive."
+                        + Environment.NewLine
+                        + "[You can play this card as a Resource from your"
+                        + Environment.NewLine
+                        + "discard pile.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "103"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.BhavyaAdministrator,
+                    Name = "Bhavya, Administrator",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 5,
+                    Ability = "Reaction: After this agent deals"
+                        + Environment.NewLine
+                        + "attack damage discard a random"
+                        + Environment.NewLine
+                        + "card from your opponent's hand.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "104"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.IllusionalDistraction,
+                    Name = "Illusional Distraction",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Reaction: After an Agent is dealt attack"
+                        + Environment.NewLine
+                        + "damage, that Agent loses all of its"
+                        + Environment.NewLine
+                        + "Talents until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "105"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.FatigueoftheFlesh,
+                    Name = "Fatigue of the Flesh",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Archive."
+                        + Environment.NewLine
+                        + "[You can play this card as a Resource from your discard pile.]"
+                        + Environment.NewLine
+                        + "Use target Agent with converted"
+                        + Environment.NewLine
+                        + "Resource cost 3 or lower.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "106"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.InterplanetaryAssist,
+                    Name = "Interplanetary Assist",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Use target Agent:"
+                        + Environment.NewLine
+                        + "Ready another target Agent.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "107"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.SuddenTurnaround,
+                    Name = "Sudden Turnaround",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Conflict action: Ready target non-Unique"
+                        + Environment.NewLine
+                        + "enemy Agent with converted Resource"
+                        + Environment.NewLine
+                        + "cost 3 or lower, take control of it and"
+                        + Environment.NewLine
+                        + "immediately make an Attack with that Agent."
+                        + Environment.NewLine
+                        + "Return it to its owner's control.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "108"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.SilenceYourMind,
+                    Name = "Silence Your Mind",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Archive."
+                        + Environment.NewLine
+                        + "[You can play this card as a Resource from your discard pile.]"
+                        + Environment.NewLine
+                        + "Target Agent treats its text box as if it were"
+                        + Environment.NewLine
+                        + "blan until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "109"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.DataBreach,
+                    Name = "Data Breach",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Target opponent reveals their hand."
+                        + Environment.NewLine
+                        + "You choose a card from it."
+                        + Environment.NewLine
+                        + "That player discards that card.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "110"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.MindOverride,
+                    Name = "Mind Override",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Archive."
+                        + Environment.NewLine
+                        + "Choose a non-Unique Agent in play,"
+                        + Environment.NewLine
+                        + "take control of that Agent"
+                        + Environment.NewLine
+                        + "until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "111"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.WipetheMind,
+                    Name = "Wipe the Mind",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Target Agent loses a Talent of your"
+                        + Environment.NewLine
+                        + "choice until the end of the round.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "112"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.SearchingtheArchives,
+                    Name = "Searching the Archives",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Archive."
+                        + Environment.NewLine
+                        + "Search your discard pile for an Agent"
+                        + Environment.NewLine
+                        + "card, put it into your hand.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "113"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.AncientDrives,
+                    Name = "Ancient Drives",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Discard the top 5 cards"
+                        + Environment.NewLine
+                        + "of your deck.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "114"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.DataMine,
+                    Name = "Data Mine",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Construction,
+                    Ability = "Reaction: After this card enters play put 4"
+                        + Environment.NewLine
+                        + "memory counters on it."
+                        + Environment.NewLine
+                        + "Use, Remove a memory counter:"
+                        + Environment.NewLine
+                        + "Look at the top card of your deck."
+                        + Environment.NewLine
+                        + "You may put that card into your Discard pile.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "115"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.XanaduMemoryVault,
+                    Name = "Xanadu Memory Vault",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Construction,
+                    Ability = "Use: Put 1 corruption counter on this card."
+                        + Environment.NewLine
+                        + "Use: Take control of an Agent with converted"
+                        + Environment.NewLine
+                        + "Resource cost equal to the corruption counters"
+                        + Environment.NewLine
+                        + "on this card. Destroy this card.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "116"
+                },
                 new Card
                 {
                     Id = (int)Enum.CardId.CyberBankOfTitan,
@@ -1125,7 +1853,22 @@ namespace SolarisRec.Persistence.Configuration
 
             #region Venus
 
-
+                //new Card
+                //{
+                //    Id = (int)Enum.CardId.MercurianRecruiter,
+                //    Name = "Mercurian Recruiter",
+                //    Unique = false,
+                //    Type = (int)Enum.CardType.Agent,
+                //    AttackValue = 0,
+                //    HealthValue = 1,
+                //    Ability = "Preparing."
+                //        + Environment.NewLine
+                //        + "[This Agent enters play Used.]"
+                //        + Environment.NewLine
+                //        + "Use: Gain [Me].",
+                //    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                //    ExpansionSerialNumber = "070"
+                //},
 
             #endregion
 

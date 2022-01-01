@@ -709,12 +709,461 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
 
             #region Mercury
 
-
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MercurianRecruiter,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ApollodorusMerc,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.NewDallasSapper,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.NewDallasSapper,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SecondGenColonist,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SecondGenColonist,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.NoahtheArchitect,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MiningBeliever,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MiningBeliever,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.NewDallasOpportunist,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.NewDallasOpportunist,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CalorisBasinTrader,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CalorisBasinTrader,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.AMU,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.AMU,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.OutcastSmuggler,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.OutcastSmuggler,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MiningWalker,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MiningWalker,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.BobbyMcKendrickTheBoss,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.BobbyMcKendrickTheBoss,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CombatSteroids,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CombatSteroids,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.GiveUporGetUp,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MercifulLoan,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MercifulLoan,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.NabuInsurancePolicy,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.InvestmentintheFuture,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.RecycleEverythingthatShines,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.RecycleEverythingthatShines,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.PlannedDemolition,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.PlannedDemolition,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.BadQualityFuelCells,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.BadQualityFuelCells,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CalorStorage,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ApollodorusDock,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ApollodorusDock,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.WalkingFactory,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.WalkingFactory,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.GearingStation,
+                    ResourceId = (int)Enum.Resource.Mercurian,
+                    Quantity = 1
+                },
 
             #endregion
 
             #region Titan
 
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.DataMiner,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.OrdinaryServitor,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.OrdinaryServitor,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SinlapParasyte,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SinlapParasyte,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.OracleDroid,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.OracleDroid,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.BattleDroid,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.BattleDroid,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.LigeiaDeveloper,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.LigeiaDeveloper,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.XanaduLeadLibrarian,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.XanaduLeadLibrarian,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.LazarusProtocol,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.LazarusProtocol,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CyborgBodyguard,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CyborgBodyguard,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.BhavyaAdministrator,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.BhavyaAdministrator,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.IllusionalDistraction,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.FatigueoftheFlesh,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.FatigueoftheFlesh,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.InterplanetaryAssist,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.InterplanetaryAssist,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SuddenTurnaround,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SuddenTurnaround,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SilenceYourMind,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.DataBreach,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MindOverride,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MindOverride,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.WipetheMind,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.SearchingtheArchives,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.AncientDrives,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.DataMine,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.XanaduMemoryVault,
+                    ResourceId = (int)Enum.Resource.Titanian,
+                    Quantity = 2
+                },
                 new CardResource
                 {
                     CardId = (int)Enum.CardId.CyberBankOfTitan,
@@ -726,21 +1175,26 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     CardId = (int)Enum.CardId.CyberBankOfTitan,
                     ResourceId = (int)Enum.Resource.Any,
                     Quantity = 2
+                },
+
+            #endregion
+
+            #region Venus
+
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.CyberBankOfTitan,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
                 }
 
-                #endregion
+            #endregion
 
-                #region Venus
-
-
-
-                #endregion
-
-                #region Mission
+            #region Mission
 
 
 
-                #endregion
+            #endregion
 
             );
         }

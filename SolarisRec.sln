@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarisRec.Core", "SolarisR
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarisRec.Persistence", "SolarisRec.Persistence\SolarisRec.Persistence.csproj", "{3D2D2137-6A67-4E18-B7C2-37AC5B4B7B2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarisRec.Core.Tests", "SolarisRec.Core.Tests\SolarisRec.Core.Tests.csproj", "{BA96151C-3952-4DD1-848C-28A48BAA3AD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarisRec.Core.Tests", "SolarisRec.Core.Tests\SolarisRec.Core.Tests.csproj", "{BA96151C-3952-4DD1-848C-28A48BAA3AD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarisRec.Persistence.Tests", "SolarisRec.Persistence.Tests\SolarisRec.Persistence.Tests.csproj", "{D837FA9B-9B8A-4A13-B25D-499C87AB8F8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarisRec.Persistence.Tests", "SolarisRec.Persistence.Tests\SolarisRec.Persistence.Tests.csproj", "{D837FA9B-9B8A-4A13-B25D-499C87AB8F8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarisRec.UI.Tests", "SolarisRec.UI.Tests\SolarisRec.UI.Tests.csproj", "{D36FC3DB-43BF-463A-9097-CC1FA1B73CF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarisRec.UI.Tests", "SolarisRec.UI.Tests\SolarisRec.UI.Tests.csproj", "{D36FC3DB-43BF-463A-9097-CC1FA1B73CF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

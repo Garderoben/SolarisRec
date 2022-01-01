@@ -381,12 +381,246 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
 
             #region Mercury
 
-
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.MercurianRecruiter,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ApollodorusMerc,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.NewDallasSapper,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.SecondGenColonist,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.NoahtheArchitect,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.MiningBeliever,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.NewDallasOpportunist,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CalorisBasinTrader,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.AMU,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.OutcastSmuggler,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.MiningWalker,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.BobbyMcKendrickTheBoss,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CombatSteroids,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.GiveUporGetUp,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.MercifulLoan,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.NabuInsurancePolicy,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.InvestmentintheFuture,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.RecycleEverythingthatShines,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.PlannedDemolition,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.BadQualityFuelCells,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CalorStorage,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ApollodorusDock,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.WalkingFactory,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.GearingStation,
+                    FactionId = (int)Enum.Faction.Mercury
+                },
 
             #endregion
 
             #region Titan
 
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.DataMiner,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.OrdinaryServitor,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.SinlapParasyte,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.OracleDroid,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.EbonyFranth,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.BattleDroid,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.LigeiaDeveloper,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.XanaduLeadLibrarian,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.LazarusProtocol,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CyborgBodyguard,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.BhavyaAdministrator,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.IllusionalDistraction,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.FatigueoftheFlesh,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.InterplanetaryAssist,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.SuddenTurnaround,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.SilenceYourMind,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.DataBreach,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.MindOverride,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.WipetheMind,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.SearchingtheArchives,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.AncientDrives,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.DataMine,
+                    FactionId = (int)Enum.Faction.Titan
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.XanaduMemoryVault,
+                    FactionId = (int)Enum.Faction.Titan
+                },
                 new CardFaction
                 {
                     CardId = (int)Enum.CardId.CyberBankOfTitan,
@@ -397,7 +631,11 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
 
             #region Venus
 
-
+                //new CardFaction
+                //{
+                //    CardId = (int)Enum.CardId.DataMiner,
+                //    FactionId = (int)Enum.Faction.Titan
+                //}
 
             #endregion
 
