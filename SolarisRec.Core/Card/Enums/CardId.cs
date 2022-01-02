@@ -158,7 +158,26 @@
         TheShadowDistrict = 141,
 
         //Mission
-        Redistribution = 159
+        ReconIntel = 142,
+        Deconstruction = 143,
+        MissionSwap = 144,
+        IndustrialSabotage = 145,
+        PeaceAgreement = 146,
+        CollapsingStocks = 147,
+        ServerOverload = 148,
+        Framing = 149,
+        Wiretapping = 150,
+        CarefulPlanning = 151,
+        ResourceOperation = 152,
+        MyWay = 153,
+        CallinginFavors = 154,
+        LevelthePlayingField = 155,
+        Mustering = 156,
+        Seduction = 157,
+        WithdrawFunds = 158,
+        Redistribution = 159,
+        SearchforLostKnowledge = 160,
+        PlanetaryPolitics = 161
 
         #endregion
     }

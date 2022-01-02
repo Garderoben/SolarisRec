@@ -997,12 +997,318 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     TalentId = (int)Enum.Talent.Military,
                     Quantity = 1
                 },
-                
+
 
             #endregion
 
             #region Mission
 
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ReconIntel,
+                    TalentId = (int)Enum.Talent.Research,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ReconIntel,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ReconIntel,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Deconstruction,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Deconstruction,
+                    TalentId = (int)Enum.Talent.Research,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Deconstruction,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MissionSwap,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MissionSwap,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MissionSwap,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.IndustrialSabotage,
+                    TalentId = (int)Enum.Talent.Data,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.IndustrialSabotage,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.IndustrialSabotage,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.PeaceAgreement,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.PeaceAgreement,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.PeaceAgreement,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CollapsingStocks,
+                    TalentId = (int)Enum.Talent.Data,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CollapsingStocks,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CollapsingStocks,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ServerOverload,
+                    TalentId = (int)Enum.Talent.Data,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ServerOverload,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ServerOverload,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Framing,
+                    TalentId = (int)Enum.Talent.Research,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Framing,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Framing,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Wiretapping,
+                    TalentId = (int)Enum.Talent.Data,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Wiretapping,
+                    TalentId = (int)Enum.Talent.Espionage,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Wiretapping,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CarefulPlanning,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CarefulPlanning,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CarefulPlanning,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ResourceOperation,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ResourceOperation,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.ResourceOperation,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MyWay,
+                    TalentId = (int)Enum.Talent.Research,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MyWay,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.MyWay,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CallinginFavors,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CallinginFavors,
+                    TalentId = (int)Enum.Talent.Research,
+                    Quantity = 3
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.CallinginFavors,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.LevelthePlayingField,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.LevelthePlayingField,
+                    TalentId = (int)Enum.Talent.Military,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.LevelthePlayingField,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 5
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Mustering,
+                    TalentId = (int)Enum.Talent.Mining,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Mustering,
+                    TalentId = (int)Enum.Talent.Data,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Mustering,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 5
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Seduction,
+                    TalentId = (int)Enum.Talent.Data,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Seduction,
+                    TalentId = (int)Enum.Talent.Research,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.Seduction,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 5
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.WithdrawFunds,
+                    TalentId = (int)Enum.Talent.Diplomacy,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.WithdrawFunds,
+                    TalentId = (int)Enum.Talent.Research,
+                    Quantity = 4
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.WithdrawFunds,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 5
+                },
                 new CardTalent
                 {
                     CardId = (int)Enum.CardId.Redistribution,
@@ -1020,6 +1326,18 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     CardId = (int)Enum.CardId.Redistribution,
                     TalentId = (int)Enum.Talent.Any,
                     Quantity = 5
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.SearchforLostKnowledge,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 2
+                },
+                new CardTalent
+                {
+                    CardId = (int)Enum.CardId.PlanetaryPolitics,
+                    TalentId = (int)Enum.Talent.Any,
+                    Quantity = 2
                 }
 
                 #endregion

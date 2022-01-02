@@ -2214,6 +2214,186 @@ namespace SolarisRec.Persistence.Configuration
 
                 new Card
                 {
+                    Id = (int)Enum.CardId.ReconIntel,
+                    Name = "Recon Intel",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Draw 2 cards then discard 1.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "142"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.Deconstruction,
+                    Name = "Deconstruction",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Destroy target Construction.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "143"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.MissionSwap,
+                    Name = "Mission Swap",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Choose target Mission in the Mission Row, switch that Mission with one from"
+                        + Environment.NewLine
+                        + "your Mission Deck- [The other one goes back to its owner's Mission Deck.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "144"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.IndustrialSabotage,
+                    Name = "Industrial Sabotage",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Destroy target Resource card.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "145"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.PeaceAgreement,
+                    Name = "Peace Agreement",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Each player gains 3 Influence.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "146"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CollapsingStocks,
+                    Name = "Collapsing Stocks",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Each player loses 4 Influence.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "147"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.ServerOverload,
+                    Name = "Server Overload",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Draw 1 card, target opponent discards 1 card.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "148"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.Framing,
+                    Name = "Framing",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Destroy target Agent with converted Resource cost 3 or lower.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "149"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.Wiretapping,
+                    Name = "Wiretapping",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Target player reveals their hand. You choose a card from it."
+                        + Environment.NewLine
+                        + "That player discards that card.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "150"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CarefulPlanning,
+                    Name = "Careful Planning",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Put a Resource card of your choice into play.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "151"
+                },                
+                new Card
+                {
+                    Id = (int)Enum.CardId.ResourceOperation,
+                    Name = "Resource Operation",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Put an Agent into your Shuttle area from your discard pile with"
+                        + Environment.NewLine
+                        + "converted Resource cost 3 or less.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "152"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.MyWay,
+                    Name = "My Way!",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "After you claim this Mission, instead of your opponent, you put"
+                        + Environment.NewLine
+                        + "the new Mission from your Mission Deck into play.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "153"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.CallinginFavors,
+                    Name = "Calling in Favors",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "You may spend up to 3 Influence to draw that many cards.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "154"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.LevelthePlayingField,
+                    Name = "Level the Playing Field",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Destroy all Agents in play.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "155"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.Mustering,
+                    Name = "Mustering",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Put an Agent into your Shuttle area from your hand.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "156"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.Seduction,
+                    Name = "Seduction",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Take control of target non-Unique Agent.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "157"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.WithdrawFunds,
+                    Name = "Withdraw Funds",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Choose up to 2 Maneuver cards from your discard pile"
+                        + Environment.NewLine
+                        + "and put them into your hand.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "158"
+                },
+                new Card
+                {
                     Id = (int)Enum.CardId.Redistribution,
                     Name = "Redistribution",
                     Unique = false,
@@ -2221,6 +2401,28 @@ namespace SolarisRec.Persistence.Configuration
                     Ability = "Discard your hand then draw 5 cards.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "159"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.SearchforLostKnowledge,
+                    Name = "Search for Lost Knowledge",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Draw 1 card. Gain 2 Influence.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "160"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.PlanetaryPolitics,
+                    Name = "Planetary Politics",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Mission,
+                    Ability = "Target player discards 1 card from their hand."
+                        + Environment.NewLine
+                        + "Gain 2 Influence.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "161"
                 }
 
                 #endregion

@@ -629,7 +629,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
 
             #endregion
 
-                #region Venus
+            #region Venus
 
                 new CardFaction
                 {
@@ -752,13 +752,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     FactionId = (int)Enum.Faction.Venus
                 },
 
-                #endregion
-
-            #region Mission
-
-
-
-            #endregion
+                #endregion            
 
             );
         }

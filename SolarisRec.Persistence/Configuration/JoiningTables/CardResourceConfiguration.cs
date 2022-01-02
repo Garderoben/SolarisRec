@@ -1429,13 +1429,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 },
 
                 #endregion
-
-            #region Mission
-
-
-
-            #endregion
-
+          
             );
         }
     }
