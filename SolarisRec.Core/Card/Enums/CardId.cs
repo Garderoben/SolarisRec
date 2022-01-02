@@ -2,6 +2,8 @@
 {
     public enum CardId
     {
+        #region SoItBegins
+
         //Belt
         Turncoat = 1,
         InsuredColleague = 2,
@@ -130,8 +132,34 @@
         CyberBankOfTitan = 117,
 
         //Venus
+        DisguisedCrew = 118,
+        DustAddict = 119,
+        DisciplineofNight = 120,
+        EvidenceAnalyst = 121,
+        QuasimDaher = 122,
+        IshtarAssociate = 123,
+        TravelingMerchant = 124,
+        HiddenCell = 125,
+        MaatMonsSupervisor = 126,
+        FailedExperiment = 127,
+        Mole = 128,
+        FamedNavigator = 129,
+        VioletThorn = 130,
+        UnexpectedExpenses = 131,
+        FailedProject = 132,
+        ActofAggression = 133,
+        ForgedTravelLog = 134,
+        IntelGathering = 135,
+        ToxicBlood = 136,
+        HologramTrick = 137,
+        ImOutofHere = 138,
+        Misinformation = 139,
+        InfiltrationAcademy = 140,
+        TheShadowDistrict = 141,
 
         //Mission
         Redistribution = 159
+
+        #endregion
     }
 }

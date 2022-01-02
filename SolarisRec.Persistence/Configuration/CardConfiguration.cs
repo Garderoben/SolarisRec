@@ -1853,22 +1853,360 @@ namespace SolarisRec.Persistence.Configuration
 
             #region Venus
 
-                //new Card
-                //{
-                //    Id = (int)Enum.CardId.MercurianRecruiter,
-                //    Name = "Mercurian Recruiter",
-                //    Unique = false,
-                //    Type = (int)Enum.CardType.Agent,
-                //    AttackValue = 0,
-                //    HealthValue = 1,
-                //    Ability = "Preparing."
-                //        + Environment.NewLine
-                //        + "[This Agent enters play Used.]"
-                //        + Environment.NewLine
-                //        + "Use: Gain [Me].",
-                //    ExpansionId = (int)Enum.Expansion.SoItBegins,
-                //    ExpansionSerialNumber = "070"
-                //},
+                new Card
+                {
+                    Id = (int)Enum.CardId.DisguisedCrew,
+                    Name = "Disguised Crew",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 1,
+                    HealthValue = 1,
+                    Ability = "Covert."
+                        + Environment.NewLine
+                        + "[This Agent can be played in"
+                        + Environment.NewLine
+                        + "the Conflict phase.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "118"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.DustAddict,
+                    Name = "Dust Addict",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "Forced Reaction: Destroy this"
+                        + Environment.NewLine
+                        + "Agent at the end of the round.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "119"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.DisciplineofNight,
+                    Name = "Discipline of Night",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 1,
+                    Ability = "Covert."
+                        + Environment.NewLine
+                        + "[This Agent can be played in"
+                        + Environment.NewLine
+                        + "the Conflict phase.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "120"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.EvidenceAnalyst,
+                    Name = "Evidence Analyst",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "[V]: This Agent gains a Talent of your"
+                        + Environment.NewLine
+                        + "choice from an enemy Agent on the"
+                        + Environment.NewLine
+                        + "same Mission until the end of the phase.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "121"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.QuasimDaher,
+                    Name = "Quasim Daher",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 3,
+                    Ability = "Reaction: After a friendly Agent"
+                        + Environment.NewLine
+                        + "moves to this Mission,"
+                        + Environment.NewLine
+                        + "draw 1 card. [limit once per phase]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "122"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.IshtarAssociate,
+                    Name = "Ishtar Associate",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 3,
+                    Ability = "[V][V][A1]: In the Conflict phase,"
+                        + Environment.NewLine
+                        + "moves target friendly Agent"
+                        + Environment.NewLine
+                        + "to the Shuttle area.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "123"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.TravelingMerchant,
+                    Name = "Traveling Merchant",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 2,
+                    HealthValue = 2,
+                    Ability = "Use: When this Agent is on a"
+                        + Environment.NewLine
+                        + "Mission, move this Agent to a"
+                        + Environment.NewLine
+                        + "Ready Mission.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "124"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.HiddenCell,
+                    Name = "Hidden Cell",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 2,
+                    Ability = "Covert."
+                        + Environment.NewLine
+                        + "[This Agent can be played in the"
+                        + Environment.NewLine
+                        + "Conflict phase.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "125"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.MaatMonsSupervisor,
+                    Name = "Maat Mons Supervisor",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 4,
+                    Ability = "Reaction: After a friendly Agent"
+                        + Environment.NewLine
+                        + "enters play on this Mission,"
+                        + Environment.NewLine
+                        + "ready this Agent.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "126"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.FailedExperiment,
+                    Name = "Failed Experiment",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 6,
+                    HealthValue = 1,
+                    Ability = "[V][V][A2]: Prevent all damage"
+                        + Environment.NewLine
+                        + "from a source on this Agent.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "127"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.Mole,
+                    Name = "Mole",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 2,
+                    Ability = "Covert."
+                        + Environment.NewLine
+                        + "Reaction: When this Agent enters play"
+                        + Environment.NewLine
+                        + "in the Conflict phase,"
+                        + Environment.NewLine
+                        + "Cancel target card.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "128"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.FamedNavigator,
+                    Name = "Famed Navigator",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 3,
+                    Ability = "Reaction, Use: If this is the only Agent"
+                        + Environment.NewLine
+                        + "in this shuttle, after the Shuttle Dials"
+                        + Environment.NewLine
+                        + "are revealed change the number of"
+                        + Environment.NewLine
+                        + "this Agent's Shuttle Dial.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "129"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.VioletThorn,
+                    Name = "Violet Thorn",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Agent,
+                    AttackValue = 3,
+                    HealthValue = 4,
+                    Ability = "Reaction: After this Agent completes a"
+                        + Environment.NewLine
+                        + "Mission move this Agent to the next"
+                        + Environment.NewLine
+                        + "Mission. [Limit once per phase.]",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "130"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.UnexpectedExpenses,
+                    Name = "Unexpected Expenses",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,                    
+                    Ability = "Reaction: Cancel target card,"
+                        + Environment.NewLine
+                        + "unless the controlling player pays [A2].",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "131"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.FailedProject,
+                    Name = "Failed Project",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Syndicate maneuver"
+                        + Environment.NewLine
+                        + "Reaction: Cancel target card.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "132"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.ActofAggression,
+                    Name = "Act of Aggression",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Reaction: After a friendly Agent with"
+                        + Environment.NewLine
+                        + "Covert enters play, it deals its attack"
+                        + Environment.NewLine
+                        + "value to target Agent on the same mission.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "133"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.ForgedTravelLog,
+                    Name = "Forged Travel Log",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Reaction: After the Shuttle dials are"
+                        + Environment.NewLine
+                        + "revealed, change the number on a"
+                        + Environment.NewLine
+                        + "Shuttle dial you control.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "134"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.IntelGathering,
+                    Name = "Intel Gathering",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Search the top 5 cards of your deck"
+                        + Environment.NewLine
+                        + "for a card and put it into your hand."
+                        + Environment.NewLine
+                        + "Put the rest to the bottom of your deck.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "135"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.ToxicBlood,
+                    Name = "Toxic Blood",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Reaction: After a friendly Agent is dealt"
+                        + Environment.NewLine
+                        + "damage from an enemy Agent,"
+                        + Environment.NewLine
+                        + "deal the same amount of damage to that"
+                        + Environment.NewLine
+                        + "Agent, up to this Agent's health.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "136"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.HologramTrick,
+                    Name = "Hologram Trick",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Reaction: Prevent all damage"
+                        + Environment.NewLine
+                        + "from one source on an Agent.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "137"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.ImOutofHere,
+                    Name = "I'm Out of Here!",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Conflict maneuver"
+                        + Environment.NewLine
+                        + "Move target friendly Agent to"
+                        + Environment.NewLine
+                        + "the Shuttle area.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "138"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.Misinformation,
+                    Name = "Misinformation",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Maneuver,
+                    Ability = "Rearrange all friendly Agents"
+                        + Environment.NewLine
+                        + "in your Shuttles.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "139"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.InfiltrationAcademy,
+                    Name = "Infiltration Academy",
+                    Unique = false,
+                    Type = (int)Enum.CardType.Construction,
+                    Ability = "Use: You may play an Agent in this"
+                        + Environment.NewLine
+                        + "phase as a Maneuver.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "140"
+                },
+                new Card
+                {
+                    Id = (int)Enum.CardId.TheShadowDistrict,
+                    Name = "The Shadow District",
+                    Unique = true,
+                    Type = (int)Enum.CardType.Construction,
+                    Ability = "Reaction, Use: After a friendly Agent"
+                        + Environment.NewLine
+                        + "enters play in the Conflict phase,"
+                        + Environment.NewLine
+                        + "draw 1 card.",
+                    ExpansionId = (int)Enum.Expansion.SoItBegins,
+                    ExpansionSerialNumber = "141"
+                },
 
             #endregion
 

@@ -13,7 +13,7 @@ namespace SolarisRec.Core.Card.Processes
         public ProvideCardService(
             ICardRepository cardRepository)
         {
-            this.cardRepository = cardRepository ?? throw new ArgumentNullException(nameof(cardRepository)); ;
+            this.cardRepository = cardRepository ?? throw new ArgumentNullException(nameof(cardRepository));
         }
 
         public async Task<Card> Get(int cardId)

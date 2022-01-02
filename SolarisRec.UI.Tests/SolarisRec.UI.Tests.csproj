@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="UITests\" />
     <Folder Include="UnitTests\" />
   </ItemGroup>
 

@@ -1183,12 +1183,252 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
 
                 new CardResource
                 {
-                    CardId = (int)Enum.CardId.CyberBankOfTitan,
+                    CardId = (int)Enum.CardId.DisguisedCrew,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.DustAddict,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.DisciplineofNight,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.DisciplineofNight,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.EvidenceAnalyst,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.EvidenceAnalyst,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.QuasimDaher,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.IshtarAssociate,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.IshtarAssociate,
                     ResourceId = (int)Enum.Resource.Any,
                     Quantity = 2
-                }
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.TravelingMerchant,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.TravelingMerchant,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.HiddenCell,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.HiddenCell,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MaatMonsSupervisor,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.MaatMonsSupervisor,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.FailedExperiment,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.FailedExperiment,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.Mole,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.Mole,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.FamedNavigator,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.FamedNavigator,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.VioletThorn,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.VioletThorn,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.UnexpectedExpenses,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.UnexpectedExpenses,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.FailedProject,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.FailedProject,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ActofAggression,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ForgedTravelLog,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.IntelGathering,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.IntelGathering,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ToxicBlood,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ToxicBlood,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.HologramTrick,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.ImOutofHere,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.Misinformation,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.Misinformation,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.InfiltrationAcademy,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.InfiltrationAcademy,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.TheShadowDistrict,
+                    ResourceId = (int)Enum.Resource.Venusian,
+                    Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.TheShadowDistrict,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 1
+                },
 
-            #endregion
+                #endregion
 
             #region Mission
 

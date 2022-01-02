@@ -629,22 +629,137 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
 
             #endregion
 
-            #region Venus
+                #region Venus
 
-                //new CardFaction
-                //{
-                //    CardId = (int)Enum.CardId.DataMiner,
-                //    FactionId = (int)Enum.Faction.Titan
-                //}
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.DisguisedCrew,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.DustAddict,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.DisciplineofNight,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.EvidenceAnalyst,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.QuasimDaher,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.IshtarAssociate,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.TravelingMerchant,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.HiddenCell,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.MaatMonsSupervisor,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.FailedExperiment,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.Mole,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.FamedNavigator,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.VioletThorn,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.UnexpectedExpenses,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.FailedProject,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ActofAggression,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ForgedTravelLog,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.IntelGathering,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ToxicBlood,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.HologramTrick,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ImOutofHere,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.Misinformation,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.InfiltrationAcademy,
+                    FactionId = (int)Enum.Faction.Venus
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.TheShadowDistrict,
+                    FactionId = (int)Enum.Faction.Venus
+                },
 
-            #endregion
+                #endregion
 
             #region Mission
 
 
 
             #endregion
-                
+
             );
         }
     }
