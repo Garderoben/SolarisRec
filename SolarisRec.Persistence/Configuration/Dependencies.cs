@@ -33,6 +33,7 @@ namespace SolarisRec.Persistence.Configuration
         {
             var optionsBuilder = new DbContextOptionsBuilder<SolarisRecDbContext>();
             optionsBuilder.UseSqlServer(connectionstring);
+            optionsBuilder.EnableSensitiveDataLogging();
             return new SolarisRecDbContext(optionsBuilder.Options);
         }
     }

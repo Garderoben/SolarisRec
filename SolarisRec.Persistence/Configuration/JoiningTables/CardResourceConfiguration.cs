@@ -619,13 +619,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     CardId = (int)Enum.CardId.GeneralRwanda,
                     ResourceId = (int)Enum.Resource.Any,
                     Quantity = 2
-                },
-                new CardResource
-                {
-                    CardId = (int)Enum.CardId.GeneralRwanda,
-                    ResourceId = (int)Enum.Resource.Martian,
-                    Quantity = 1
-                },
+                },               
                 new CardResource
                 {
                     CardId = (int)Enum.CardId.Headshot,
@@ -992,7 +986,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 },
                 new CardResource
                 {
-                    CardId = (int)Enum.CardId.OracleDroid,
+                    CardId = (int)Enum.CardId.EbonyFranth,
                     ResourceId = (int)Enum.Resource.Titanian,
                     Quantity = 3
                 },
@@ -1340,7 +1334,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 new CardResource
                 {
                     CardId = (int)Enum.CardId.FailedProject,
-                    ResourceId = (int)Enum.Resource.Venusian,
+                    ResourceId = (int)Enum.Resource.Any,
                     Quantity = 1
                 },
                 new CardResource

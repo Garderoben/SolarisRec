@@ -1100,21 +1100,7 @@ namespace SolarisRec.Persistence.Configuration
                         + "Use: Gain [Me].",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "070"
-                },
-                new Card
-                {
-                    Id = (int)Enum.CardId.ApollodorusMerc,
-                    Name = "Apollodorus Merc",
-                    Unique = false,
-                    Type = (int)Enum.CardType.Agent,
-                    AttackValue = 2,
-                    HealthValue = 2,
-                    Ability = "[A2]: Take control of this Agent."
-                        + Environment.NewLine
-                        + "[Any player may pay for this ability.]",
-                    ExpansionId = (int)Enum.Expansion.SoItBegins,
-                    ExpansionSerialNumber = "071"
-                },
+                },                
                 new Card
                 {
                     Id = (int)Enum.CardId.ApollodorusMerc,
@@ -1290,19 +1276,7 @@ namespace SolarisRec.Persistence.Configuration
                         + "until the end of the Conflict round.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "082"
-                },
-                new Card
-                {
-                    Id = (int)Enum.CardId.CombatSteroids,
-                    Name = "Combat Steroids",
-                    Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
-                    Ability = "Target Agent gains +2/+2"
-                        + Environment.NewLine
-                        + "until the end of the Conflict round.",
-                    ExpansionId = (int)Enum.Expansion.SoItBegins,
-                    ExpansionSerialNumber = "082"
-                },
+                },                
                 new Card
                 {
                     Id = (int)Enum.CardId.GiveUporGetUp,
