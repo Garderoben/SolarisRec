@@ -625,7 +625,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 {
                     CardId = (int)Enum.CardId.CyberBankOfTitan,
                     FactionId = (int)Enum.Faction.Titan
-                }
+                },
 
             #endregion
 
@@ -750,7 +750,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 {
                     CardId = (int)Enum.CardId.TheShadowDistrict,
                     FactionId = (int)Enum.Faction.Venus
-                },
+                }
 
                 #endregion            
 

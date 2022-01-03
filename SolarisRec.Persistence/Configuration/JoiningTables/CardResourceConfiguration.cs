@@ -1426,7 +1426,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     CardId = (int)Enum.CardId.TheShadowDistrict,
                     ResourceId = (int)Enum.Resource.Any,
                     Quantity = 1
-                },
+                }
 
                 #endregion
           
