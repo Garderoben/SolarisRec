@@ -11,8 +11,7 @@ namespace SolarisRec.Persistence.Repositories
 {
     internal class CardRepository : ICardRepository
     {
-        private readonly SolarisRecDbContext context;
-        private readonly CardQueryBuilder cardQueryBuilder;
+        private readonly SolarisRecDbContext context;        
         private readonly IMapToDomainModel<PersistenceModel.Card, Card> persistenceModelMapper;
         private readonly IMapToPersistenceModel<Card, PersistenceModel.Card> domainModelMapper;        
 
@@ -23,9 +22,7 @@ namespace SolarisRec.Persistence.Repositories
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context)); ;
             this.persistenceModelMapper = persistenceModelMapper ?? throw new ArgumentNullException(nameof(persistenceModelMapper));
-            this.domainModelMapper = domainModelMapper ?? throw new ArgumentNullException(nameof(domainModelMapper));
-
-            this.cardQueryBuilder = new CardQueryBuilder(this.context);
+            this.domainModelMapper = domainModelMapper ?? throw new ArgumentNullException(nameof(domainModelMapper));            
         }
 
         public async Task<Card> Get(int id)
@@ -73,31 +70,23 @@ namespace SolarisRec.Persistence.Repositories
         {
             var result = new List<Card>();
 
-            if(!string.IsNullOrEmpty(filter.Name))
+            var allCards =
+                await context.Cards
+                .Skip((filter.Page -1) * filter.PageSize)
+                .Take(filter.PageSize)
+                .Include(c => c.Expansion)
+                .Include(c => c.CardFactions)
+                    .ThenInclude(cf => cf.Faction)
+                .Include(c => c.CardResources)
+                    .ThenInclude(cr => cr.Resource)
+                .Include(c => c.CardTalents)
+                    .ThenInclude(ct => ct.Talent)
+                .ToListAsync();
+
+
+            if (allCards.Count > 0)
             {
-                cardQueryBuilder.HavingName(filter.Name);
-            }
-
-            if(filter.Type != null)
-            {
-                cardQueryBuilder.HavingType((int)filter.Type);
-            }
-
-            if(filter.Faction != null)
-            {                
-                cardQueryBuilder.HavingFaction((int)filter.Faction);                
-            }
-
-            if (filter.Talents != null && filter.Talents.Count > 0)
-            {
-                cardQueryBuilder.HavingTalent(filter.Talents);
-            }            
-
-            var filtered = await cardQueryBuilder.Filter();
-
-            if(filtered.Count > 0)
-            {
-                foreach(var card in filtered)
+                foreach (var card in allCards)
                 {
                     result.Add(persistenceModelMapper.Map(card));
                 }

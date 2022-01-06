@@ -26,6 +26,8 @@ namespace SolarisRec.Core.Card
 
         public List<Cost> Costs { get; set; }
 
-        public List<Talent> Talents { get; set; }        
+        public List<Talent> Talents { get; set; }
+
+        public string ImageSrc => $@"..\Assets\Expansions\{ExpansionMap.Map(ExpansionName)}\{ExpansionSerialNumber}.jpg";
     }
 }

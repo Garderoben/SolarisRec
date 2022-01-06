@@ -11,5 +11,9 @@ namespace SolarisRec.Core.Card
         public int? Faction { get; set; }       
 
         public List<int> Talents { get; set; }
+
+        public int PageSize { get; set; }
+
+        public int Page { get; set; }
     }
 }
