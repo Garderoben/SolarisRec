@@ -42,6 +42,33 @@ namespace SolarisRec.Persistence.Repositories
             return persistenceModelMapper.Map(card);
         }
 
+        public async Task<List<Card>> GetAll()
+        {
+            var result = new List<Card>();
+
+            var allCards =
+                await context.Cards
+                .Include(c => c.Expansion)
+                .Include(c => c.CardFactions)
+                    .ThenInclude(cf => cf.Faction)
+                .Include(c => c.CardResources)
+                    .ThenInclude(cr => cr.Resource)
+                .Include(c => c.CardTalents)
+                    .ThenInclude(ct => ct.Talent)
+                .ToListAsync();
+
+
+            if (allCards.Count > 0)
+            {
+                foreach (var card in allCards)
+                {
+                    result.Add(persistenceModelMapper.Map(card));
+                }
+            }
+
+            return result;
+        }
+
         public async Task<List<Card>> GetCardsFiltered(Filter filter)
         {
             var result = new List<Card>();
@@ -68,7 +95,7 @@ namespace SolarisRec.Persistence.Repositories
 
             var filtered = await cardQueryBuilder.Filter();
 
-            if(result.Count > 0)
+            if(filtered.Count > 0)
             {
                 foreach(var card in filtered)
                 {

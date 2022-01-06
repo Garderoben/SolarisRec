@@ -24,11 +24,11 @@ namespace SolarisRec.Persistence.Tests.UnitTests.CardRepositoryTests
                 Ability = "Unit Test Ability",
                 ExpansionSerialNumber = "001",
                 ExpansionName = "So it Begins",
-                Type = (int)Enum.CardType.Agent,
-                AttackValue = 1,
-                HealthValue = 1,
+                Type = "Agent",
+                AttackValue = "1",
+                HealthValue = "1",
                 Unique = false,
-                Factions = new List<string>() { "Earth" },
+                Factions = "Earth",
                 Costs = new List<Cost>()
                 { 
                     new Cost

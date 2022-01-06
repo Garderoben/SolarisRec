@@ -1,5 +1,7 @@
 ﻿using SolarisRec.Core.Card;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace SolarisRec.Persistence.Mappers.ToDomainModel
 {
@@ -15,28 +17,18 @@ namespace SolarisRec.Persistence.Mappers.ToDomainModel
                 ExpansionSerialNumber = input.ExpansionSerialNumber,
                 Ability = input.Ability,
                 Unique = input.Unique,
-                AttackValue = input.AttackValue,
-                HealthValue = input.HealthValue,
-                Type = input.Type,
-                Factions = MapFactions(input.CardFactions),
+                AttackValue = input.AttackValue.ToString(),
+                HealthValue = input.HealthValue.ToString(),
+                Type = MapType(input.Type),
+                Factions = MapFactions(input),
                 Costs = MapCosts(input.CardResources),
                 Talents = MapTalents(input.CardTalents)
             };
         }
 
-        private static List<string> MapFactions(ICollection<PersistenceModel.JoiningTables.CardFaction> cardFactions)
+        private static string MapFactions(PersistenceModel.Card card)
         {
-            var result = new List<string>();
-
-            if (cardFactions != null)
-            {
-                foreach (var cardFaction in cardFactions)
-                {
-                    result.Add(cardFaction.Faction.Name);
-                }
-            }            
-
-            return result;
+            return string.Join(", ", card.CardFactions.Select(cf => cf.Faction.Name));
         }
 
         private static List<Cost> MapCosts(ICollection<PersistenceModel.JoiningTables.CardResource> cardResources)
@@ -47,9 +39,10 @@ namespace SolarisRec.Persistence.Mappers.ToDomainModel
             {
                 foreach (var cardResource in cardResources)
                 {
-                    result.Add(new Cost {
+                    result.Add(new Cost
+                    {
                         ResourceType = (Core.Card.Enums.Resource)cardResource.Resource.Id,
-                        Quantity = cardResource.Quantity                        
+                        Quantity = cardResource.Quantity
                     });
                 }
             }
@@ -65,7 +58,8 @@ namespace SolarisRec.Persistence.Mappers.ToDomainModel
             {
                 foreach (var cardTalent in cardTalents)
                 {
-                    result.Add(new Talent {
+                    result.Add(new Talent
+                    {
                         TalentType = (Core.Card.Enums.Talent)cardTalent.Talent.Id,
                         Quantity = cardTalent.Quantity
                     });
@@ -73,6 +67,24 @@ namespace SolarisRec.Persistence.Mappers.ToDomainModel
             }
 
             return result;
+        }
+
+        private static string MapType(int type)
+        {
+            switch (type)
+            {
+                case 1:
+                    return "Agent";
+                    break;
+                case 2:
+                    return "Construction";
+                case 3:
+                    return "Maneuver";
+                case 4:
+                    return "Mission";
+                default:
+                    return "";
+            }
         }
     }
 }

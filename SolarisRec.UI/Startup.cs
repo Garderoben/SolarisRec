@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SolarisRec.UI.Data;
 using SolarisRec.Persistence.Configuration;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SolarisRec.Core.Configuration;
+using MudBlazor.Services;
 
 namespace SolarisRec.UI
 {
@@ -30,8 +30,8 @@ namespace SolarisRec.UI
 
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Pages");
-            services.AddSingleton<WeatherForecastService>();
+            services.AddMudServices();
+            services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Pages");            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +52,7 @@ namespace SolarisRec.UI
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapBlazorHub();

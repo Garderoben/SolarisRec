@@ -213,6 +213,11 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 },
                 new CardFaction
                 {
+                    CardId = (int)Enum.CardId.AmbassadorSunders,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
                     CardId = (int)Enum.CardId.HeroicRescue,
                     FactionId = (int)Enum.Faction.Earth
                 },
@@ -234,6 +239,11 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 new CardFaction
                 {
                     CardId = (int)Enum.CardId.CantTouchMe,
+                    FactionId = (int)Enum.Faction.Earth
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.HardTimes,
                     FactionId = (int)Enum.Faction.Earth
                 },
                 new CardFaction

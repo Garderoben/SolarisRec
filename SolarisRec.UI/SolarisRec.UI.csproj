@@ -5,14 +5,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="C:\Users\major\.nuget\packages\mudblazor\6.0.3\contentFiles\any\net6.0\tsconfig.json" />
+    <Content Remove="C:\Users\major\.nuget\packages\mudblazor\6.0.3\contentFiles\any\net6.0\TScripts\combined\MudBlazor.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.5.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MudBlazor" Version="6.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SolarisRec.Persistence\SolarisRec.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Expansions\SoItBegins\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 	
   <PropertyGroup>

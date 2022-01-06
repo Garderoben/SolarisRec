@@ -16,16 +16,16 @@ namespace SolarisRec.Core.Card
 
         public string Ability { get; set; }
 
-        public List<string> Factions { get; set; }
+        public string Factions { get; set; }
 
-        public int Type { get; set; }
+        public string Type { get; set; }
 
-        public int? AttackValue { get; set; }
+        public string AttackValue { get; set; }
 
-        public int? HealthValue { get; set; }
+        public string HealthValue { get; set; }
 
         public List<Cost> Costs { get; set; }
 
-        public List<Talent> Talents { get; set; }
+        public List<Talent> Talents { get; set; }        
     }
 }
