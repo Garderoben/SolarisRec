@@ -9,6 +9,8 @@ using SolarisRec.Core.Deck.Processes;
 using SolarisRec.Core.Deck.Processes.PrimaryPorts;
 using SolarisRec.Core.Faction.Processes;
 using SolarisRec.Core.Faction.Processes.PrimaryPorts;
+using SolarisRec.Core.Talent.Processes;
+using SolarisRec.Core.Talent.Processes.PrimaryPorts;
 
 namespace SolarisRec.Core.Configuration
 {
@@ -22,7 +24,9 @@ namespace SolarisRec.Core.Configuration
                 .AddTransient<ILoginService, LoginService>()
                 .AddTransient<IHashPassword, PasswordHasher>()
                 .AddTransient<IProvideCardService, ProvideCardService>()
-                .AddTransient<IProvideFactionService, ProvideFactionService>();            
+                .AddTransient<IProvideFactionService, ProvideFactionService>()
+                .AddTransient<IProvideTalentService, ProvideTalentService>()
+                ;            
         }
     }
 }

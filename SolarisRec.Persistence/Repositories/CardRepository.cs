@@ -72,8 +72,6 @@ namespace SolarisRec.Persistence.Repositories
 
             var allCards =
                 await context.Cards
-                .Skip((filter.Page -1) * filter.PageSize)
-                .Take(filter.PageSize)
                 .Include(c => c.Expansion)
                 .Include(c => c.CardFactions)
                     .ThenInclude(cf => cf.Faction)
@@ -81,12 +79,20 @@ namespace SolarisRec.Persistence.Repositories
                     .ThenInclude(cr => cr.Resource)
                 .Include(c => c.CardTalents)
                     .ThenInclude(ct => ct.Talent)
-                .ToListAsync();
+                .Where(c => c.CardFactions.Any(cf => filter.Factions.Contains(cf.FactionId))
+                    && c.CardTalents.Any(ct => filter.Talents.Contains(ct.TalentId)))                
+                .ToListAsync();            
 
+            filter.MatchingCardCount = allCards.Count;
 
-            if (allCards.Count > 0)
+            var paged = allCards
+                .Skip((filter.Page - 1) * filter.PageSize)
+                .Take(filter.PageSize)
+                .ToList();
+
+            if (paged.Count > 0)
             {
-                foreach (var card in allCards)
+                foreach (var card in paged)
                 {
                     result.Add(persistenceModelMapper.Map(card));
                 }

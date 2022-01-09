@@ -7,6 +7,7 @@ using SolarisRec.Core.Card.Processes.SecondaryPorts;
 using SolarisRec.Core.Deck.Processes.SecondaryPorts;
 using SolarisRec.Core.Faction;
 using SolarisRec.Core.Faction.Processes.SecondaryPorts;
+using SolarisRec.Core.Talent.Processes.SecondaryPorts;
 using SolarisRec.Persistence.Mappers;
 using SolarisRec.Persistence.Repositories;
 
@@ -31,7 +32,12 @@ namespace SolarisRec.Persistence.Configuration
                 .AddTransient<IMapToPersistenceModel<Card, PersistenceModel.Card>, Mappers.ToPersistenceModel.CardMapper>()
 
                 .AddTransient<IFactionRepository, FactionRepository>()
-                .AddTransient<IMapToDomainModel<PersistenceModel.Faction, Faction>, Mappers.ToDomainModel.FactionMapper>();
+                .AddTransient<IMapToDomainModel<PersistenceModel.Faction, Faction>, Mappers.ToDomainModel.FactionMapper>()
+
+                .AddTransient<ITalentRepository, TalentRepository>()
+                .AddTransient<IMapToDomainModel<PersistenceModel.Talent, Core.Talent.Talent>, Mappers.ToDomainModel.TalentMapper>()
+
+                ;
         }
 
         private static SolarisRecDbContext CreateSolarisDbContext(string connectionstring)

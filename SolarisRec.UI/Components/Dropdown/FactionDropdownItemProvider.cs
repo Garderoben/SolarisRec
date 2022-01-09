@@ -12,6 +12,7 @@ namespace SolarisRec.UI.Components.Dropdown
     {
         private readonly IProvideFactionService provideFactionService;
         private readonly IMapToDropdownItem<Faction, DropdownItem> domainToDropdownMapper;
+
         public FactionDropdownItemProvider(
             IProvideFactionService provideFactionService,
             IMapToDropdownItem<Faction, DropdownItem> domainToDropdownMapper)

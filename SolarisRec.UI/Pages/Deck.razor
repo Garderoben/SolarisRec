@@ -3,16 +3,14 @@
 @using SolarisRec.Core.Card
 @using SolarisRec.UI.Components.Dropdown
 
-<MudGrid>
+<MudGrid> 
     <MudItem xs="2">
-        <MudMultiSelectDropdown DropdownItems="FactionDropdownItems" Label="Factions" @bind-SelectedValues="@SelectedFactions"/>
-    </MudItem>    
+        <MudMultiSelectDropdown DropdownItems="FactionDropdownItems" Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected"/>
+    </MudItem>
+    <MudItem xs="2">
+        <MudMultiSelectDropdown DropdownItems="TalentDropdownItems" Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected"/>
+    </MudItem>
 </MudGrid>
-
-<MudItem>
-@(string.Join(", ", SelectedFactions.Select(x=>$"\"{x}\"")))
-</MudItem>
-
 
 <div>
 
