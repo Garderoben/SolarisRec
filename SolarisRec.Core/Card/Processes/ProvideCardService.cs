@@ -26,9 +26,9 @@ namespace SolarisRec.Core.Card.Processes
             return await cardRepository.GetCardsFiltered(filter);
         }
 
-        public async Task<List<Card>> GetAll()
+        public async Task<List<Card>> List()
         {
-            return await cardRepository.GetAll();
+            return await cardRepository.List();
         }
     }
 }

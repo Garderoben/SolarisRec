@@ -26,10 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\Assets\0Cardback.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>

@@ -7,6 +7,7 @@ using SolarisRec.Persistence.Configuration;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SolarisRec.Core.Configuration;
 using MudBlazor.Services;
+using SolarisRec.UI.Configuration;
 
 namespace SolarisRec.UI
 {
@@ -26,7 +27,8 @@ namespace SolarisRec.UI
             var connectionString = "Server=.;Database=SolarisRec;Trusted_Connection=True;";
 
             services.UseSolarisRecPersistenceAdapters(connectionString);
-            services.UseSolarisRecCore();            
+            services.UseSolarisRecCore();
+            services.UseSolarisRecUi();
 
             services.AddRazorPages();
             services.AddServerSideBlazor();

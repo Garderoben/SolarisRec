@@ -1,6 +1,18 @@
 ﻿@page "/deck"
 
 @using SolarisRec.Core.Card
+@using SolarisRec.UI.Components.Dropdown
+
+<MudGrid>
+    <MudItem xs="2">
+        <MudMultiSelectDropdown DropdownItems="FactionDropdownItems" Label="Factions" @bind-SelectedValues="@SelectedFactions"/>
+    </MudItem>    
+</MudGrid>
+
+<MudItem>
+@(string.Join(", ", SelectedFactions.Select(x=>$"\"{x}\"")))
+</MudItem>
+
 
 <div>
 
@@ -9,9 +21,9 @@
     </div>
 
     <div class="float-child-80">
-        <MudTable Items="@Cards" T="Card" OnRowClick="UpdateImageSrc" 
-                ServerData="@(new Func<TableState, Task<TableData<Card>>>(GetCardsFiltered))"
-                Hover="true" Breakpoint="Breakpoint.Sm" RightAlignSmall="true" @ref="table" RowsPerPage="8">
+        <MudTable Items="@Cards" T="Card" OnRowClick="UpdateImageSrc"
+                  ServerData="@(new Func<TableState, Task<TableData<Card>>>(GetCardsFiltered))"
+                  Hover="true" Breakpoint="Breakpoint.Sm" RightAlignSmall="true" @ref="table">
             <HeaderContent>
                 <MudTh>Name</MudTh>
                 <MudTh>Factions</MudTh>
@@ -20,17 +32,17 @@
                 <MudTh>HealthValue</MudTh>
                 <MudTh>Ability</MudTh>
             </HeaderContent>
-            <RowTemplate>                
+            <RowTemplate>
                 <MudTd DataLabel="Name">@context.Name</MudTd>
                 <MudTd DataLabel="Factions">@context.Factions</MudTd>
                 <MudTd DataLabel="CardType">@context.Type</MudTd>
                 <MudTd DataLabel="AttackValue">@context.AttackValue</MudTd>
                 <MudTd DataLabel="HealthValue">@context.HealthValue</MudTd>
-                <MudTd DataLabel="Ability">@context.Ability</MudTd>                
+                <MudTd DataLabel="Ability">@context.Ability</MudTd>
             </RowTemplate>
             <PagerContent>
-                <MudTablePager PageSizeOptions="@pageSizeOption" RowsPerPageString="Cards per page" /> 
+                <MudTablePager PageSizeOptions="@pageSizeOption" RowsPerPageString="Cards per page" />
             </PagerContent>
-        </MudTable>        
+        </MudTable>
     </div>
 </div>

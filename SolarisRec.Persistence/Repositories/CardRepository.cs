@@ -20,7 +20,7 @@ namespace SolarisRec.Persistence.Repositories
             IMapToDomainModel<PersistenceModel.Card, Card> persistenceModelMapper,
             IMapToPersistenceModel<Card, PersistenceModel.Card> domainModelMapper)
         {
-            this.context = context ?? throw new ArgumentNullException(nameof(context)); ;
+            this.context = context ?? throw new ArgumentNullException(nameof(context));
             this.persistenceModelMapper = persistenceModelMapper ?? throw new ArgumentNullException(nameof(persistenceModelMapper));
             this.domainModelMapper = domainModelMapper ?? throw new ArgumentNullException(nameof(domainModelMapper));            
         }
@@ -39,7 +39,7 @@ namespace SolarisRec.Persistence.Repositories
             return persistenceModelMapper.Map(card);
         }
 
-        public async Task<List<Card>> GetAll()
+        public async Task<List<Card>> List()
         {
             var result = new List<Card>();
 

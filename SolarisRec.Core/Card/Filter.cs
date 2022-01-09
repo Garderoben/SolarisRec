@@ -4,16 +4,16 @@ namespace SolarisRec.Core.Card
 {
     public class Filter
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
-        public int? Type { get; set; }
+        public int? Type { get; set; }        
 
-        public int? Faction { get; set; }       
+        public List<int> Talents { get; set; } = new List<int>();
 
-        public List<int> Talents { get; set; }
+        public List<int> Factions { get; set; } = new List<int>();
 
-        public int PageSize { get; set; }
+        public int PageSize { get; set; } = 8;
 
-        public int Page { get; set; }
+        public int Page { get; set; } = 1;
     }
 }

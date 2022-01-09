@@ -9,6 +9,6 @@ namespace SolarisRec.Core.Card.Processes.PrimaryPorts
 
         Task<List<Card>> GetCardsFiltered(Filter filter);
 
-        Task<List<Card>> GetAll();
+        Task<List<Card>> List();
     }
 }

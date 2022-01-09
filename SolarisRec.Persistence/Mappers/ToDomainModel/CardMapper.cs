@@ -71,20 +71,14 @@ namespace SolarisRec.Persistence.Mappers.ToDomainModel
 
         private static string MapType(int type)
         {
-            switch (type)
+            return type switch
             {
-                case 1:
-                    return "Agent";
-                    break;
-                case 2:
-                    return "Construction";
-                case 3:
-                    return "Maneuver";
-                case 4:
-                    return "Mission";
-                default:
-                    return "";
-            }
+                1 => "Agent",
+                2 => "Construction",
+                3 => "Maneuver",
+                4 => "Mission",
+                _ => "",
+            };
         }
     }
 }
