@@ -4,6 +4,7 @@ using SolarisRec.Core.Faction.Processes.SecondaryPorts;
 using SolarisRec.Persistence.Mappers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SolarisRec.Persistence.Repositories
@@ -25,13 +26,13 @@ namespace SolarisRec.Persistence.Repositories
         {
             var result = new List<Faction>();
 
-            var allFactions = await context.Factions.ToListAsync();
+            var allFactions = await context.Factions.OrderBy(f => f.Id).ToListAsync();
 
             if(allFactions.Count > 0)
             {
-                foreach (var faction in allFactions)
+                for (int i = 0; i < allFactions.Count; i++)
                 {
-                    result.Add(persistenceModelMapper.Map(faction));
+                    result.Add(persistenceModelMapper.Map(allFactions[i]));
                 }
             }
 

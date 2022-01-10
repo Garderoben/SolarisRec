@@ -79,13 +79,18 @@ namespace SolarisRec.Persistence.Repositories
                     .ThenInclude(cr => cr.Resource)
                 .Include(c => c.CardTalents)
                     .ThenInclude(ct => ct.Talent)
-                .Where(c => c.CardFactions.Any(cf => filter.Factions.Contains(cf.FactionId))
-                    && c.CardTalents.Any(ct => filter.Talents.Contains(ct.TalentId)))                
-                .ToListAsync();            
+                .ToListAsync();
 
-            filter.MatchingCardCount = allCards.Count;
+            var filteredCards = allCards.Where
+                   (
+                       c => filter.Factions.Count > 0 ? c.CardFactions.Any(cf => filter.Factions.Contains(cf.FactionId)) : 1==1
+                        &&
+                       filter.Talents.All(t => c.CardTalents.Select(ct => ct.TalentId).Contains(t))
+                   ).ToList();                         
 
-            var paged = allCards
+            filter.MatchingCardCount = filteredCards.Count;
+
+            var paged = filteredCards
                 .Skip((filter.Page - 1) * filter.PageSize)
                 .Take(filter.PageSize)
                 .ToList();

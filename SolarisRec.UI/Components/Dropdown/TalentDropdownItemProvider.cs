@@ -25,11 +25,14 @@ namespace SolarisRec.UI.Components.Dropdown
         {
             var result = new List<DropdownItem>();
 
-            var factions = await provideTalentService.List();
+            var talents = await provideTalentService.List();
 
-            foreach (var faction in factions)
+            foreach (var talent in talents)
             {
-                result.Add(domainToDropdownMapper.Map(faction));
+                if (talent.Id != (int)Core.Card.Enums.Talent.Any)
+                {
+                    result.Add(domainToDropdownMapper.Map(talent));
+                }
             }
 
             return result;

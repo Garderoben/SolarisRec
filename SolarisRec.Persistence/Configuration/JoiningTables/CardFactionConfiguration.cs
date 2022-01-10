@@ -760,9 +760,114 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 {
                     CardId = (int)Enum.CardId.TheShadowDistrict,
                     FactionId = (int)Enum.Faction.Venus
+                },
+
+                #endregion
+
+            #region Missions
+
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ReconIntel,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.Deconstruction,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.MissionSwap,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.IndustrialSabotage,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.PeaceAgreement,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CollapsingStocks,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ServerOverload,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.Framing,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.Wiretapping,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CarefulPlanning,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.ResourceOperation,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.MyWay,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.CallinginFavors,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.LevelthePlayingField,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.Mustering,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.Seduction,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.WithdrawFunds,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.Redistribution,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.SearchforLostKnowledge,
+                    FactionId = (int)Enum.Faction.IncludeMissions
+                },
+                new CardFaction
+                {
+                    CardId = (int)Enum.CardId.PlanetaryPolitics,
+                    FactionId = (int)Enum.Faction.IncludeMissions
                 }
 
-                #endregion            
+            #endregion
 
             );
         }

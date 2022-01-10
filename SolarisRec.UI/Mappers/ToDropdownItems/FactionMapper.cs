@@ -10,7 +10,7 @@ namespace SolarisRec.UI.Mappers.ToDropdownItems
             return new DropdownItem
             {
                 Id = input.Id, 
-                Name = input.Name 
+                Name = input.Name == "Mission" ? "Include Missions" : input.Name
             };
         }
     }
