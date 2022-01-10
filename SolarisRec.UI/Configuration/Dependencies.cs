@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using SolarisRec.Core.Card;
 using SolarisRec.Core.Faction;
 using SolarisRec.Core.Talent;
 using SolarisRec.UI.Components.Dropdown;
@@ -15,9 +16,11 @@ namespace SolarisRec.UI.Configuration
                 .AddTransient<IMapToDropdownItem<Faction, DropdownItem>, Mappers.ToDropdownItems.FactionMapper>()
                 .AddTransient<IFactionDropdownItemProvider, FactionDropdownItemProvider>()
                 
-                .AddTransient<IMapToDropdownItem<Talent, DropdownItem>, Mappers.ToDropdownItems.TalentMapper>()
+                .AddTransient<IMapToDropdownItem<Core.Talent.Talent, DropdownItem>, Mappers.ToDropdownItems.TalentMapper>()
                 .AddTransient<ITalentDropdownItemProvider, TalentDropdownItemProvider>()
 
+                .AddTransient<IMapToDropdownItem<CardType, DropdownItem>, Mappers.ToDropdownItems.CardTypeMapper>()
+                .AddTransient<ICardTypeDropdownProvider, CardTypeDropdownProvider>()
                 ;
         }       
     }

@@ -6,6 +6,6 @@ namespace SolarisRec.Core.Card
     {
         public int Quantity { get; set; }
 
-        public Resource ResourceType { get; set; }
+        public Resource ResourceType { get; set; }       
     }
 }

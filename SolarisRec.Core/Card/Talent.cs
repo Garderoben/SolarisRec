@@ -1,6 +1,4 @@
-﻿using SolarisRec.Core.Card.Enums;
-
-namespace SolarisRec.Core.Card
+﻿namespace SolarisRec.Core.Card
 {
     public class Talent
     {

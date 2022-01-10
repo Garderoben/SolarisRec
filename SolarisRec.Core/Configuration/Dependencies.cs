@@ -5,6 +5,8 @@ using SolarisRec.Core.Account.Processes.PrimaryPorts;
 using SolarisRec.Core.Account.Processes.SecondaryPorts;
 using SolarisRec.Core.Card.Processes;
 using SolarisRec.Core.Card.Processes.PrimaryPorts;
+using SolarisRec.Core.CardType.Processes;
+using SolarisRec.Core.CardType.Processes.PrimaryPorts;
 using SolarisRec.Core.Deck.Processes;
 using SolarisRec.Core.Deck.Processes.PrimaryPorts;
 using SolarisRec.Core.Faction.Processes;
@@ -26,6 +28,7 @@ namespace SolarisRec.Core.Configuration
                 .AddTransient<IProvideCardService, ProvideCardService>()
                 .AddTransient<IProvideFactionService, ProvideFactionService>()
                 .AddTransient<IProvideTalentService, ProvideTalentService>()
+                .AddTransient<IProvideCardTypeService, ProvideCardTypeService>()
                 ;            
         }
     }

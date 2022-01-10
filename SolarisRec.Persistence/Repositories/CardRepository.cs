@@ -86,6 +86,11 @@ namespace SolarisRec.Persistence.Repositories
                        c => (filter.Factions.Count > 0 ? c.CardFactions.Any(cf => filter.Factions.Contains(cf.FactionId)) : 1==1)
                         &&
                        (filter.Talents.All(t => c.CardTalents.Select(ct => ct.TalentId).Contains(t)))
+                        &&
+                       (filter.CardTypes.Count <= 0 || filter.CardTypes.Contains(c.Type))
+                        &&
+                       (filter.Name.Length <= 1 || c.Name.ToLower().Contains(filter.Name.ToLower()))
+
                    ).ToList();                         
 
             filter.MatchingCardCount = filteredCards.Count;

@@ -11,10 +11,13 @@ using System.Threading.Tasks;
 namespace SolarisRec.UI.Pages
 {
     public partial class Deck
-    {  
+    {
         [Inject] public IProvideCardService ProvideCardService { get; set; }
         [Inject] public IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }
         [Inject] public ITalentDropdownItemProvider TalentDropdownItemProvider { get; set; }
+        [Inject] public ICardTypeDropdownProvider CardTypeDropdownItemProvider { get; set; }
+
+        private const int DEFAULT_PAGE_SIZE = 6;
 
         private MudTable<Card> table;
         private string ImgSrc { get; set; } = @"../Assets/0Cardback.jpg";
@@ -24,6 +27,8 @@ namespace SolarisRec.UI.Pages
         private SelectedValues SelectedFactions = new SelectedValues();
         private List<DropdownItem> TalentDropdownItems = new();
         private SelectedValues SelectedTalents = new SelectedValues();
+        private List<DropdownItem> CardTypeDropdownItems = new();
+        private SelectedValues SelectedCardTypes = new SelectedValues();
 
         private Filter Filter { get; set; } = new Filter();
 
@@ -40,6 +45,11 @@ namespace SolarisRec.UI.Pages
             {
                 await InvokeAsync(ApplyDropdownFilters);
             };
+
+            SelectedCardTypes.PropertyChanged += async (sender, e) =>
+            {
+                await InvokeAsync(ApplyDropdownFilters);
+            };
         }
 
         protected override async Task OnInitializedAsync()
@@ -47,23 +57,24 @@ namespace SolarisRec.UI.Pages
             await base.OnInitializedAsync();
             FactionDropdownItems = await FactionDropdownItemProvider.ProvideDropdownItems();
             TalentDropdownItems = await TalentDropdownItemProvider.ProvideDropdownItems();
+            CardTypeDropdownItems = await CardTypeDropdownItemProvider.ProvideDropdownItems();
         }
 
         private async Task ApplyDropdownFilters()
         {
-            Filter.Factions = SelectedFactions.Selected.Select(f => f.Id).ToList();
             await table.ReloadServerData();
-        }        
+        }
 
         private async Task<TableData<Card>> GetCardsFiltered(TableState state)
         {
-            state.PageSize = state.PageSize >= 8 ? 8 : state.PageSize;
+            state.PageSize = state.PageSize >= DEFAULT_PAGE_SIZE ? DEFAULT_PAGE_SIZE : state.PageSize;
             table.SetRowsPerPage(state.PageSize);
 
             Filter.PageSize = state.PageSize;
             Filter.Page = state.Page + 1;
             Filter.Factions = SelectedFactions.Selected.Select(f => f.Id).ToList();
             Filter.Talents = SelectedTalents.Selected.Select(t => t.Id).ToList();
+            Filter.CardTypes = SelectedCardTypes.Selected.Select(ct => ct.Id).ToList();
 
             Cards = await ProvideCardService.GetCardsFiltered(Filter);
 
@@ -76,7 +87,13 @@ namespace SolarisRec.UI.Pages
 
         public void UpdateImageSrc(TableRowClickEventArgs<Card> card)
         {
-            ImgSrc = card.Item.ImageSrc;            
-        }        
+            ImgSrc = card.Item.ImageSrc;
+        }
+
+        private async Task OnSearchByName(string searchTerm)
+        {
+            Filter.Name = searchTerm;
+            await table.ReloadServerData();
+        }
     }
 }
