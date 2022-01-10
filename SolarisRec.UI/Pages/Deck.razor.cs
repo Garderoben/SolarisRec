@@ -12,12 +12,12 @@ namespace SolarisRec.UI.Pages
 {
     public partial class Deck
     {
-        [Inject] public IProvideCardService ProvideCardService { get; set; }
-        [Inject] public IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }
-        [Inject] public ITalentDropdownItemProvider TalentDropdownItemProvider { get; set; }
-        [Inject] public ICardTypeDropdownProvider CardTypeDropdownItemProvider { get; set; }
+        [Inject] private IProvideCardService ProvideCardService { get; set; }
+        [Inject] private IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }
+        [Inject] private ITalentDropdownItemProvider TalentDropdownItemProvider { get; set; }
+        [Inject] private ICardTypeDropdownProvider CardTypeDropdownItemProvider { get; set; }
 
-        private const int DEFAULT_PAGE_SIZE = 6;
+        private const int DEFAULT_PAGE_SIZE = 8;
 
         private MudTable<Card> table;
         private string ImgSrc { get; set; } = @"../Assets/0Cardback.jpg";

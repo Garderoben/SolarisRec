@@ -2,7 +2,7 @@
 using SolarisRec.Core.Card.Enums;
 using System;
 
-namespace SolarisRec.UI.Helpers
+namespace SolarisRec.UI.Provdiders
 {
     internal static class ResourceIconImageLinkProvider
     {

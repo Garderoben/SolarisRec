@@ -2,7 +2,7 @@
 using System;
 using Enums = SolarisRec.Core.Card.Enums;
 
-namespace SolarisRec.UI.Helpers
+namespace SolarisRec.UI.Provdiders
 {
     public static class TalentIconImageLinkProvider
     {
