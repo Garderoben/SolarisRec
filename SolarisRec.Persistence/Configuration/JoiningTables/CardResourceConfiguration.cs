@@ -230,7 +230,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 {
                     CardId = (int)Enum.CardId.Arson,
                     ResourceId = (int)Enum.Resource.Any,
-                    Quantity = 3
+                    Quantity = 2
                 },
                 new CardResource
                 {

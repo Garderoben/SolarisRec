@@ -2,40 +2,77 @@
 
 @using SolarisRec.Core.Card
 @using SolarisRec.UI.Components.Dropdown
+@using SolarisRec.UI.Helpers
 
-<MudGrid> 
+<MudGrid>
     <MudItem xs="2">
-        <MudMultiSelectDropdown DropdownItems="FactionDropdownItems" Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected"/>
+        <MudMultiSelectDropdown DropdownItems="FactionDropdownItems" Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected" />
     </MudItem>
     <MudItem xs="2">
-        <MudMultiSelectDropdown DropdownItems="TalentDropdownItems" Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected"/>
+        <MudMultiSelectDropdown DropdownItems="TalentDropdownItems" Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected" />
+    </MudItem>
+    <MudItem xs="2">
+        <MudMultiSelectDropdown DropdownItems="CardTypeDropdownItems" Label="Card Type" @bind-SelectedValues="@SelectedCardTypes.Selected" />
     </MudItem>
 </MudGrid>
 
-<div>
-
-    <div class="float-child-20">
+<MudGrid>
+    <MudItem xs="2">
         <img src="@(ImgSrc)" width=200 height=300>
-    </div>
+    </MudItem>
 
-    <div class="float-child-80">
+    <MudItem xs="10">
         <MudTable Items="@Cards" T="Card" OnRowClick="UpdateImageSrc"
                   ServerData="@(new Func<TableState, Task<TableData<Card>>>(GetCardsFiltered))"
                   Hover="true" Breakpoint="Breakpoint.Sm" RightAlignSmall="true" @ref="table">
+            <ToolBarContent>                
+                <MudSpacer/>
+                <MudTextField T="string" ValueChanged="@(searchTerm => OnSearchByName(searchTerm))" Placeholder="Search by name"
+                      Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search"
+                      IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            </ToolBarContent>
+            <ColGroup>
+                <col />
+                <col />
+                <col />
+                <col style="width: 60px;" />
+                <col style="width: 60px;" />
+                <col style="width: 30px;" />
+                <col style="width: 30px;" />
+                <col />
+            </ColGroup>            
             <HeaderContent>
                 <MudTh>Name</MudTh>
                 <MudTh>Factions</MudTh>
                 <MudTh>Type</MudTh>
                 <MudTh>Cost</MudTh>
-                <MudTh>AttackValue</MudTh>
-                <MudTh>HealthValue</MudTh>
+                <MudTh>Talent</MudTh>
+                <MudTh>AV</MudTh>
+                <MudTh>HV</MudTh>
                 <MudTh>Ability</MudTh>
             </HeaderContent>
             <RowTemplate>
                 <MudTd DataLabel="Name">@context.Name</MudTd>
                 <MudTd DataLabel="Factions">@context.Factions</MudTd>
                 <MudTd DataLabel="CardType">@context.Type</MudTd>
-                <MudTd DataLabel="Cost">DisplayCosts</MudTd>
+                <MudTd DataLabel="Cost">
+                    @for (int i = 0; i < @context.Costs.Count; i++)
+                    {
+                        for (int j = 0; j < @context.Costs[i].Quantity; j++)
+                        {
+                            <img src="@ResourceIconImageLinkProvider.Provide(@context.Costs[i])" width="20" height="20">
+                        }
+                    }
+                </MudTd>
+                <MudTd DataLabel="Talent">
+                    @for (int i = 0; i < @context.Talents.Count; i++)
+                    {
+                        for (int j = 0; j < @context.Talents[i].Quantity; j++)
+                        {
+                            <img src="@TalentIconImageLinkProvider.Provide(@context.Talents[i])" width="20" height="20">
+                        }
+                    }
+                </MudTd>
                 <MudTd DataLabel="AttackValue">@context.AttackValue</MudTd>
                 <MudTd DataLabel="HealthValue">@context.HealthValue</MudTd>
                 <MudTd DataLabel="Ability">@context.Ability</MudTd>
@@ -44,5 +81,5 @@
                 <MudTablePager PageSizeOptions="@pageSizeOption" RowsPerPageString="Cards per page" />
             </PagerContent>
         </MudTable>
-    </div>
-</div>
+    </MudItem>
+</MudGrid>

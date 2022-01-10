@@ -6,7 +6,7 @@ namespace SolarisRec.Core.Card
     {
         public string Name { get; set; } = string.Empty;
 
-        public int? Type { get; set; }        
+        public List<int> CardTypes { get; set; } = new List<int>();
 
         public List<int> Talents { get; set; } = new List<int>();
 

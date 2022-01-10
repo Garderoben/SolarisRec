@@ -3,7 +3,7 @@ using SolarisRec.UI.UIModels;
 
 namespace SolarisRec.UI.Mappers.ToDropdownItems
 {
-    public class FactionMapper : IMapToDropdownItem<Faction, DropdownItem>
+    internal class FactionMapper : IMapToDropdownItem<Faction, DropdownItem>
     {
         public DropdownItem Map(Faction input)
         {
