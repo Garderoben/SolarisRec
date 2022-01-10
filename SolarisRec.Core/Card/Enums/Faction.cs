@@ -7,6 +7,7 @@
         Titan = 3,
         Belt = 4,
         Earth = 5,
-        Venus = 6
+        Venus = 6,
+        IncludeMissions = 7
     }
 }

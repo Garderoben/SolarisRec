@@ -15,6 +15,7 @@ namespace SolarisRec.UI
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    
                 });
     }
 }

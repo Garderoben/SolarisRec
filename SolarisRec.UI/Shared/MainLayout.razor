@@ -1,17 +1,15 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<MudLayout>
+	<AppBar OnSidebarToggled="ToggleSidebar" OnThemeToggled="ToggleTheme" />
 
-    <div class="main">
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
+	<NavMenu SideBarOpen="_sidebarOpen" />
 
-        <div class="content px-4">
-            @Body
-        </div>
-    </div>
-</div>
+	<MudMainContent Class="pt-16 px-16">
+		<MudContainer Class="mt-6">
+			@Body
+		</MudContainer>
+	</MudMainContent>
+</MudLayout>
+
+<MudThemeProvider Theme="_currentTheme" />

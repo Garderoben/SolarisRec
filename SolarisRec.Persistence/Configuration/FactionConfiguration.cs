@@ -55,6 +55,11 @@ namespace SolarisRec.Persistence.Configuration
                 {
                     Id = (int)Enum.Faction.Venus,
                     Name = "Venus"
+                },
+                new Faction
+                {
+                    Id = (int)Enum.Faction.IncludeMissions,
+                    Name = "Mission"
                 }
             );
         }

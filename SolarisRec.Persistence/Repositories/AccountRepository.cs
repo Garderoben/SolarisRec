@@ -20,7 +20,7 @@ namespace SolarisRec.Persistence.Repositories
             IMapToDomainModel<PersistenceModel.Account, Account> persistenceModelMapper,
             IMapToPersistenceModel<Account, PersistenceModel.Account> domainModelMapper)
         {
-            this.context = context ?? throw new ArgumentNullException(nameof(context)); ;
+            this.context = context ?? throw new ArgumentNullException(nameof(context));
             this.persistenceModelMapper = persistenceModelMapper ?? throw new ArgumentNullException(nameof(persistenceModelMapper));
             this.domainModelMapper = domainModelMapper ?? throw new ArgumentNullException(nameof(domainModelMapper));
         }

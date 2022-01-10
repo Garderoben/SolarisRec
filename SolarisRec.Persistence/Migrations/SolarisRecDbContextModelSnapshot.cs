@@ -1973,6 +1973,11 @@ namespace SolarisRec.Persistence.Migrations
                         {
                             Id = 6,
                             Name = "Venus"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Mission"
                         });
                 });
 
@@ -2168,6 +2173,11 @@ namespace SolarisRec.Persistence.Migrations
                         },
                         new
                         {
+                            CardId = 36,
+                            FactionId = 5
+                        },
+                        new
+                        {
                             CardId = 37,
                             FactionId = 5
                         },
@@ -2189,6 +2199,11 @@ namespace SolarisRec.Persistence.Migrations
                         new
                         {
                             CardId = 41,
+                            FactionId = 5
+                        },
+                        new
+                        {
+                            CardId = 42,
                             FactionId = 5
                         },
                         new
@@ -2685,6 +2700,106 @@ namespace SolarisRec.Persistence.Migrations
                         {
                             CardId = 141,
                             FactionId = 6
+                        },
+                        new
+                        {
+                            CardId = 142,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 143,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 144,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 145,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 146,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 147,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 148,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 149,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 150,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 151,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 152,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 153,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 154,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 155,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 156,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 157,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 158,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 159,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 160,
+                            FactionId = 7
+                        },
+                        new
+                        {
+                            CardId = 161,
+                            FactionId = 7
                         });
                 });
 

@@ -1,9 +1,46 @@
 ﻿@page "/deck"
 
-@using SolarisRec.UI.Data
+@using SolarisRec.Core.Card
+@using SolarisRec.UI.Components.Dropdown
 
-<h3>Deck</h3>
+<MudGrid> 
+    <MudItem xs="2">
+        <MudMultiSelectDropdown DropdownItems="FactionDropdownItems" Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected"/>
+    </MudItem>
+    <MudItem xs="2">
+        <MudMultiSelectDropdown DropdownItems="TalentDropdownItems" Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected"/>
+    </MudItem>
+</MudGrid>
 
-@code {
+<div>
 
-}
+    <div class="float-child-20">
+        <img src="@(ImgSrc)" width=200 height=300>
+    </div>
+
+    <div class="float-child-80">
+        <MudTable Items="@Cards" T="Card" OnRowClick="UpdateImageSrc"
+                  ServerData="@(new Func<TableState, Task<TableData<Card>>>(GetCardsFiltered))"
+                  Hover="true" Breakpoint="Breakpoint.Sm" RightAlignSmall="true" @ref="table">
+            <HeaderContent>
+                <MudTh>Name</MudTh>
+                <MudTh>Factions</MudTh>
+                <MudTh>Type</MudTh>
+                <MudTh>AttackValue</MudTh>
+                <MudTh>HealthValue</MudTh>
+                <MudTh>Ability</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Name">@context.Name</MudTd>
+                <MudTd DataLabel="Factions">@context.Factions</MudTd>
+                <MudTd DataLabel="CardType">@context.Type</MudTd>
+                <MudTd DataLabel="AttackValue">@context.AttackValue</MudTd>
+                <MudTd DataLabel="HealthValue">@context.HealthValue</MudTd>
+                <MudTd DataLabel="Ability">@context.Ability</MudTd>
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager PageSizeOptions="@pageSizeOption" RowsPerPageString="Cards per page" />
+            </PagerContent>
+        </MudTable>
+    </div>
+</div>
