@@ -4,6 +4,7 @@ using SolarisRec.Core.Faction;
 using SolarisRec.Core.Talent;
 using SolarisRec.UI.Components.Dropdown;
 using SolarisRec.UI.Mappers;
+using SolarisRec.UI.Providers;
 using SolarisRec.UI.UIModels;
 
 namespace SolarisRec.UI.Configuration
@@ -21,6 +22,8 @@ namespace SolarisRec.UI.Configuration
 
                 .AddTransient<IMapToDropdownItem<CardType, DropdownItem>, Mappers.ToDropdownItems.CardTypeMapper>()
                 .AddTransient<ICardTypeDropdownProvider, CardTypeDropdownProvider>()
+
+                .AddTransient<IFactionInfoProvider, FactionInfoProvider>()
                 ;
         }       
     }
