@@ -1,6 +1,7 @@
 ﻿using SolarisRec.Core.CardType.Processes.PrimaryPorts;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Enums = SolarisRec.Core.Card.Enums;
 
 namespace SolarisRec.Core.CardType.Processes
 {
@@ -12,22 +13,22 @@ namespace SolarisRec.Core.CardType.Processes
             {
                 new Card.CardType
                 {
-                    Id = 1,
+                    Id = (int)Enums.CardType.Agent,
                     Name = "Agent"
                 },
                 new Card.CardType
                 {
-                    Id = 2,
+                    Id = (int)Enums.CardType.Construction,
                     Name = "Construction"
                 },
                 new Card.CardType
                 {
-                    Id = 3,
+                    Id = (int)Enums.CardType.Maneuver,
                     Name = "Maneuver"
                 },
                 new Card.CardType
                 {
-                    Id = 4,
+                    Id = (int)Enums.CardType.Mission,
                     Name = "Mission"
                 },
             };

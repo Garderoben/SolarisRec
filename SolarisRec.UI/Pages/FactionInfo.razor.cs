@@ -11,6 +11,8 @@ namespace SolarisRec.UI.Pages
         //Todo: figure out what to display first, adjust UI Model then write mapping
         //Todo: FactionInfo should propably be a UI Model only an all data needed should be mapped from appropriate Core.model
 
+        //Todo: Deck.razor.cs -> Keyword 
+
         [Inject] private IFactionInfoProvider FactionInfoProvider { get; set; }
 
         [Parameter] public string Id { get; set; }

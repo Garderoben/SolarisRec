@@ -90,7 +90,8 @@ namespace SolarisRec.Persistence.Repositories
                        (filter.CardTypes.Count <= 0 || filter.CardTypes.Contains(c.Type))
                         &&
                        (filter.Name.Length <= 1 || c.Name.ToLower().Contains(filter.Name.ToLower()))
-
+                        &&
+                       (filter.Keywords.Count <= 0 || filter.Keywords.All( k => c.Ability.ToLower().Contains(k.ToLower()))) 
                    ).ToList();                         
 
             filter.MatchingCardCount = filteredCards.Count;

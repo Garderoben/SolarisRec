@@ -24,12 +24,13 @@ namespace SolarisRec.UI.Pages
         private readonly int[] pageSizeOption = { 4, 6, 8 };
         private List<Card> Cards { get; set; } = new List<Card>();
         private List<DropdownItem> FactionDropdownItems = new();
-        private SelectedValues SelectedFactions = new SelectedValues();
+        private SelectedValues SelectedFactions = new ();
         private List<DropdownItem> TalentDropdownItems = new();
-        private SelectedValues SelectedTalents = new SelectedValues();
+        private SelectedValues SelectedTalents = new ();
         private List<DropdownItem> CardTypeDropdownItems = new();
-        private SelectedValues SelectedCardTypes = new SelectedValues();
-
+        private SelectedValues SelectedCardTypes = new ();
+        private List<DropdownItem> KeywordDropdownItems = new();    
+        private SelectedValues SelectedKeywords = new();
         private Filter Filter { get; set; } = new Filter();
 
         protected override void OnParametersSet()
@@ -50,6 +51,11 @@ namespace SolarisRec.UI.Pages
             {
                 await InvokeAsync(ApplyDropdownFilters);
             };
+
+            SelectedKeywords.PropertyChanged += async (sender, e) =>
+            {
+                await InvokeAsync(ApplyDropdownFilters);
+            };
         }
 
         protected override async Task OnInitializedAsync()
@@ -58,6 +64,19 @@ namespace SolarisRec.UI.Pages
             FactionDropdownItems = await FactionDropdownItemProvider.ProvideDropdownItems();
             TalentDropdownItems = await TalentDropdownItemProvider.ProvideDropdownItems();
             CardTypeDropdownItems = await CardTypeDropdownItemProvider.ProvideDropdownItems();
+            KeywordDropdownItems = new List<DropdownItem>
+            {
+                new DropdownItem
+                {
+                    Id = 1,
+                    Name = "Covert"
+                },
+                new DropdownItem
+                {
+                    Id= 2,
+                    Name = "Archive"
+                }
+            };
         }
 
         private async Task ApplyDropdownFilters()
@@ -75,6 +94,7 @@ namespace SolarisRec.UI.Pages
             Filter.Factions = SelectedFactions.Selected.Select(f => f.Id).ToList();
             Filter.Talents = SelectedTalents.Selected.Select(t => t.Id).ToList();
             Filter.CardTypes = SelectedCardTypes.Selected.Select(ct => ct.Id).ToList();
+            Filter.Keywords = SelectedKeywords.Selected.Select(k => k.Name).ToList();
 
             Cards = await ProvideCardService.GetCardsFiltered(Filter);
 
