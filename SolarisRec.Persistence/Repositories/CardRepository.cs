@@ -83,7 +83,7 @@ namespace SolarisRec.Persistence.Repositories
 
             var filteredCards = allCards.Where
                    (
-                       c => (filter.Factions.Count > 0 ? c.CardFactions.Any(cf => filter.Factions.Contains(cf.FactionId)) : 1==1)
+                       c => (filter.Factions.Count <= 0 || c.CardFactions.Any(cf => filter.Factions.Contains(cf.FactionId)))
                         &&
                        (filter.Talents.All(t => c.CardTalents.Select(ct => ct.TalentId).Contains(t)))
                         &&
