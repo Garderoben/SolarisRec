@@ -19,5 +19,7 @@ namespace SolarisRec.Core.Card
         public int Page { get; set; } = 1;
 
         public int MatchingCardCount { get; set; }
+
+        public string Ability { get; set; } = string.Empty;
     }
 }

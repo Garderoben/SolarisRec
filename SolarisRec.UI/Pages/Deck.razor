@@ -28,11 +28,14 @@
         <MudTable Items="@Cards" T="Card" OnRowClick="UpdateImageSrc"
                   ServerData="@(new Func<TableState, Task<TableData<Card>>>(GetCardsFiltered))"
                   Hover="true" Breakpoint="Breakpoint.Sm" RightAlignSmall="true" @ref="table">
-            <ToolBarContent>                
-                <MudSpacer/>
+            <ToolBarContent>
+                <MudSpacer />
                 <MudTextField T="string" ValueChanged="@(searchTerm => OnSearchByName(searchTerm))" Placeholder="Search by name"
-                      Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search"
-                      IconSize="Size.Medium" Class="mt-0"></MudTextField>
+                              Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search"
+                              IconSize="Size.Medium" Class="mt-0" Label="Search by name"></MudTextField>
+                <MudTextField T="string" ValueChanged="@(abilitySearchTerm => OnSearchByAbility(abilitySearchTerm))" Placeholder="Search by ability"
+                              Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search"
+                              IconSize="Size.Medium" Class="mt-0" Label="Search by ability"></MudTextField>
             </ToolBarContent>
             <ColGroup>
                 <col />
@@ -43,7 +46,7 @@
                 <col style="width: 30px;" />
                 <col style="width: 30px;" />
                 <col />
-            </ColGroup>            
+            </ColGroup>
             <HeaderContent>
                 <MudTh>Name</MudTh>
                 <MudTh>Factions</MudTh>

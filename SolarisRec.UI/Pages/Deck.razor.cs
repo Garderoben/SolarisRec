@@ -115,5 +115,11 @@ namespace SolarisRec.UI.Pages
             Filter.Name = searchTerm;
             await table.ReloadServerData();
         }
+
+        private async Task OnSearchByAbility(string abilitySearchTerm)
+        {
+            Filter.Ability = abilitySearchTerm;
+            await table.ReloadServerData();
+        }
     }
 }
