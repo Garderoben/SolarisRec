@@ -121,5 +121,10 @@ namespace SolarisRec.UI.Pages
             Filter.Ability = abilitySearchTerm;
             await table.ReloadServerData();
         }
+
+        private void Test()
+        {
+
+        }
     }
 }

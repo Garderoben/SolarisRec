@@ -952,7 +952,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 new CardTalent
                 {
                     CardId = (int)Enum.CardId.FailedExperiment,
-                    TalentId = (int)Enum.Talent.Military,
+                    TalentId = (int)Enum.Talent.Espionage,
                     Quantity = 1
                 },
                 new CardTalent

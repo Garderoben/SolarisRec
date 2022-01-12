@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using MudBlazor;
 using SolarisRec.UI.Providers;
 using System.Threading.Tasks;
 
@@ -19,9 +20,26 @@ namespace SolarisRec.UI.Pages
 
         private Core.Faction.FactionInfo FactionInformation { get; set; }
 
+        private ChartOptions ChartOptions { get; set; }
+
         double[] data = { 11, 10, 2 };
         string[] labels = { "Agents", "Maneuvers", "Constructions" };
-        
+
+
+        protected override Task OnInitializedAsync()
+        {
+            ChartOptions = new ChartOptions
+            {
+                ChartPalette = new string[]
+                {
+                    "#7E1629",
+                    "#17583A",
+                    "#D2D64A"
+                }
+            };
+
+            return base.OnInitializedAsync();
+        }
 
         protected override async Task OnParametersSetAsync()
         {
