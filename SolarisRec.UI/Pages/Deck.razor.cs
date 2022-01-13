@@ -31,6 +31,9 @@ namespace SolarisRec.UI.Pages
         private SelectedValues SelectedCardTypes = new ();
         private List<DropdownItem> KeywordDropdownItems = new();    
         private SelectedValues SelectedKeywords = new();
+        private List<DropdownItem> ConvertedResourceCostDropdownItems = new();
+        private SelectedValues SelectedConvertedResourceCosts = new();
+
         private Filter Filter { get; set; } = new Filter();
 
         protected override void OnParametersSet()
@@ -56,6 +59,11 @@ namespace SolarisRec.UI.Pages
             {
                 await InvokeAsync(ApplyDropdownFilters);
             };
+
+            SelectedConvertedResourceCosts.PropertyChanged += async (sender, e) =>
+            {
+                await InvokeAsync(ApplyDropdownFilters);
+            };
         }
 
         protected override async Task OnInitializedAsync()
@@ -77,6 +85,15 @@ namespace SolarisRec.UI.Pages
                     Name = "Archive"
                 }
             };
+            ConvertedResourceCostDropdownItems = new List<DropdownItem>
+            {
+                new DropdownItem{ Id = 1, Name = "1"},
+                new DropdownItem{ Id = 2, Name = "2"},
+                new DropdownItem{ Id = 3, Name = "3"},
+                new DropdownItem{ Id = 4, Name = "4"},
+                new DropdownItem{ Id = 5, Name = "5"},
+                new DropdownItem{ Id = 5, Name = "6"}
+            };
         }
 
         private async Task ApplyDropdownFilters()
@@ -95,6 +112,7 @@ namespace SolarisRec.UI.Pages
             Filter.Talents = SelectedTalents.Selected.Select(t => t.Id).ToList();
             Filter.CardTypes = SelectedCardTypes.Selected.Select(ct => ct.Id).ToList();
             Filter.Keywords = SelectedKeywords.Selected.Select(k => k.Name).ToList();
+            Filter.ConvertedResourceCost = SelectedConvertedResourceCosts.Selected.Select(c => c.Id).ToList();
 
             Cards = await ProvideCardService.GetCardsFiltered(Filter);
 
@@ -120,11 +138,6 @@ namespace SolarisRec.UI.Pages
         {
             Filter.Ability = abilitySearchTerm;
             await table.ReloadServerData();
-        }
-
-        private void Test()
-        {
-
-        }
+        }       
     }
 }

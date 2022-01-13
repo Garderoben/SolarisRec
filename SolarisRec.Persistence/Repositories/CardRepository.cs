@@ -2,6 +2,7 @@
 using SolarisRec.Core.Card;
 using SolarisRec.Core.Card.Processes.SecondaryPorts;
 using SolarisRec.Persistence.Mappers;
+using SolarisRec.Persistence.PersistenceModel.JoiningTables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -93,7 +94,9 @@ namespace SolarisRec.Persistence.Repositories
                         &&
                        (filter.Ability.Length <= 1 || c.Ability.ToLower().Contains(filter.Ability.ToLower()))
                         &&
-                       (filter.Keywords.Count <= 0 || filter.Keywords.All( k => c.Ability.ToLower().Contains(k.ToLower()))) 
+                       (filter.Keywords.Count <= 0 || filter.Keywords.All( k => c.Ability.ToLower().Contains(k.ToLower())))
+                        &&
+                       (filter.ConvertedResourceCost.Count <= 0 || filter.ConvertedResourceCost.Any(crc => CalculatedConvertedResourceCost(c.CardResources) == crc))
                    ).ToList();                         
 
             filter.MatchingCardCount = filteredCards.Count;
@@ -113,5 +116,17 @@ namespace SolarisRec.Persistence.Repositories
 
             return result;
         }
-    }
+
+        private static int CalculatedConvertedResourceCost(IEnumerable<CardResource> cardResources)
+        {
+            var convertedResourceCost = 0;
+
+            foreach (var cardResource in cardResources)
+            {
+                convertedResourceCost += cardResource.Quantity;
+            }
+
+            return convertedResourceCost;
+        }
+    }    
 }

@@ -14,6 +14,8 @@ namespace SolarisRec.Core.Card
 
         public List<string> Keywords { get; set; } = new List<string>();
 
+        public List<int> ConvertedResourceCost { get; set; } = new List<int>();
+
         public int PageSize { get; set; } = 8;
 
         public int Page { get; set; } = 1;

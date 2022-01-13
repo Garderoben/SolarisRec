@@ -13,6 +13,8 @@ namespace SolarisRec.UI.Pages
         //Todo: FactionInfo should propably be a UI Model only an all data needed should be mapped from appropriate Core.model
 
         //Todo: Deck.razor.cs -> Keyword 
+        //Todo: Deck.razor.cs -> consider ConvertedResourceCost
+        //Todo: CalculatedConvertedResourceCost refactor
 
         [Inject] private IFactionInfoProvider FactionInfoProvider { get; set; }
 

@@ -7,12 +7,15 @@
 <MudGrid>
     <MudItem xs="2">
         <MudMultiSelectDropdown DropdownItems="FactionDropdownItems" Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected" />
+    </MudItem>    
+    <MudItem xs="2">
+        <MudMultiSelectDropdown DropdownItems="CardTypeDropdownItems" Label="Card Type" @bind-SelectedValues="@SelectedCardTypes.Selected" />
+    </MudItem>
+    <MudItem xs="2">
+        <MudMultiSelectDropdown DropdownItems="ConvertedResourceCostDropdownItems" Label="Converted Cost" @bind-SelectedValues="@SelectedConvertedResourceCosts.Selected" />
     </MudItem>
     <MudItem xs="2">
         <MudMultiSelectDropdown DropdownItems="TalentDropdownItems" Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected" />
-    </MudItem>
-    <MudItem xs="2">
-        <MudMultiSelectDropdown DropdownItems="CardTypeDropdownItems" Label="Card Type" @bind-SelectedValues="@SelectedCardTypes.Selected" />
     </MudItem>
     <MudItem xs="2">
         <MudMultiSelectDropdown DropdownItems="KeywordDropdownItems" Label="Keyword" @bind-SelectedValues="@SelectedKeywords.Selected" />
@@ -27,9 +30,14 @@
     <MudItem xs="1"></MudItem>
 
     <MudItem xs="9">
-        <MudTable Items="@Cards" T="Card" OnRowClick="UpdateImageSrc"
+        <MudTable Items="@Cards"
+                  T="Card"
+                  OnRowClick="UpdateImageSrc"
                   ServerData="@(new Func<TableState, Task<TableData<Card>>>(GetCardsFiltered))"
-                  Hover="true" Breakpoint="Breakpoint.Sm" RightAlignSmall="true" @ref="table" >
+                  Hover="true"
+                  Breakpoint="Breakpoint.Sm"
+                  RightAlignSmall="true"
+                  @ref="table">
             <ToolBarContent>
                 <MudSpacer />
                 <MudTextField T="string" ValueChanged="@(searchTerm => OnSearchByName(searchTerm))" Placeholder="Search by name"

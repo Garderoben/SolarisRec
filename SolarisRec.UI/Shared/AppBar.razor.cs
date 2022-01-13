@@ -38,8 +38,9 @@ namespace SolarisRec.UI.Shared
 					AppbarText = "#ffffffb3",
 					DrawerBackground = "#27272f",
 					DrawerText = "#ffffffb3",
-					DrawerIcon = "#ffffffb3"
+					DrawerIcon = "#ffffffb3",
+					TableHover = "#6C6F52"
 				}
-			};
+			};	
 	}
 }
