@@ -152,7 +152,9 @@ namespace SolarisRec.UI.Pages
             await cardTypeDropdown.Clear();
             await crcDropdown.Clear();
             await talentsDropdown.Clear();
-            await keywordDropown.Clear();            
+            await keywordDropown.Clear();
+            await searchByName.Clear();
+            await searchByAbility.Clear();
 
             reload = true;
 

@@ -90,9 +90,9 @@ namespace SolarisRec.Persistence.Repositories
                         &&
                        (filter.CardTypes.Count <= 0 || filter.CardTypes.Contains(c.Type))
                         &&
-                       (filter.Name.Length <= 1 || c.Name.ToLower().Contains(filter.Name.ToLower()))
+                       (string.IsNullOrEmpty(filter.Name) || c.Name.ToLower().Contains(filter.Name.ToLower()))
                         &&
-                       (filter.Ability.Length <= 1 || c.Ability.ToLower().Contains(filter.Ability.ToLower()))
+                       (string.IsNullOrEmpty(filter.Ability) || c.Ability.ToLower().Contains(filter.Ability.ToLower()))
                         &&
                        (filter.Keywords.Count <= 0 || filter.Keywords.All( k => c.Ability.ToLower().Contains(k.ToLower())))
                         &&
