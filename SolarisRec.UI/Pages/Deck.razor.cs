@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using MudBlazor;
 using SolarisRec.Core.Card;
 using SolarisRec.Core.Card.Processes.PrimaryPorts;
@@ -44,9 +45,9 @@ namespace SolarisRec.UI.Pages
         private List<DropdownItem> KeywordDropdownItems = new();    
         private SelectedValues SelectedKeywords = new();
         private List<DropdownItem> ConvertedResourceCostDropdownItems = new();
-        private SelectedValues SelectedConvertedResourceCosts = new();
+        private SelectedValues SelectedConvertedResourceCosts = new();        
 
-        private Filter Filter { get; set; } = new Filter();
+        private Filter Filter { get; set; } = new Filter();        
 
         protected override void OnParametersSet()
         {
@@ -123,9 +124,9 @@ namespace SolarisRec.UI.Pages
             };
         }
 
-        public void UpdateImageSrc(TableRowClickEventArgs<Card> card)
+        public void UpdateImageSrc(Card card)
         {
-            ImgSrc = card.Item.ImageSrc;
+            ImgSrc = card.ImageSrc;
         }
 
         private async Task OnSearchByName(string searchTerm)
@@ -159,6 +160,11 @@ namespace SolarisRec.UI.Pages
             reload = true;
 
             await table.ReloadServerData();
+        }
+
+        private async Task AddToDeck(TableRowClickEventArgs<Card> card)
+        {
+            await Task.FromResult("");
         }
     }
 }
