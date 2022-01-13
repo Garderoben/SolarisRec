@@ -6,19 +6,22 @@
 
 <MudGrid>
     <MudItem xs="2">
-        <MudMultiSelectDropdown DropdownItems="FactionDropdownItems" Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected" />
+        <MudMultiSelectDropdown @ref="factionDropdown" DropdownItems="FactionDropdownItems" Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected" />
     </MudItem>    
     <MudItem xs="2">
-        <MudMultiSelectDropdown DropdownItems="CardTypeDropdownItems" Label="Card Type" @bind-SelectedValues="@SelectedCardTypes.Selected" />
+        <MudMultiSelectDropdown @ref="cardTypeDropdown" DropdownItems="CardTypeDropdownItems" Label="Card Type" @bind-SelectedValues="@SelectedCardTypes.Selected" />
     </MudItem>
     <MudItem xs="2">
-        <MudMultiSelectDropdown DropdownItems="ConvertedResourceCostDropdownItems" Label="Converted Cost" @bind-SelectedValues="@SelectedConvertedResourceCosts.Selected" />
+        <MudMultiSelectDropdown @ref="crcDropdown" DropdownItems="ConvertedResourceCostDropdownItems" Label="Converted Cost" @bind-SelectedValues="@SelectedConvertedResourceCosts.Selected" />
     </MudItem>
     <MudItem xs="2">
-        <MudMultiSelectDropdown DropdownItems="TalentDropdownItems" Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected" />
+        <MudMultiSelectDropdown @ref="talentsDropdown" DropdownItems="TalentDropdownItems" Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected" />
     </MudItem>
     <MudItem xs="2">
-        <MudMultiSelectDropdown DropdownItems="KeywordDropdownItems" Label="Keyword" @bind-SelectedValues="@SelectedKeywords.Selected" />
+        <MudMultiSelectDropdown @ref="keywordDropown" DropdownItems="KeywordDropdownItems" Label="Keyword" @bind-SelectedValues="@SelectedKeywords.Selected" />
+    </MudItem>
+    <MudItem xs="2">
+        <MudButton OnClick="ClearFilters">Clear Filters</MudButton>
     </MudItem>
 </MudGrid>
 
@@ -42,10 +45,10 @@
                 <MudSpacer />
                 <MudTextField T="string" ValueChanged="@(searchTerm => OnSearchByName(searchTerm))" Placeholder="Search by name"
                               Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search"
-                              IconSize="Size.Medium" Class="mt-0" Label="Search by name"></MudTextField>
+                              IconSize="Size.Medium" Class="mt-0" Label="Search by name" @ref="searchByName"></MudTextField>
                 <MudTextField T="string" ValueChanged="@(abilitySearchTerm => OnSearchByAbility(abilitySearchTerm))" Placeholder="Search by ability"
                               Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search"
-                              IconSize="Size.Medium" Class="mt-0" Label="Search by ability"></MudTextField>
+                              IconSize="Size.Medium" Class="mt-0" Label="Search by ability" @ref="searchByAbility"></MudTextField>
             </ToolBarContent>
             <ColGroup>
                 <col />

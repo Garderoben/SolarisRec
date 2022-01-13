@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
+using MudBlazor;
 using SolarisRec.UI.UIModels;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SolarisRec.UI.Components.Dropdown
 {
@@ -14,10 +16,18 @@ namespace SolarisRec.UI.Components.Dropdown
 
         [Parameter] public IEnumerable<DropdownItem> SelectedValues { get; set; }
 
-        private void SelectedFactionsChanged(IEnumerable<DropdownItem> value)
+        private MudSelect<DropdownItem> mudSelect;        
+
+        private async Task SelectionChanged(IEnumerable<DropdownItem> value)
         {
-            SelectedValues = value;
-            SelectedValuesChanged.InvokeAsync(SelectedValues);
+            SelectedValues = value;            
+           
+            await SelectedValuesChanged.InvokeAsync(SelectedValues);            
+        }
+
+        public async Task Clear()
+        {            
+            await mudSelect.Clear();            
         }
     }
 }

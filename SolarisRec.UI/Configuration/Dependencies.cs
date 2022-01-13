@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SolarisRec.Core.Card;
+using SolarisRec.Core.CardType;
 using SolarisRec.Core.Faction;
-using SolarisRec.Core.Talent;
+using SolarisRec.Core.Keyword;
+using SolarisRec.Core.ResourceCost;
 using SolarisRec.UI.Components.Dropdown;
 using SolarisRec.UI.Mappers;
 using SolarisRec.UI.Providers;
@@ -22,6 +23,12 @@ namespace SolarisRec.UI.Configuration
 
                 .AddTransient<IMapToDropdownItem<CardType, DropdownItem>, Mappers.ToDropdownItems.CardTypeMapper>()
                 .AddTransient<ICardTypeDropdownProvider, CardTypeDropdownProvider>()
+
+                .AddTransient<IMapToDropdownItem<Keyword, DropdownItem>, Mappers.ToDropdownItems.KeywordMapper>()
+                .AddTransient<IKeywordDropdownItemProvider, KeywordDropdownItemProvider>()
+
+                .AddTransient<IMapToDropdownItem<ConvertedResourceCost, DropdownItem>, Mappers.ToDropdownItems.ConvertedResourceCostMapper>()
+                .AddTransient<IConvertedResourceCostDropdownItemProvider, ConvertedResourceCostDropdownItemProvider>()
 
                 .AddTransient<IFactionInfoProvider, FactionInfoProvider>()
                 ;

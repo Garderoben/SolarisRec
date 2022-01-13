@@ -16,12 +16,24 @@ namespace SolarisRec.UI.Pages
         [Inject] private IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }
         [Inject] private ITalentDropdownItemProvider TalentDropdownItemProvider { get; set; }
         [Inject] private ICardTypeDropdownProvider CardTypeDropdownItemProvider { get; set; }
+        [Inject] private IKeywordDropdownItemProvider KeywordDropdownItemProvider { get; set; }
+        [Inject] private IConvertedResourceCostDropdownItemProvider ConvertedResourceCostDropdownItemProvider { get; set; }
 
         private const int DEFAULT_PAGE_SIZE = 8;
+        private const int DEFAULT_FROM_MUD_BLAZOR = 10;
 
         private MudTable<Card> table;
+        private MudMultiSelectDropdown factionDropdown;
+        private MudMultiSelectDropdown cardTypeDropdown;
+        private MudMultiSelectDropdown crcDropdown;
+        private MudMultiSelectDropdown talentsDropdown;
+        private MudMultiSelectDropdown keywordDropown;
+        private MudTextField<string> searchByName;
+        private MudTextField<string> searchByAbility;
+
+        private bool reload = true;
         private string ImgSrc { get; set; } = @"../Assets/0Cardback.jpg";
-        private readonly int[] pageSizeOption = { 4, 6, 8 };
+        private readonly int[] pageSizeOption = { 4, 6, 8, 50 };
         private List<Card> Cards { get; set; } = new List<Card>();
         private List<DropdownItem> FactionDropdownItems = new();
         private SelectedValues SelectedFactions = new ();
@@ -42,28 +54,33 @@ namespace SolarisRec.UI.Pages
 
             SelectedFactions.PropertyChanged += async (sender, e) =>
             {
-                await InvokeAsync(ApplyDropdownFilters);
-            };
-
-            SelectedTalents.PropertyChanged += async (sender, e) =>
-            {
-                await InvokeAsync(ApplyDropdownFilters);
+                if(reload)
+                    await InvokeAsync(ApplyDropdownFilters);
             };
 
             SelectedCardTypes.PropertyChanged += async (sender, e) =>
             {
-                await InvokeAsync(ApplyDropdownFilters);
-            };
-
-            SelectedKeywords.PropertyChanged += async (sender, e) =>
-            {
-                await InvokeAsync(ApplyDropdownFilters);
+                if (reload)
+                    await InvokeAsync(ApplyDropdownFilters);
             };
 
             SelectedConvertedResourceCosts.PropertyChanged += async (sender, e) =>
             {
-                await InvokeAsync(ApplyDropdownFilters);
+                if (reload)
+                    await InvokeAsync(ApplyDropdownFilters);
             };
+
+            SelectedTalents.PropertyChanged += async (sender, e) =>
+            {
+                if (reload)
+                    await InvokeAsync(ApplyDropdownFilters);
+            };
+
+            SelectedKeywords.PropertyChanged += async (sender, e) =>
+            {
+                if (reload)
+                    await InvokeAsync(ApplyDropdownFilters);
+            };            
         }
 
         protected override async Task OnInitializedAsync()
@@ -72,28 +89,8 @@ namespace SolarisRec.UI.Pages
             FactionDropdownItems = await FactionDropdownItemProvider.ProvideDropdownItems();
             TalentDropdownItems = await TalentDropdownItemProvider.ProvideDropdownItems();
             CardTypeDropdownItems = await CardTypeDropdownItemProvider.ProvideDropdownItems();
-            KeywordDropdownItems = new List<DropdownItem>
-            {
-                new DropdownItem
-                {
-                    Id = 1,
-                    Name = "Covert"
-                },
-                new DropdownItem
-                {
-                    Id= 2,
-                    Name = "Archive"
-                }
-            };
-            ConvertedResourceCostDropdownItems = new List<DropdownItem>
-            {
-                new DropdownItem{ Id = 1, Name = "1"},
-                new DropdownItem{ Id = 2, Name = "2"},
-                new DropdownItem{ Id = 3, Name = "3"},
-                new DropdownItem{ Id = 4, Name = "4"},
-                new DropdownItem{ Id = 5, Name = "5"},
-                new DropdownItem{ Id = 5, Name = "6"}
-            };
+            KeywordDropdownItems = await  KeywordDropdownItemProvider.ProvideDropdownItems();            
+            ConvertedResourceCostDropdownItems = await ConvertedResourceCostDropdownItemProvider.ProvideDropdownItems();            
         }
 
         private async Task ApplyDropdownFilters()
@@ -103,7 +100,7 @@ namespace SolarisRec.UI.Pages
 
         private async Task<TableData<Card>> GetCardsFiltered(TableState state)
         {
-            state.PageSize = state.PageSize >= DEFAULT_PAGE_SIZE ? DEFAULT_PAGE_SIZE : state.PageSize;
+            state.PageSize = state.PageSize == DEFAULT_FROM_MUD_BLAZOR ? DEFAULT_PAGE_SIZE : state.PageSize;
             table.SetRowsPerPage(state.PageSize);
 
             Filter.PageSize = state.PageSize;
@@ -112,9 +109,12 @@ namespace SolarisRec.UI.Pages
             Filter.Talents = SelectedTalents.Selected.Select(t => t.Id).ToList();
             Filter.CardTypes = SelectedCardTypes.Selected.Select(ct => ct.Id).ToList();
             Filter.Keywords = SelectedKeywords.Selected.Select(k => k.Name).ToList();
-            Filter.ConvertedResourceCost = SelectedConvertedResourceCosts.Selected.Select(c => c.Id).ToList();
+            Filter.ConvertedResourceCost = SelectedConvertedResourceCosts.Selected.Select(c => c.Id).ToList();            
 
-            Cards = await ProvideCardService.GetCardsFiltered(Filter);
+            if (reload)
+            {
+                Cards = await ProvideCardService.GetCardsFiltered(Filter);
+            }
 
             return new TableData<Card>
             {
@@ -130,14 +130,33 @@ namespace SolarisRec.UI.Pages
 
         private async Task OnSearchByName(string searchTerm)
         {
+            reload = true;
+
             Filter.Name = searchTerm;
             await table.ReloadServerData();
         }
 
         private async Task OnSearchByAbility(string abilitySearchTerm)
         {
+            reload = true;
+
             Filter.Ability = abilitySearchTerm;
             await table.ReloadServerData();
-        }       
+        }
+        
+        private async Task ClearFilters()
+        {            
+            reload = false;
+
+            await factionDropdown.Clear();
+            await cardTypeDropdown.Clear();
+            await crcDropdown.Clear();
+            await talentsDropdown.Clear();
+            await keywordDropown.Clear();            
+
+            reload = true;
+
+            await table.ReloadServerData();
+        }
     }
 }

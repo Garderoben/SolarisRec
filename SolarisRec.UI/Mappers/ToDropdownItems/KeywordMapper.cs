@@ -1,11 +1,11 @@
-﻿using SolarisRec.Core.CardType;
+﻿using SolarisRec.Core.Keyword;
 using SolarisRec.UI.UIModels;
 
 namespace SolarisRec.UI.Mappers.ToDropdownItems
 {
-    internal class CardTypeMapper : IMapToDropdownItem<CardType, DropdownItem>
+    public class KeywordMapper : IMapToDropdownItem<Keyword, DropdownItem>
     {
-        public DropdownItem Map(CardType input)
+        public DropdownItem Map(Keyword input)
         {
             return new DropdownItem
             {

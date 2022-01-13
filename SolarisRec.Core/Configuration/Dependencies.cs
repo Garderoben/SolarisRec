@@ -11,6 +11,10 @@ using SolarisRec.Core.Deck.Processes;
 using SolarisRec.Core.Deck.Processes.PrimaryPorts;
 using SolarisRec.Core.Faction.Processes;
 using SolarisRec.Core.Faction.Processes.PrimaryPorts;
+using SolarisRec.Core.Keyword.Processes;
+using SolarisRec.Core.Keyword.Processes.PrimaryPorts;
+using SolarisRec.Core.ResourceCost.Processes;
+using SolarisRec.Core.ResourceCost.Processes.PrimaryPorts;
 using SolarisRec.Core.Talent.Processes;
 using SolarisRec.Core.Talent.Processes.PrimaryPorts;
 
@@ -29,6 +33,8 @@ namespace SolarisRec.Core.Configuration
                 .AddTransient<IProvideFactionService, ProvideFactionService>()
                 .AddTransient<IProvideTalentService, ProvideTalentService>()
                 .AddTransient<IProvideCardTypeService, ProvideCardTypeService>()
+                .AddTransient<IProvideKeywordService, ProvideKeywordService>()
+                .AddTransient<IProvideConvertedResourceCostService, ProvideConvertedResourceCostService>()
                 ;            
         }
     }
