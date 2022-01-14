@@ -12,6 +12,9 @@ namespace SolarisRec.Persistence.Repositories
 {
     internal class CardRepository : ICardRepository
     {
+        private const int ASCENDING = 1;
+        private const int DESCENDING = 2;
+
         private readonly SolarisRecDbContext context;        
         private readonly IMapToDomainModel<PersistenceModel.Card, Card> persistenceModelMapper;
         private readonly IMapToPersistenceModel<Card, PersistenceModel.Card> domainModelMapper;        
@@ -94,12 +97,45 @@ namespace SolarisRec.Persistence.Repositories
                         &&
                        (string.IsNullOrEmpty(filter.Ability) || c.Ability.ToLower().Contains(filter.Ability.ToLower()))
                         &&
-                       (filter.Keywords.Count <= 0 || filter.Keywords.All( k => c.Ability.ToLower().Contains(k.ToLower())))
+                       (filter.Keywords.Count <= 0 || filter.Keywords.All(k => c.Ability.ToLower().Contains(k.ToLower())))
                         &&
                        (filter.ConvertedResourceCost.Count <= 0 || filter.ConvertedResourceCost.Any(crc => CalculatedConvertedResourceCost(c.CardResources) == crc))
-                   ).ToList();                         
+                   );
 
-            filter.MatchingCardCount = filteredCards.Count;
+            if (filter.OrderBy == nameof(Card.Name) && filter.SortingDirection == ASCENDING)
+            {
+                filteredCards = filteredCards.OrderBy(c => c.Name).ToList();
+            }
+            else if (filter.OrderBy == nameof(Card.Name) && filter.SortingDirection == DESCENDING)
+            {
+                filteredCards = filteredCards.OrderByDescending(c => c.Name).ToList();
+            }
+            else if (filter.OrderBy == nameof(Card.AttackValue) && filter.SortingDirection == ASCENDING)
+            {
+                filteredCards = filteredCards.OrderBy(c => c.AttackValue).ToList();
+            }
+            else if (filter.OrderBy == nameof(Card.AttackValue) && filter.SortingDirection == DESCENDING)
+            {
+                filteredCards = filteredCards.OrderByDescending(c => c.AttackValue).ToList();
+            }
+            else if (filter.OrderBy == nameof(Card.HealthValue) && filter.SortingDirection == ASCENDING)
+            {
+                filteredCards = filteredCards.OrderBy(c => c.HealthValue).ToList();
+            }
+            else if (filter.OrderBy == nameof(Card.HealthValue) && filter.SortingDirection == DESCENDING)
+            {
+                filteredCards = filteredCards.OrderByDescending(c => c.HealthValue).ToList();
+            }
+            else if (filter.OrderBy == nameof(Card.Costs) && filter.SortingDirection == ASCENDING)
+            {
+                filteredCards = filteredCards.OrderBy(c => CalculatedConvertedResourceCost(c.CardResources)).ToList();
+            }
+            else if (filter.OrderBy == nameof(Card.Costs) && filter.SortingDirection == DESCENDING)
+            {
+                filteredCards = filteredCards.OrderByDescending(c => CalculatedConvertedResourceCost(c.CardResources)).ToList();
+            }
+
+            filter.MatchingCardCount = filteredCards.Count();
 
             var paged = filteredCards
                 .Skip((filter.Page - 1) * filter.PageSize)

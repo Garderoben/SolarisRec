@@ -15,6 +15,7 @@ namespace SolarisRec.UI.Pages
         //todo: cardtype string, enum? how should I treat it? 
         //todo: UIModel for card?
         //todo: differentiate between UIModels and Helper models?
+        //todo: check why UI has/needs reference to Persistence and fix
 
         [Inject] private IProvideCardService ProvideCardService { get; set; }
         [Inject] private IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }
@@ -117,7 +118,9 @@ namespace SolarisRec.UI.Pages
             Filter.Talents = SelectedTalents.Selected.Select(t => t.Id).ToList();
             Filter.CardTypes = SelectedCardTypes.Selected.Select(ct => ct.Id).ToList();
             Filter.Keywords = SelectedKeywords.Selected.Select(k => k.Name).ToList();
-            Filter.ConvertedResourceCost = SelectedConvertedResourceCosts.Selected.Select(c => c.Id).ToList();            
+            Filter.ConvertedResourceCost = SelectedConvertedResourceCosts.Selected.Select(c => c.Id).ToList();
+            Filter.OrderBy = state.SortLabel;
+            Filter.SortingDirection = (int)state.SortDirection;
 
             if (reload)
             {

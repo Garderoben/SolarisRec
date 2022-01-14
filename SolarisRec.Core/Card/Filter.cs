@@ -23,5 +23,9 @@ namespace SolarisRec.Core.Card
         public int MatchingCardCount { get; set; }
 
         public string Ability { get; set; } = string.Empty;
+
+        public string OrderBy { get; set; } = string.Empty;
+
+        public int SortingDirection { get; set; } = 0;
     }
 }

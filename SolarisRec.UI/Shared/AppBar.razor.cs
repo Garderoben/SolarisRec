@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Components;
 using MudBlazor;
+using SolarisRec.UI.Providers;
 using System.Threading.Tasks;
 
 namespace SolarisRec.UI.Shared
 {
     public partial class AppBar
     {
-		private bool isLightMode = true;
+		private bool isLightMode = false;
 		private MudTheme currentTheme = new MudTheme();
 
 		[Parameter]
@@ -18,29 +19,9 @@ namespace SolarisRec.UI.Shared
 		{
 			isLightMode = !isLightMode;
 
-			currentTheme = !isLightMode ? GenerateDarkTheme() : new MudTheme();
+			currentTheme = !isLightMode ? MyMudThemeProvider.GenerateDarkTheme() :MyMudThemeProvider.GenerateLightTheme();
 
 			await OnThemeToggled.InvokeAsync(currentTheme);
-		}
-
-		private MudTheme GenerateDarkTheme() =>
-			new MudTheme
-			{
-				Palette = new Palette()
-				{
-					Black = "#27272f",
-					Background = "#32333d",
-					BackgroundGrey = "#27272f",
-					Surface = "#373740",
-					TextPrimary = "#ffffffb3",
-					TextSecondary = "rgba(255,255,255, 0.50)",
-					AppbarBackground = "#27272f",
-					AppbarText = "#ffffffb3",
-					DrawerBackground = "#27272f",
-					DrawerText = "#ffffffb3",
-					DrawerIcon = "#ffffffb3",
-					TableHover = "#6C6F52"
-				}
-			};	
+		}		
 	}
 }
