@@ -16,6 +16,9 @@ namespace SolarisRec.UI.Pages
         //todo: UIModel for card?
         //todo: differentiate between UIModels and Helper models?
         //todo: check why UI has/needs reference to Persistence and fix
+        //todo: clear filters shold reset sorting?
+        //todo: adjust grid header/rows
+        //todo: are void methods legit?
 
         [Inject] private IProvideCardService ProvideCardService { get; set; }
         [Inject] private IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }
@@ -26,6 +29,7 @@ namespace SolarisRec.UI.Pages
 
         private const int DEFAULT_PAGE_SIZE = 8;
         private const int DEFAULT_FROM_MUD_BLAZOR = 10;
+        private const int MAX_MISSION_SIZE = 5;
 
         private MudTable<Card> table;
         private MudMultiSelectDropdown factionDropdown;
@@ -37,6 +41,7 @@ namespace SolarisRec.UI.Pages
         private MudTextField<string> searchByAbility;
 
         private bool reload = true;
+        
         private string ImgSrc { get; set; } = @"../Assets/0Cardback.jpg";
         private readonly int[] pageSizeOption = { 4, 6, 8, 50 };
         private List<Card> Cards { get; set; } = new List<Card>();
@@ -170,9 +175,9 @@ namespace SolarisRec.UI.Pages
             await talentsDropdown.Clear();
             await keywordDropown.Clear();
             await searchByName.Clear();
-            await searchByAbility.Clear();
+            await searchByAbility.Clear();            
 
-            reload = true;
+            reload = true;            
 
             await table.ReloadServerData();
         }
@@ -181,13 +186,13 @@ namespace SolarisRec.UI.Pages
         {
             bool isMission = card.Item.Type == nameof(CardTypeConstants.Mission);
 
-            if (card.MouseEventArgs.ShiftKey && !isMission)
+            if (card.MouseEventArgs.CtrlKey && !isMission)
             {
                 card.Item.AddCard(Sideboard);
                 return;
             }
 
-            if (isMission)
+            if (isMission && MissionDeck.Count < MAX_MISSION_SIZE)
             {
                 card.Item.AddCard(MissionDeck);
                 return;
@@ -209,6 +214,13 @@ namespace SolarisRec.UI.Pages
         private void RemoveFromSideboard(TableRowClickEventArgs<DeckItem> deckItem)
         {
             deckItem.Item.RemoveCard(Sideboard);
+        }
+
+        private async Task Export()
+        {
+            //todo: generate txt and save
+
+            await Task.FromResult(true);
         }
     }
 }

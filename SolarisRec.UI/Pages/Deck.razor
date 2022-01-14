@@ -34,7 +34,7 @@
             <img src="@(ImgSrc)" width=200 height=300>
         </MudItem>
                
-        
+        <MudIconButton Icon="@Icons.Material.Filled.Print" Color="Color.Inherit" OnClick="Export"></MudIconButton>
 
         <MudItem lg="3" md="3" sm="3">
             Main deck
@@ -43,7 +43,8 @@
                       OnRowClick="RemoveFromDeck"
                       Hover="true"
                       Breakpoint="Breakpoint.Sm"
-                      Style="float: left; width: 220px;">
+                      Style="float: left; width: 220px;"
+                      Dense="true">
 
                 <HeaderContent>
                     <MudContainer>
@@ -69,7 +70,8 @@
                       OnRowClick="RemoveFromMissionDeck"
                       Hover="true"
                       Breakpoint="Breakpoint.Sm"
-                      Style="float: left; width: 220px;">
+                      Style="float: left; width: 220px;"
+                      Dense="true">
 
                 <HeaderContent>
                     <MudContainer>
@@ -95,7 +97,8 @@
                       OnRowClick="RemoveFromSideboard"
                       Hover="true"
                       Breakpoint="Breakpoint.Sm"
-                      Style="float: left; width: 220px;">
+                      Style="float: left; width: 220px;"
+                      Dense="true">
 
                 <HeaderContent>
                     <MudContainer>
@@ -123,7 +126,7 @@
                       ServerData="@(new Func<TableState, Task<TableData<Card>>>(GetCardsFiltered))"
                       Hover="true"
                       Breakpoint="Breakpoint.Sm"
-                      RightAlignSmall="true"
+                      RightAlignSmall="true"                      
                       @ref="table">
                 <ToolBarContent>
                     <MudSpacer />
