@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using MudBlazor;
 using SolarisRec.Core.Card;
 using SolarisRec.Core.Card.Processes.PrimaryPorts;
@@ -36,6 +35,10 @@ namespace SolarisRec.UI.Pages
         private string ImgSrc { get; set; } = @"../Assets/0Cardback.jpg";
         private readonly int[] pageSizeOption = { 4, 6, 8, 50 };
         private List<Card> Cards { get; set; } = new List<Card>();
+        private List<DeckItem> MainDeck { get; set; } = new List<DeckItem>();
+        private List<Card> MissionDeck { get; set; } = new List<Card>();
+        private List<Card> Sideboard { get; set; } = new List<Card>();
+
         private List<DropdownItem> FactionDropdownItems = new();
         private SelectedValues SelectedFactions = new ();
         private List<DropdownItem> TalentDropdownItems = new();
@@ -162,9 +165,24 @@ namespace SolarisRec.UI.Pages
             await table.ReloadServerData();
         }
 
-        private async Task AddToDeck(TableRowClickEventArgs<Card> card)
+        private void AddToDeck(TableRowClickEventArgs<Card> card)
         {
-            await Task.FromResult("");
+            card.Item.AddCard(MainDeck);
+        }
+
+        private void RemoveFromDeck(TableRowClickEventArgs<DeckItem> deckItem)
+        {
+            deckItem.Item.RemoveCard(MainDeck);
+        }
+
+        private void RemoveFromMissionDeck(TableRowClickEventArgs<Card> card)
+        {
+            
+        }
+
+        private void RemoveFromSideboard(TableRowClickEventArgs<Card> card)
+        {
+            
         }
     }
 }

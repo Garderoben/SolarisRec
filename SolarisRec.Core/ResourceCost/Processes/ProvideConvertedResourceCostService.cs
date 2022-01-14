@@ -15,7 +15,7 @@ namespace SolarisRec.Core.ResourceCost.Processes
                 new ConvertedResourceCost{ Id = 3, Value = 3},
                 new ConvertedResourceCost{ Id = 4, Value = 4},
                 new ConvertedResourceCost{ Id = 5, Value = 5},
-                new ConvertedResourceCost{ Id = 5, Value = 6}
+                new ConvertedResourceCost{ Id = 6, Value = 6}
             };
 
             return await Task.FromResult(result);
