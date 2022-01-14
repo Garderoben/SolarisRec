@@ -12,6 +12,10 @@ namespace SolarisRec.UI.Pages
 {
     public partial class Deck
     {
+        //todo: cardtype string, enum? how should I treat it? 
+        //todo: UIModel for card?
+        //todo: differentiate between UIModels and Helper models?
+
         [Inject] private IProvideCardService ProvideCardService { get; set; }
         [Inject] private IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }
         [Inject] private ITalentDropdownItemProvider TalentDropdownItemProvider { get; set; }
@@ -36,8 +40,8 @@ namespace SolarisRec.UI.Pages
         private readonly int[] pageSizeOption = { 4, 6, 8, 50 };
         private List<Card> Cards { get; set; } = new List<Card>();
         private List<DeckItem> MainDeck { get; set; } = new List<DeckItem>();
-        private List<Card> MissionDeck { get; set; } = new List<Card>();
-        private List<Card> Sideboard { get; set; } = new List<Card>();
+        private List<DeckItem> MissionDeck { get; set; } = new List<DeckItem>();
+        private List<DeckItem> Sideboard { get; set; } = new List<DeckItem>();
 
         private List<DropdownItem> FactionDropdownItems = new();
         private SelectedValues SelectedFactions = new ();
@@ -132,6 +136,11 @@ namespace SolarisRec.UI.Pages
             ImgSrc = card.ImageSrc;
         }
 
+        public void UpdateImageSrc(DeckItem deckItem)
+        {
+            ImgSrc = deckItem.ImageSrc;
+        }
+
         private async Task OnSearchByName(string searchTerm)
         {
             reload = true;
@@ -167,6 +176,20 @@ namespace SolarisRec.UI.Pages
 
         private void AddToDeck(TableRowClickEventArgs<Card> card)
         {
+            bool isMission = card.Item.Type == nameof(CardTypeConstants.Mission);
+
+            if (card.MouseEventArgs.ShiftKey && !isMission)
+            {
+                card.Item.AddCard(Sideboard);
+                return;
+            }
+
+            if (isMission)
+            {
+                card.Item.AddCard(MissionDeck);
+                return;
+            } 
+            
             card.Item.AddCard(MainDeck);
         }
 
@@ -175,14 +198,14 @@ namespace SolarisRec.UI.Pages
             deckItem.Item.RemoveCard(MainDeck);
         }
 
-        private void RemoveFromMissionDeck(TableRowClickEventArgs<Card> card)
+        private void RemoveFromMissionDeck(TableRowClickEventArgs<DeckItem> deckItem)
         {
-            
+            deckItem.Item.RemoveCard(MissionDeck);
         }
 
-        private void RemoveFromSideboard(TableRowClickEventArgs<Card> card)
+        private void RemoveFromSideboard(TableRowClickEventArgs<DeckItem> deckItem)
         {
-            
+            deckItem.Item.RemoveCard(Sideboard);
         }
     }
 }

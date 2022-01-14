@@ -6,37 +6,36 @@
 @using SolarisRec.UI.UIModels
 
 <MudGrid>
-    <MudItem xs="2">
+    <MudItem lg="2" xs="2" sm="2">
         <MudMultiSelectDropdown @ref="factionDropdown" DropdownItems="FactionDropdownItems" Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected" />
     </MudItem>
-    <MudItem xs="2">
+    <MudItem lg="2" xs="2" sm="2">
         <MudMultiSelectDropdown @ref="cardTypeDropdown" DropdownItems="CardTypeDropdownItems" Label="Card Type" @bind-SelectedValues="@SelectedCardTypes.Selected" />
     </MudItem>
-    <MudItem xs="2">
+    <MudItem lg="2" xs="2" sm="2">
         <MudMultiSelectDropdown @ref="crcDropdown" DropdownItems="ConvertedResourceCostDropdownItems" Label="Converted Cost" @bind-SelectedValues="@SelectedConvertedResourceCosts.Selected" />
     </MudItem>
-    <MudItem xs="2">
+    <MudItem lg="2" xs="2" sm="2">
         <MudMultiSelectDropdown @ref="talentsDropdown" DropdownItems="TalentDropdownItems" Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected" />
     </MudItem>
-    <MudItem xs="2">
+    <MudItem lg="2" xs="2" sm="2">
         <MudMultiSelectDropdown @ref="keywordDropown" DropdownItems="KeywordDropdownItems" Label="Keyword" @bind-SelectedValues="@SelectedKeywords.Selected" />
     </MudItem>
-    <MudItem xs="2">
+    <MudItem lg="2" xs="2" sm="2">
         <MudButton OnClick="ClearFilters">Clear Filters</MudButton>
     </MudItem>
-</MudGrid>
 
-<MudGrid>
-    <MudItem xs="2">
+    <MudItem lg="2" xs="2" sm="2">
         <img src="@(ImgSrc)" width=200 height=300>
     </MudItem>
 
-    <MudItem xs="1"></MudItem>
+    <MudItem lg="1" xs="1" sm="1"></MudItem>
 
-    <MudItem xs="9">
+    <MudItem lg="9" xs="9" sm="9">
         <MudTable Items="@Cards"
                   T="Card"
                   OnRowClick="AddToDeck"
+                  
                   ServerData="@(new Func<TableState, Task<TableData<Card>>>(GetCardsFiltered))"
                   Hover="true"
                   Breakpoint="Breakpoint.Sm"
@@ -97,58 +96,66 @@
             </PagerContent>
         </MudTable>
     </MudItem>
+
+    <MudItem lg="3" xs="3" sm="3">
+        <MudTable Items="@MainDeck"
+                  T="DeckItem"
+                  OnRowClick="RemoveFromDeck"
+                  Hover="true"
+                  Breakpoint="Breakpoint.Sm"
+                  Style="width=1000px; float: left;">
+
+            <HeaderContent>
+                <MudContainer>
+                    <MudTh Style="width: 20px;"></MudTh>
+                    <MudTh Style="width: 100px;">Name</MudTh>
+                </MudContainer>
+            </HeaderContent>
+            <RowTemplate>
+                <MudContainer @onmouseover="@(() => UpdateImageSrc(context))">
+                    <MudTd DataLabel="Quantity" Style="width: 20px;">@context.Quantity</MudTd>
+                    <MudTd DataLabel="Name" Style="width: 100px;">@context.Name</MudTd>
+                </MudContainer>
+            </RowTemplate>
+        </MudTable>
+    </MudItem>
+
+    <MudItem lg="3" xs="3" sm="3">
+        <MudTable Items="@MissionDeck"
+                  T="DeckItem"
+                  OnRowClick="RemoveFromMissionDeck"
+                  Hover="true"
+                  Breakpoint="Breakpoint.Sm"
+                  Style="width=1000px; float: left;">
+
+            <HeaderContent>
+                <MudTh Style="width: 20px;"></MudTh>
+                <MudTh Style="width: 100px;">Name</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Quantity" Style="width: 20px;">@context.Quantity</MudTd>
+                <MudTd DataLabel="Name" Style="width: 100px;">@context.Name</MudTd>
+            </RowTemplate>
+        </MudTable>
+    </MudItem>
+
+    <MudItem lg="3" xs="3" sm="3">
+        <MudTable Items="@Sideboard"
+                  T="DeckItem"
+                  OnRowClick="RemoveFromSideboard"
+                  Hover="true"
+                  Breakpoint="Breakpoint.Sm"
+                  Style="width=1000px; float: left;">
+
+            <HeaderContent>
+                <MudTh Style="width: 20px;"></MudTh>
+                <MudTh Style="width: 100px;">Name</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Quantity" Style="width: 20px;">@context.Quantity</MudTd>
+                <MudTd DataLabel="Name" Style="width: 100px;">@context.Name</MudTd>
+            </RowTemplate>
+        </MudTable>
+    </MudItem>
+
 </MudGrid>
-
-
-
-<MudTable Items="@MainDeck"
-          T="DeckItem"
-          OnRowClick="RemoveFromDeck"
-          Hover="true"
-          Breakpoint="Breakpoint.Sm"
-          Style="width=1000px; float: left;">
-
-    <HeaderContent>
-        <MudTh Style="width: 20px;">Q</MudTh>
-        <MudTh Style="width: 100px;">Name</MudTh>
-    </HeaderContent>
-    <RowTemplate>
-        <MudTd DataLabel="Quantity" Style="width: 20px;">@context.Quantity</MudTd>
-        <MudTd DataLabel="Name" Style="width: 100px;">@context.Name</MudTd>
-    </RowTemplate>
-</MudTable>
-
-
-
-<MudTable Items="@MissionDeck"
-          T="Card"
-          OnRowClick="RemoveFromMissionDeck"
-          Hover="true"
-          Breakpoint="Breakpoint.Sm"
-          Style="width=1000px; float: left;">
-
-    <HeaderContent>
-        <MudTh Style="width: 100px;">Name</MudTh>
-    </HeaderContent>
-    <RowTemplate>
-        <MudTd DataLabel="Name" Style="width: 100px;">@context.Name</MudTd>
-    </RowTemplate>
-</MudTable>
-
-
-
-<MudTable Items="@Sideboard"
-          T="Card"
-          OnRowClick="RemoveFromSideboard"
-          Hover="true"
-          Breakpoint="Breakpoint.Sm"
-          Style="width=1000px; float: left;">
-
-    <HeaderContent>
-        <MudTh Style="width: 100px;">Name</MudTh>
-    </HeaderContent>
-    <RowTemplate>
-        <MudTd DataLabel="Name" Style="width: 100px;">@context.Name</MudTd>
-    </RowTemplate>
-</MudTable>
-
