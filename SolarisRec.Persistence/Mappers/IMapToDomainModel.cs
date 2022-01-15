@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace SolarisRec.Persistence.Mappers
+﻿namespace SolarisRec.Persistence.Mappers
 {
     interface IMapToDomainModel<TData, TDomain>
     {

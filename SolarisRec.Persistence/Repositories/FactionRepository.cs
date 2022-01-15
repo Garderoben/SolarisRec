@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SolarisRec.Core.Card;
 using SolarisRec.Core.Faction;
 using SolarisRec.Core.Faction.Processes.SecondaryPorts;
 using SolarisRec.Persistence.Mappers;
@@ -28,7 +29,7 @@ namespace SolarisRec.Persistence.Repositories
 
             var allFactions = await context.Factions.OrderBy(f => f.Id).ToListAsync();
 
-            if(allFactions.Count > 0)
+            if (allFactions.Count > 0)
             {
                 for (int i = 0; i < allFactions.Count; i++)
                 {
@@ -37,6 +38,13 @@ namespace SolarisRec.Persistence.Repositories
             }
 
             return result;
+        }
+
+        public async Task<int> GetFactionId(string factionName)
+        {            
+            var faction = await context.Factions.FirstAsync(f => f.Name == factionName);
+
+            return faction.Id;
         }
     }
 }

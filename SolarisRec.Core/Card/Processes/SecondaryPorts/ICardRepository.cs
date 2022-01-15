@@ -10,5 +10,7 @@ namespace SolarisRec.Core.Card.Processes.SecondaryPorts
         Task<List<Card>> GetCardsFiltered(Filter filter);
 
         Task<List<Card>> List();
+
+        Task<List<Card>> GetFactionCards(int factionId);
     }
 }

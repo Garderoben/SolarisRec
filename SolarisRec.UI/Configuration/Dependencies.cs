@@ -31,7 +31,8 @@ namespace SolarisRec.UI.Configuration
                 .AddTransient<IMapToDropdownItem<ConvertedResourceCost, DropdownItem>, Mappers.ToDropdownItems.ConvertedResourceCostMapper>()
                 .AddTransient<IConvertedResourceCostDropdownItemProvider, ConvertedResourceCostDropdownItemProvider>()
 
-                .AddTransient<IFactionInfoProvider, FactionInfoProvider>()
+                .AddTransient<IMapToUIModel<Core.Faction.FactionInformation, UIModels.FactionInformation>, Mappers.ToUIModel.FactionInformationMapper>()
+                .AddTransient<IFactionInformationProvider, FactionInformationProvider>()
 
                 .AddTransient<IDeckGenerator, DeckGenerator>()
                 .AddTransient<IFileSaveService, FileSaveService>()

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SolarisRec.Core.Card;
 using SolarisRec.Core.Card.Processes.SecondaryPorts;
+using SolarisRec.Persistence.Helpers;
 using SolarisRec.Persistence.Mappers;
-using SolarisRec.Persistence.PersistenceModel.JoiningTables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +15,9 @@ namespace SolarisRec.Persistence.Repositories
         private const int ASCENDING = 1;
         private const int DESCENDING = 2;
 
-        private readonly SolarisRecDbContext context;        
+        private readonly SolarisRecDbContext context;
         private readonly IMapToDomainModel<PersistenceModel.Card, Card> persistenceModelMapper;
-        private readonly IMapToPersistenceModel<Card, PersistenceModel.Card> domainModelMapper;        
+        private readonly IMapToPersistenceModel<Card, PersistenceModel.Card> domainModelMapper;
 
         public CardRepository(
             SolarisRecDbContext context,
@@ -26,7 +26,7 @@ namespace SolarisRec.Persistence.Repositories
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
             this.persistenceModelMapper = persistenceModelMapper ?? throw new ArgumentNullException(nameof(persistenceModelMapper));
-            this.domainModelMapper = domainModelMapper ?? throw new ArgumentNullException(nameof(domainModelMapper));            
+            this.domainModelMapper = domainModelMapper ?? throw new ArgumentNullException(nameof(domainModelMapper));
         }
 
         public async Task<Card> Get(int id)
@@ -35,7 +35,7 @@ namespace SolarisRec.Persistence.Repositories
                 .Where(c => c.Id == id)
                 .FirstOrDefaultAsync();
 
-            if(card == null)
+            if (card == null)
             {
                 throw new KeyNotFoundException($"Card with Card Id {id} does not exist.");
             }
@@ -99,7 +99,7 @@ namespace SolarisRec.Persistence.Repositories
                         &&
                        (filter.Keywords.Count <= 0 || filter.Keywords.All(k => c.Ability.ToLower().Contains(k.ToLower())))
                         &&
-                       (filter.ConvertedResourceCost.Count <= 0 || filter.ConvertedResourceCost.Any(crc => CalculatedConvertedResourceCost(c.CardResources) == crc))
+                       (filter.ConvertedResourceCost.Count <= 0 || filter.ConvertedResourceCost.Any(crc => ConvertedResourceCostCalculator.Calculate(c.CardResources) == crc))
                    );
 
             if (filter.OrderBy == nameof(Card.Name) && filter.SortingDirection == ASCENDING)
@@ -128,11 +128,11 @@ namespace SolarisRec.Persistence.Repositories
             }
             else if (filter.OrderBy == nameof(Card.Costs) && filter.SortingDirection == ASCENDING)
             {
-                filteredCards = filteredCards.OrderBy(c => CalculatedConvertedResourceCost(c.CardResources)).ToList();
+                filteredCards = filteredCards.OrderBy(c => ConvertedResourceCostCalculator.Calculate(c.CardResources)).ToList();
             }
             else if (filter.OrderBy == nameof(Card.Costs) && filter.SortingDirection == DESCENDING)
             {
-                filteredCards = filteredCards.OrderByDescending(c => CalculatedConvertedResourceCost(c.CardResources)).ToList();
+                filteredCards = filteredCards.OrderByDescending(c => ConvertedResourceCostCalculator.Calculate(c.CardResources)).ToList();
             }
 
             filter.MatchingCardCount = filteredCards.Count();
@@ -153,16 +153,31 @@ namespace SolarisRec.Persistence.Repositories
             return result;
         }
 
-        private static int CalculatedConvertedResourceCost(IEnumerable<CardResource> cardResources)
+        public async Task<List<Card>> GetFactionCards(int factionId)
         {
-            var convertedResourceCost = 0;
+            var result = new List<Card>();
 
-            foreach (var cardResource in cardResources)
+            var cards = await context
+                .Cards
+                    .Include(c => c.Expansion)
+                    .Include(c => c.CardFactions)
+                        .ThenInclude(cf => cf.Faction)
+                    .Include(c => c.CardResources)
+                        .ThenInclude(cr => cr.Resource)
+                    .Include(c => c.CardTalents)
+                        .ThenInclude(ct => ct.Talent)
+                .Where(c => c.CardFactions.Any(cf => cf.FactionId == factionId))
+                .ToListAsync();
+
+            if (cards.Count > 0)
             {
-                convertedResourceCost += cardResource.Quantity;
+                foreach (var card in cards)
+                {
+                    result.Add(persistenceModelMapper.Map(card));
+                }
             }
 
-            return convertedResourceCost;
+            return result;
         }
-    }    
+    }
 }

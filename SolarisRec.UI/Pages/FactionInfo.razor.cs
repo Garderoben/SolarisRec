@@ -12,17 +12,16 @@ namespace SolarisRec.UI.Pages
         //Todo: figure out what to display first, adjust UI Model then write mapping
         //Todo: FactionInfo should propably be a UI Model only an all data needed should be mapped from appropriate Core.model        
         
-        [Inject] private IFactionInfoProvider FactionInfoProvider { get; set; }
+        [Inject] private IFactionInformationProvider FactionInfoProvider { get; set; }
 
         [Parameter] public string Id { get; set; }
 
-        private Core.Faction.FactionInfo FactionInformation { get; set; }
+        private UIModels.FactionInformation FactionInformation { get; set; }
 
         private ChartOptions ChartOptions { get; set; }
 
-        double[] data = { 11, 10, 2 };
-        string[] labels = { "Agents", "Maneuvers", "Constructions" };
-
+        double[] data = { 0, 0, 0 };
+        string[] labels = { "Agents", "Maneuvers", "Constructions" };       
 
         protected override Task OnInitializedAsync()
         {
@@ -30,9 +29,9 @@ namespace SolarisRec.UI.Pages
             {
                 ChartPalette = new string[]
                 {
-                    "#7E1629",
-                    "#17583A",
-                    "#D2D64A"
+                    "#5B403E",
+                    "#3B3B55",
+                    "#8D8D56"
                 }
             };
 
@@ -42,10 +41,11 @@ namespace SolarisRec.UI.Pages
         protected override async Task OnParametersSetAsync()
         {
             await base.OnParametersSetAsync();
-
-            var test = Id;
-
-            FactionInformation = await FactionInfoProvider.ProvideFactionInfo(Id);
+            
+            FactionInformation = await FactionInfoProvider.ProvideFactionInformation(Id);
+            data[0] = FactionInformation.AgentCount;
+            data[1] = FactionInformation.ManeuverCount;
+            data[2] = FactionInformation.ConstructionCount;
         }
     }
 }

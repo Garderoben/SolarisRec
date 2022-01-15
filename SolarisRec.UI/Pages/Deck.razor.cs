@@ -14,16 +14,18 @@ namespace SolarisRec.UI.Pages
 {
     public partial class Deck
     {
+        //todo: CodeCleanup
         //todo: cardtype string, enum? how should I treat it? 
-        //todo: UIModel for card?
+        //todo: UIModel for card? FactionInformation: what is UI specific, what is domain specific?
         //todo: differentiate between UIModels and Helper models?
         //todo: check why UI has/needs reference to Persistence and fix
         //todo: clear filters shold reset sorting?
         //todo: adjust grid header/rows
-        //todo: are void methods legit?
-        //todo: check all access modifiers in UI project if it should be changed to internal
+        //todo: are void methods legit? Should I use Task.FromResult?
         //todo: understand scoped vs transient
         //todo: naming etc service, generator, provider etc
+        //todo: move usings
+        //todo: use for instead of foreach when using mappers
 
         [Inject] private IProvideCardService ProvideCardService { get; set; }
         [Inject] private IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }

@@ -35,6 +35,7 @@ namespace SolarisRec.Core.Configuration
                 .AddTransient<IProvideCardTypeService, ProvideCardTypeService>()
                 .AddTransient<IProvideKeywordService, ProvideKeywordService>()
                 .AddTransient<IProvideConvertedResourceCostService, ProvideConvertedResourceCostService>()
+                .AddTransient<IProvideFactionInformationService, ProvideFactionInformationService>()
                 ;            
         }
     }
