@@ -14,6 +14,10 @@ namespace SolarisRec.UI.Pages
 {
     public partial class Deck
     {
+        //todo: Features
+        //todo: Validation for decks
+        //todo: More Deck info (Agent vs non-agent count, avg crc etc.)
+
         //todo: CodeCleanup
         //todo: cardtype string, enum? how should I treat it? 
         //todo: UIModel for card? FactionInformation: what is UI specific, what is domain specific?

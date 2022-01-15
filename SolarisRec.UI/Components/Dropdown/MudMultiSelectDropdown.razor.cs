@@ -16,6 +16,8 @@ namespace SolarisRec.UI.Components.Dropdown
 
         [Parameter] public IEnumerable<DropdownItem> SelectedValues { get; set; }
 
+        [Parameter] public bool Dense { get; set; } = false;
+
         private MudSelect<DropdownItem> mudSelect;        
 
         private async Task SelectionChanged(IEnumerable<DropdownItem> value)

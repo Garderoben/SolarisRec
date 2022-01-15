@@ -7,19 +7,24 @@
 
 <MudGrid>
     <MudItem lg="2" xs="2" sm="2">
-        <MudMultiSelectDropdown @ref="factionDropdown" DropdownItems="FactionDropdownItems" Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected" />
+        <MudMultiSelectDropdown @ref="factionDropdown" DropdownItems="FactionDropdownItems" Dense="true"
+            Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected" />
     </MudItem>
     <MudItem lg="2" xs="2" sm="2">
-        <MudMultiSelectDropdown @ref="cardTypeDropdown" DropdownItems="CardTypeDropdownItems" Label="Card Type" @bind-SelectedValues="@SelectedCardTypes.Selected" />
+        <MudMultiSelectDropdown @ref="cardTypeDropdown" DropdownItems="CardTypeDropdownItems" Dense="true"
+            Label="Card Type" @bind-SelectedValues="@SelectedCardTypes.Selected" />
     </MudItem>
     <MudItem lg="2" xs="2" sm="2">
-        <MudMultiSelectDropdown @ref="crcDropdown" DropdownItems="ConvertedResourceCostDropdownItems" Label="Converted Cost" @bind-SelectedValues="@SelectedConvertedResourceCosts.Selected" />
+        <MudMultiSelectDropdown @ref="crcDropdown" DropdownItems="ConvertedResourceCostDropdownItems" Dense="true"
+            Label="Converted Cost" @bind-SelectedValues="@SelectedConvertedResourceCosts.Selected" />
     </MudItem>
     <MudItem lg="2" xs="2" sm="2">
-        <MudMultiSelectDropdown @ref="talentsDropdown" DropdownItems="TalentDropdownItems" Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected" />
+        <MudMultiSelectDropdown @ref="talentsDropdown" DropdownItems="TalentDropdownItems" Dense="true"
+            Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected" />
     </MudItem>
     <MudItem lg="2" xs="2" sm="2">
-        <MudMultiSelectDropdown @ref="keywordDropown" DropdownItems="KeywordDropdownItems" Label="Keyword" @bind-SelectedValues="@SelectedKeywords.Selected" />
+        <MudMultiSelectDropdown @ref="keywordDropown" DropdownItems="KeywordDropdownItems" Dense="true"
+            Label="Keyword" @bind-SelectedValues="@SelectedKeywords.Selected" />
     </MudItem>
     <MudItem lg="2" xs="2" sm="2">
         <MudButton OnClick="ClearFilters">Clear Filters</MudButton>
@@ -132,7 +137,7 @@
                       Hover="true"
                       Breakpoint="Breakpoint.Sm"
                       RightAlignSmall="true"                      
-                      @ref="table">
+                      @ref="table" Dense="true">
                 <ToolBarContent>
                     <MudSpacer />
                     <MudTextField T="string" ValueChanged="@(searchTerm => OnSearchByName(searchTerm))" Placeholder="Search by name"
