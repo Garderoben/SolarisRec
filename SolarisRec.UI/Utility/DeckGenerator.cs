@@ -21,7 +21,7 @@ namespace SolarisRec.UI.Utility
 
             stringBuilder.Append(Environment.NewLine);
 
-            stringBuilder.AppendLine($"Main Deck: {missionDeck.Select(d => d.Quantity).Sum()}");
+            stringBuilder.AppendLine($"Mission Deck: {missionDeck.Select(d => d.Quantity).Sum()}");
 
             for (int i = 0; i < missionDeck.Count; i++)
             {
@@ -29,7 +29,7 @@ namespace SolarisRec.UI.Utility
             }
 
             stringBuilder.Append(Environment.NewLine);
-            stringBuilder.AppendLine($"Main Deck: {tacticalDeck.Select(d => d.Quantity).Sum()}");
+            stringBuilder.AppendLine($"Tactical Deck: {tacticalDeck.Select(d => d.Quantity).Sum()}");
 
             for (int i = 0; i < tacticalDeck.Count; i++)
             {
