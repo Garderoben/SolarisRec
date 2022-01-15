@@ -195,7 +195,7 @@ namespace SolarisRec.UI.Pages
         {
             bool isMission = card.Item.Type == nameof(CardTypeConstants.Mission);
 
-            if (card.MouseEventArgs.CtrlKey && !isMission)
+            if (card.MouseEventArgs.CtrlKey)
             {
                 card.Item.AddCard(TacticalDeck);
                 return;
