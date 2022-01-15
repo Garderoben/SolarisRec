@@ -1,6 +1,7 @@
 ﻿using SolarisRec.UI.UIModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SolarisRec.UI.Utility
@@ -11,7 +12,7 @@ namespace SolarisRec.UI.Utility
         {
             StringBuilder stringBuilder = new();
 
-            stringBuilder.AppendLine("Main Deck:");
+            stringBuilder.AppendLine($"Main Deck: {maindeck.Select(d => d.Quantity).Sum()}");
 
             for (int i = 0; i < maindeck.Count; i++)
             {
@@ -20,12 +21,15 @@ namespace SolarisRec.UI.Utility
 
             stringBuilder.Append(Environment.NewLine);
 
+            stringBuilder.AppendLine($"Main Deck: {missionDeck.Select(d => d.Quantity).Sum()}");
+
             for (int i = 0; i < missionDeck.Count; i++)
             {
                 stringBuilder.AppendLine(missionDeck[i].Quantity.ToString() + " " + missionDeck[i].Name);
             }
 
             stringBuilder.Append(Environment.NewLine);
+            stringBuilder.AppendLine($"Main Deck: {tacticalDeck.Select(d => d.Quantity).Sum()}");
 
             for (int i = 0; i < tacticalDeck.Count; i++)
             {

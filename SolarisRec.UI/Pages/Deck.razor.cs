@@ -54,7 +54,7 @@ namespace SolarisRec.UI.Pages
         private List<Card> Cards { get; set; } = new List<Card>();
         private List<DeckItem> MainDeck { get; set; } = new List<DeckItem>();
         private List<DeckItem> MissionDeck { get; set; } = new List<DeckItem>();
-        private List<DeckItem> Sideboard { get; set; } = new List<DeckItem>();
+        private List<DeckItem> TacticalDeck { get; set; } = new List<DeckItem>();
 
         private List<DropdownItem> FactionDropdownItems = new();
         private SelectedValues SelectedFactions = new ();
@@ -195,7 +195,7 @@ namespace SolarisRec.UI.Pages
 
             if (card.MouseEventArgs.CtrlKey && !isMission)
             {
-                card.Item.AddCard(Sideboard);
+                card.Item.AddCard(TacticalDeck);
                 return;
             }
 
@@ -220,12 +220,12 @@ namespace SolarisRec.UI.Pages
 
         private void RemoveFromSideboard(TableRowClickEventArgs<DeckItem> deckItem)
         {
-            deckItem.Item.RemoveCard(Sideboard);
+            deckItem.Item.RemoveCard(TacticalDeck);
         }
 
         private async Task Export()
         {
-            var deck = DeckGenerator.Generate(MainDeck, Sideboard, MissionDeck);
+            var deck = DeckGenerator.Generate(MainDeck, TacticalDeck, MissionDeck);
 
             var stream = StringToStreamConverter.Convert(deck);           
 

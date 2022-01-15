@@ -1290,7 +1290,7 @@ namespace SolarisRec.Persistence.Configuration
                 new Card
                 {
                     Id = (int)Enum.CardId.MercifulLoan,
-                    Name = "Give Up or Get Up!",
+                    Name = "Merciful Loan",
                     Unique = false,
                     Type = (int)Enum.CardType.Maneuver,
                     Ability = "Reaction: After your opponent plays a card, you"

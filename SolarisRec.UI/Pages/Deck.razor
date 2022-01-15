@@ -40,7 +40,7 @@
     <MudItem lg="2" md="2" sm="2">
 
         <MudItem lg="12" md="12" sm="12">
-            Main deck
+            <MudText> Main deck (@MainDeck.Select( d => d.Quantity).Sum())</MudText>
             <MudTable Items="@MainDeck"
                       T="DeckItem"
                       OnRowClick="RemoveFromDeck"
@@ -67,7 +67,7 @@
         
 
         <MudItem lg="12" md="12" sm="12">
-            Missions
+            <MudText>Missions (@MissionDeck.Select( d => d.Quantity).Sum())</MudText>
             <MudTable Items="@MissionDeck"
                       T="DeckItem"
                       OnRowClick="RemoveFromMissionDeck"
@@ -94,8 +94,8 @@
         
 
         <MudItem lg="12" md="12" sm="12">
-            Tactical Deck
-            <MudTable Items="@Sideboard"
+            <MudText>Tactical Deck (@TacticalDeck.Select( d => d.Quantity).Sum())</MudText>
+            <MudTable Items="@TacticalDeck"
                       T="DeckItem"
                       OnRowClick="RemoveFromSideboard"
                       Hover="true"

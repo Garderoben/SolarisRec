@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SolarisRec.Persistence;
 
@@ -11,9 +12,10 @@ using SolarisRec.Persistence;
 namespace SolarisRec.Persistence.Migrations
 {
     [DbContext(typeof(SolarisRecDbContext))]
-    partial class SolarisRecDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220115103021_MercifulLoan")]
+    partial class MercifulLoan
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4981,13 +4983,13 @@ namespace SolarisRec.Persistence.Migrations
                         {
                             CardId = 104,
                             TalentId = 6,
-                            Quantity = 1
+                            Quantity = 3
                         },
                         new
                         {
                             CardId = 104,
                             TalentId = 5,
-                            Quantity = 1
+                            Quantity = 3
                         },
                         new
                         {
