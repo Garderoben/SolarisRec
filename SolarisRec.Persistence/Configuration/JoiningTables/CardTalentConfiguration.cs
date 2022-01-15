@@ -816,13 +816,13 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 {
                     CardId = (int)Enum.CardId.BhavyaAdministrator,
                     TalentId = (int)Enum.Talent.Research,
-                    Quantity = 3
+                    Quantity = 1
                 },
                 new CardTalent
                 {
                     CardId = (int)Enum.CardId.BhavyaAdministrator,
                     TalentId = (int)Enum.Talent.Diplomacy,
-                    Quantity = 3
+                    Quantity = 1
                 },
 
             #endregion
@@ -952,7 +952,7 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 new CardTalent
                 {
                     CardId = (int)Enum.CardId.FailedExperiment,
-                    TalentId = (int)Enum.Talent.Military,
+                    TalentId = (int)Enum.Talent.Espionage,
                     Quantity = 1
                 },
                 new CardTalent

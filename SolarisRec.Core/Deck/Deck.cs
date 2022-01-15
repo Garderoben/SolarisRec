@@ -1,7 +1,6 @@
 ﻿namespace SolarisRec.Core.Deck
 {
-    public class Deck
-    {
-       
+    public class Deck   
+    {             
     }
 }

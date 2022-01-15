@@ -389,6 +389,18 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                 },
                 new CardResource
                 {
+                    CardId = (int)Enum.CardId.AmbassadorSunders,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 3
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.AmbassadorSunders,
+                    ResourceId = (int)Enum.Resource.Any,
+                    Quantity = 2
+                },
+                new CardResource
+                {
                     CardId = (int)Enum.CardId.HeroicRescue,
                     ResourceId = (int)Enum.Resource.Earthian,
                     Quantity = 1
@@ -428,6 +440,12 @@ namespace SolarisRec.Persistence.Configuration.JoiningTables
                     CardId = (int)Enum.CardId.CantTouchMe,
                     ResourceId = (int)Enum.Resource.Earthian,
                     Quantity = 1
+                },
+                new CardResource
+                {
+                    CardId = (int)Enum.CardId.HardTimes,
+                    ResourceId = (int)Enum.Resource.Earthian,
+                    Quantity = 2
                 },
                 new CardResource
                 {

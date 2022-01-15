@@ -5,6 +5,6 @@ namespace SolarisRec.Core.CardType.Processes.PrimaryPorts
 {
     public interface IProvideCardTypeService
     {
-        Task<List<Card.CardType>> List();
+        Task<List<CardType>> List();
     }
 }

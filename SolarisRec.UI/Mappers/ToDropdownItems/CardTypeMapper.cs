@@ -1,4 +1,4 @@
-﻿using SolarisRec.Core.Card;
+﻿using SolarisRec.Core.CardType;
 using SolarisRec.UI.UIModels;
 
 namespace SolarisRec.UI.Mappers.ToDropdownItems

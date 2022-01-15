@@ -1,4 +1,4 @@
-﻿using SolarisRec.Core.Card;
+﻿using SolarisRec.Core.CardType;
 using SolarisRec.Core.CardType.Processes.PrimaryPorts;
 using SolarisRec.UI.Mappers;
 using SolarisRec.UI.UIModels;

@@ -1054,7 +1054,7 @@ namespace SolarisRec.Persistence.Migrations
                             Ability = "Reaction: After your opponent plays a card, you\r\nmay pay the card's converted Resource cost\r\ninstead, gain Influence equal to the cost payed.\r\n[up to 3 Influence.]",
                             ExpansionId = 1,
                             ExpansionSerialNumber = "084",
-                            Name = "Give Up or Get Up!",
+                            Name = "Merciful Loan",
                             Type = 3,
                             Unique = false
                         },
@@ -3017,7 +3017,7 @@ namespace SolarisRec.Persistence.Migrations
                         {
                             CardId = 20,
                             ResourceId = 7,
-                            Quantity = 3
+                            Quantity = 2
                         },
                         new
                         {
@@ -3171,6 +3171,18 @@ namespace SolarisRec.Persistence.Migrations
                         },
                         new
                         {
+                            CardId = 36,
+                            ResourceId = 5,
+                            Quantity = 3
+                        },
+                        new
+                        {
+                            CardId = 36,
+                            ResourceId = 7,
+                            Quantity = 2
+                        },
+                        new
+                        {
                             CardId = 37,
                             ResourceId = 5,
                             Quantity = 1
@@ -3210,6 +3222,12 @@ namespace SolarisRec.Persistence.Migrations
                             CardId = 41,
                             ResourceId = 5,
                             Quantity = 1
+                        },
+                        new
+                        {
+                            CardId = 42,
+                            ResourceId = 5,
+                            Quantity = 2
                         },
                         new
                         {
@@ -4963,13 +4981,13 @@ namespace SolarisRec.Persistence.Migrations
                         {
                             CardId = 104,
                             TalentId = 6,
-                            Quantity = 3
+                            Quantity = 1
                         },
                         new
                         {
                             CardId = 104,
                             TalentId = 5,
-                            Quantity = 3
+                            Quantity = 1
                         },
                         new
                         {
@@ -5094,7 +5112,7 @@ namespace SolarisRec.Persistence.Migrations
                         new
                         {
                             CardId = 127,
-                            TalentId = 3,
+                            TalentId = 4,
                             Quantity = 1
                         },
                         new

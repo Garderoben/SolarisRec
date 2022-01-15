@@ -12,10 +12,20 @@ namespace SolarisRec.Core.Card
 
         public List<int> Factions { get; set; } = new List<int>();
 
+        public List<string> Keywords { get; set; } = new List<string>();
+
+        public List<int> ConvertedResourceCost { get; set; } = new List<int>();
+
         public int PageSize { get; set; } = 8;
 
         public int Page { get; set; } = 1;
 
         public int MatchingCardCount { get; set; }
+
+        public string Ability { get; set; } = string.Empty;
+
+        public string OrderBy { get; set; } = string.Empty;
+
+        public int SortingDirection { get; set; } = 0;
     }
 }

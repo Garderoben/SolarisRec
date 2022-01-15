@@ -1,33 +1,34 @@
 ﻿using SolarisRec.Core.CardType.Processes.PrimaryPorts;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Enums = SolarisRec.Core.Card.Enums;
 
 namespace SolarisRec.Core.CardType.Processes
 {
     internal class ProvideCardTypeService : IProvideCardTypeService
     {
-        public async Task<List<Card.CardType>> List()
+        public async Task<List<CardType>> List()
         {
-            var cardTypes = new List<Card.CardType>
+            var cardTypes = new List<CardType>
             {
-                new Card.CardType
+                new CardType
                 {
-                    Id = 1,
+                    Id = (int)Enums.CardType.Agent,
                     Name = "Agent"
                 },
-                new Card.CardType
+                new CardType
                 {
-                    Id = 2,
+                    Id = (int)Enums.CardType.Construction,
                     Name = "Construction"
                 },
-                new Card.CardType
+                new CardType
                 {
-                    Id = 3,
+                    Id = (int)Enums.CardType.Maneuver,
                     Name = "Maneuver"
                 },
-                new Card.CardType
+                new CardType
                 {
-                    Id = 4,
+                    Id = (int)Enums.CardType.Mission,
                     Name = "Mission"
                 },
             };

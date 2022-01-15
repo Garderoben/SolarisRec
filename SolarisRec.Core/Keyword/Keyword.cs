@@ -1,6 +1,6 @@
-﻿namespace SolarisRec.Core.Card
+﻿namespace SolarisRec.Core.Keyword
 {
-    public class CardType
+    public class Keyword
     {
         public int Id { get; set; }
 
