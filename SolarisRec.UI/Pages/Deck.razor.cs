@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using MudBlazor;
 using SolarisRec.Core.Card;
 using SolarisRec.Core.Card.Processes.PrimaryPorts;
 using SolarisRec.UI.Components.Dropdown;
 using SolarisRec.UI.UIModels;
+using SolarisRec.UI.Utility;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,6 +21,9 @@ namespace SolarisRec.UI.Pages
         //todo: clear filters shold reset sorting?
         //todo: adjust grid header/rows
         //todo: are void methods legit?
+        //todo: check all access modifiers in UI project if it should be changed to internal
+        //todo: understand scoped vs transient
+        //todo: naming etc service, generator, provider etc
 
         [Inject] private IProvideCardService ProvideCardService { get; set; }
         [Inject] private IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }
@@ -26,6 +31,8 @@ namespace SolarisRec.UI.Pages
         [Inject] private ICardTypeDropdownProvider CardTypeDropdownItemProvider { get; set; }
         [Inject] private IKeywordDropdownItemProvider KeywordDropdownItemProvider { get; set; }
         [Inject] private IConvertedResourceCostDropdownItemProvider ConvertedResourceCostDropdownItemProvider { get; set; }
+        [Inject] private IDeckGenerator DeckGenerator { get; set; }
+        [Inject] private IFileSaveService SaveFile { get; set; }
 
         private const int DEFAULT_PAGE_SIZE = 8;
         private const int DEFAULT_FROM_MUD_BLAZOR = 10;
@@ -218,9 +225,13 @@ namespace SolarisRec.UI.Pages
 
         private async Task Export()
         {
-            //todo: generate txt and save
+            var deck = DeckGenerator.Generate(MainDeck, Sideboard, MissionDeck);
 
-            await Task.FromResult(true);
-        }
+            var stream = StringToStreamConverter.Convert(deck);           
+
+            using var streamRef = new DotNetStreamReference(stream: stream);
+
+            await SaveFile.Save(streamRef);            
+        }        
     }
 }

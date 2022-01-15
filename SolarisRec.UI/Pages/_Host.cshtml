@@ -11,7 +11,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SolarisRec.UI</title>
-    <base href="~/" />    
+    <base href="~/" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="SolarisRec.UI.styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
@@ -33,5 +33,32 @@
 
     <script src="_framework/blazor.server.js"></script>
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script>
+
+                async function downloadFileFromStream(fileName, contentStreamReference) {
+          const arrayBuffer = await contentStreamReference.arrayBuffer();
+          const blob = new Blob([arrayBuffer]);
+
+          const url = URL.createObjectURL(blob);
+
+          triggerFileDownload(fileName, url);
+
+          URL.revokeObjectURL(url);
+        }
+    </script>
+    <script>
+                function triggerFileDownload(fileName, url) {
+          const anchorElement = document.createElement('a');
+          anchorElement.href = url;
+
+          if (fileName) {
+            anchorElement.download = fileName;
+          }
+
+          anchorElement.click();
+          anchorElement.remove();
+        }
+    </script>
+
 </body>
 </html>

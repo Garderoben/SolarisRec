@@ -28,15 +28,18 @@
 
 <MudGrid>
 
-    <MudItem lg="3" md="3" sm="3">
+    <MudItem lg="2" md="2" sm="2">
 
         <MudItem lg="3" md="3" sm="3" Style="padding-bottom: 20px;">
             <img src="@(ImgSrc)" width=200 height=300>
         </MudItem>
                
         <MudIconButton Icon="@Icons.Material.Filled.Print" Color="Color.Inherit" OnClick="Export"></MudIconButton>
+    </MudItem>
 
-        <MudItem lg="3" md="3" sm="3">
+    <MudItem lg="2" md="2" sm="2">
+
+        <MudItem lg="12" md="12" sm="12">
             Main deck
             <MudTable Items="@MainDeck"
                       T="DeckItem"
@@ -63,7 +66,7 @@
         
         
 
-        <MudItem lg="3" md="3" sm="3">
+        <MudItem lg="12" md="12" sm="12">
             Missions
             <MudTable Items="@MissionDeck"
                       T="DeckItem"
@@ -90,8 +93,8 @@
 
         
 
-        <MudItem lg="3" md="3" sm="3">
-            Sideboard
+        <MudItem lg="12" md="12" sm="12">
+            Tactical Deck
             <MudTable Items="@Sideboard"
                       T="DeckItem"
                       OnRowClick="RemoveFromSideboard"
@@ -117,7 +120,9 @@
 
     </MudItem>
 
-    <MudItem lg="9" md="9" sm="9">
+    <MudItem lg="1" md="1" sm="1" />
+
+    <MudItem lg="7" md="7" sm="7">
 
         <MudItem lg="12" xs="12" sm="12">
             <MudTable Items="@Cards"

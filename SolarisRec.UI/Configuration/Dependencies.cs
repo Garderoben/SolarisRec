@@ -7,6 +7,7 @@ using SolarisRec.UI.Components.Dropdown;
 using SolarisRec.UI.Mappers;
 using SolarisRec.UI.Providers;
 using SolarisRec.UI.UIModels;
+using SolarisRec.UI.Utility;
 
 namespace SolarisRec.UI.Configuration
 {
@@ -31,6 +32,10 @@ namespace SolarisRec.UI.Configuration
                 .AddTransient<IConvertedResourceCostDropdownItemProvider, ConvertedResourceCostDropdownItemProvider>()
 
                 .AddTransient<IFactionInfoProvider, FactionInfoProvider>()
+
+                .AddTransient<IDeckGenerator, DeckGenerator>()
+                .AddTransient<IFileSaveService, FileSaveService>()
+                
                 ;
         }       
     }

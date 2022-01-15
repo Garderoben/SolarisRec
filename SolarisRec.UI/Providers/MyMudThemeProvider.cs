@@ -2,7 +2,7 @@
 
 namespace SolarisRec.UI.Providers
 {
-    public static class MyMudThemeProvider
+    internal static class MyMudThemeProvider
     {
         public static MudTheme GenerateDarkTheme() =>
 			new MudTheme
