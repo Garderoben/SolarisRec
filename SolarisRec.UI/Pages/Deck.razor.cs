@@ -54,7 +54,9 @@ namespace SolarisRec.UI.Pages
         private MudTextField<string> searchByAbility;
 
         private bool reload = true;
-        
+        private int mainDeckCardCount => MainDeck.Select(d => d.Quantity).Sum();
+        //private int mainDeckAgentCount => MainDeck.Where(d => d.).Select(d => d.Quantity).Sum();
+
         private string ImgSrc { get; set; } = @"../Assets/0Cardback.jpg";
         private readonly int[] pageSizeOption = { 4, 6, 8, 50 };
         private List<Card> Cards { get; set; } = new List<Card>();

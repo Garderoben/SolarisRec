@@ -45,7 +45,7 @@
     <MudItem lg="2" md="2" sm="2">
 
         <MudItem lg="12" md="12" sm="12">
-            <MudText> Main deck (@MainDeck.Select( d => d.Quantity).Sum())</MudText>
+            <MudText> Main deck (@mainDeckCardCount)</MudText>
             <MudTable Items="@MainDeck"
                       T="DeckItem"
                       OnRowClick="RemoveFromDeck"
