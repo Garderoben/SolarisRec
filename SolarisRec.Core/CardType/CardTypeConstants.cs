@@ -1,4 +1,4 @@
-﻿namespace SolarisRec.UI.UIModels
+﻿namespace SolarisRec.Core.CardType
 {
     public static class CardTypeConstants
     {

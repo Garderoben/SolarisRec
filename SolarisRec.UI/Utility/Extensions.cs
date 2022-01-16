@@ -1,8 +1,10 @@
 ﻿using SolarisRec.Core.Card;
+using SolarisRec.Core.CardType;
+using SolarisRec.UI.UIModels;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SolarisRec.UI.UIModels
+namespace SolarisRec.UI.Utility
 {
     public static class Extensions
     {

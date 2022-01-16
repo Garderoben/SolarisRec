@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using SolarisRec.Core.Card;
+using SolarisRec.Core.CardType;
 using SolarisRec.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
@@ -102,7 +103,7 @@ namespace SolarisRec.Persistence.Tests.UnitTests.CardRepositoryTests
                 Name = "Unit Test Card",
                 Ability = "Unit Test Ability",
                 ExpansionSerialNumber = "001",
-                Type = (int)Enum.CardType.Agent,
+                Type = (int)CardTypeEnum.Agent,
                 AttackValue = 1,
                 HealthValue = 1,
                 Unique = false,

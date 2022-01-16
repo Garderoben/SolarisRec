@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using SolarisRec.Core.CardType;
 using SolarisRec.Persistence.PersistenceModel;
 using System;
 using Enum = SolarisRec.Core.Card.Enums;
@@ -50,7 +51,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Turncoat,
                     Name = "Turncoat",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "Forced Reaction: When thisAgent enters play, put 2 traitor counters on it."
@@ -67,7 +68,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.InsuredColleague,
                     Name = "Insured Colleague",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 1,
                     HealthValue = 1,
                     Ability = "Reaction: After this Agent leaves play, draw 1 card.",
@@ -79,7 +80,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.BeggarInformator,
                     Name = "Beggar Informator",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 0,
                     HealthValue = 1,
                     Ability = "Reaction: After this Agent leaves play, look at the top 2 cards of your deck,"
@@ -93,7 +94,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.KoronisBelter,
                     Name = "Koronis Belter",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "Reaction, [B][B][A2]: After this Agent deals attack damage to an Agent, destroy that Agent.",
@@ -105,7 +106,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Concubine,
                     Name = "Concubine",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "Sacrifice: Target Agent loses a Talent of your choice on this Mission until the end of the phase.",
@@ -117,7 +118,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MadameKyung,
                     Name = "Madame Kyung",
                     Unique = true,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 4,
                     Ability = "Use, Sacrifice an Agent on this Mission: Target opponent sacrifices an Agent on this Mission,"
@@ -131,7 +132,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Phisher,
                     Name = "Phisher",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 3,
                     Ability = "[B][A2]: This Agent gains [Data] or [Mining] until the end of the phase.",
@@ -143,7 +144,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.VestaExtortionist,
                     Name = "Vesta Extortionist",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 1,
                     Ability = "Reaction: Cancel the first attack targeting this Agent in the Conflict phase.",
@@ -155,7 +156,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.YoungScum,
                     Name = "Young Scum",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 1,
                     HealthValue = 1,
                     Ability = "Reaction: After this Agent leaves play, put a 2/2 Scum Agent token"
@@ -169,7 +170,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.VestaThug,
                     Name = "Vesta Thug",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 4,
                     HealthValue = 3,
                     Ability = "[B][B][A3], Use: Put a 2/2 Scum Agent token with [Espionage] into play"
@@ -183,7 +184,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.RebelSaboteur,
                     Name = "Rebel Saboteur",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 4,
                     Ability = "Sacrifice: Destroy target Construction",
@@ -195,7 +196,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.GangLeader,
                     Name = "Gang Leader",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 4,
                     Ability = "Conflict action, Use: Target enemy Agent"
@@ -213,7 +214,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MrYue,
                     Name = "Mr. Yué",
                     Unique = true,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 4,
                     Ability = "Reaction: After a friendly"
@@ -229,7 +230,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.GrowingInfection,
                     Name = "Growing Infection",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "When you play this card, attach it to an Agent and"
                        + Environment.NewLine
                        + "put 1 infection counter on this card."
@@ -251,7 +252,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Execution,
                     Name = "Execution",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Syndicate Maneuver"
                        + Environment.NewLine
                        + "Destroy target Agent.",
@@ -263,7 +264,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.HuntDown,
                     Name = "Hunt Down",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Reaction: After an Agent you control"
                        + Environment.NewLine
                        + "deals attack damage to a non-Unique"
@@ -277,7 +278,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.OrganDonor,
                     Name = "Organ Donor",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Sacrifice an Agent: Prevent all damage"
                        + Environment.NewLine
                        + "from one source to an Agent on the"
@@ -291,7 +292,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.YouareTired,
                     Name = "You are Tired!",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Move target used enemy Agent to a Ready"
                        + Environment.NewLine
                        + "Mission, if there are no Ready Missions, then"
@@ -305,7 +306,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.EyeforanEye,
                     Name = "Eye for an Eye",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Syndicate Maneuver"
                        + Environment.NewLine
                        + "All players destroy 1 Agent"
@@ -319,7 +320,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Arson,
                     Name = "Arson",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Syndicate Maneuver"
                        + Environment.NewLine
                        + "Sacrifice an Agent: Destroy target"
@@ -333,7 +334,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.BestoftheBelt,
                     Name = "Best of the Belt",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Syndicate Maneuver"
                        + Environment.NewLine
                        + "Put three 2/2 Scum Agent tokens"
@@ -347,7 +348,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Donorcenter,
                     Name = "Donor center",
                     Unique = true,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "Use, Sacrifice a non-token Agent:"
                        + Environment.NewLine
                        + "Draw 1 card.",
@@ -359,7 +360,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.AsteroidIntelStation,
                     Name = "Asteroid Intel Station",
                     Unique = false,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "Use: Use target Agent"
                        + Environment.NewLine
                        + "unless its controller pays [A2].",
@@ -376,7 +377,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.AcolyteinTraining,
                      Name = "Acolyte in Training",
                      Unique = false,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 0,
                      HealthValue = 1,
                      Ability = "Syndicate action, Use, Discard a"
@@ -392,7 +393,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.MonkofSol,
                      Name = "Monk of Sol",
                      Unique = false,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 1,
                      HealthValue = 1,
                      Ability = "Reaction: After this Agent leaves"
@@ -408,7 +409,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.SanctionedPriest,
                      Name = "Sanctioned Priest",
                      Unique = false,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 1,
                      HealthValue = 2,
                      Ability = "Reaction: After this Agent enters"
@@ -422,7 +423,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.EarthseedActivist,
                      Name = "Earthseed Activist",
                      Unique = false,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 2,
                      HealthValue = 2,
                      Ability = "[E][E][A1]: Increase a Talent"
@@ -438,7 +439,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.PeacefulRepresentative,
                      Name = "Peaceful Representative",
                      Unique = false,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 1,
                      HealthValue = 1,
                      Ability = "Reaction: After this Agent enters play"
@@ -456,7 +457,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.ReveredMediator,
                      Name = "Revered Mediator",
                      Unique = false,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 0,
                      HealthValue = 2,
                      Ability = "Conflict action, Use: Move this Agent"
@@ -474,7 +475,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.NegotiatorEld,
                      Name = "Negotiator Eld",
                      Unique = true,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 3,
                      HealthValue = 3,
                      Ability = "Reaction: After this Agent"
@@ -488,7 +489,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.ExiledPaladin,
                      Name = "Exiled Paladin",
                      Unique = false,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 2,
                      HealthValue = 3,
                      Ability = "While this Agent is ready, it takes 1"
@@ -502,7 +503,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.InvestigatorPaladin,
                      Name = "Investigator Paladin",
                      Unique = false,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 3,
                      HealthValue = 2,
                      Ability = "Reaction: After this Agent enters play"
@@ -520,7 +521,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.GuardianPaladin,
                      Name = "Guardian Paladin",
                      Unique = false,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 1,
                      HealthValue = 6,
                      Ability = "Reaction: After another Agent is"
@@ -536,7 +537,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.PoliticalAdvisor,
                      Name = "Political Advisor",
                      Unique = false,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 4,
                      HealthValue = 3,
                      Ability = "Reaction: After this Agent"
@@ -552,7 +553,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.CosmicLinkManager,
                      Name = "CosmicLink Manager",
                      Unique = false,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 3,
                      HealthValue = 4,
                      Ability = "[E][E][A2]: Target Agent on a ready"
@@ -568,7 +569,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.AmbassadorSunders,
                      Name = "Ambassador Sunders",
                      Unique = true,
-                     Type = (int)Enum.CardType.Agent,
+                     Type = (int)CardTypeEnum.Agent,
                      AttackValue = 0,
                      HealthValue = 5,
                      Ability = "This Agent cannot be targeted by Conflict"
@@ -588,7 +589,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.HeroicRescue,
                      Name = "Heroic Rescue",
                      Unique = false,
-                     Type = (int)Enum.CardType.Maneuver,
+                     Type = (int)CardTypeEnum.Maneuver,
                      Ability = "Reaction: After an attack is declared"
                        + Environment.NewLine
                        + "against an Agent you control, choose a"
@@ -602,7 +603,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.SawitComing,
                      Name = "Saw it Coming",
                      Unique = false,
-                     Type = (int)Enum.CardType.Maneuver,
+                     Type = (int)CardTypeEnum.Maneuver,
                      Ability = "Reaction: Prevent all damage on an"
                        + Environment.NewLine
                        + "Agent from a source that deals 3 or"
@@ -616,7 +617,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.ExpendableBodyguard,
                      Name = "Expendable Bodyguard",
                      Unique = false,
-                     Type = (int)Enum.CardType.Maneuver,
+                     Type = (int)CardTypeEnum.Maneuver,
                      Ability = "Reaction: Prevent 2 damage",
                      ExpansionId = (int)Enum.Expansion.SoItBegins,
                      ExpansionSerialNumber = "039"
@@ -626,7 +627,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.IntroducingtoTheFaith,
                      Name = "Introducing to The Faith",
                      Unique = false,
-                     Type = (int)Enum.CardType.Maneuver,
+                     Type = (int)CardTypeEnum.Maneuver,
                      Ability = "Return target non-Unique Agent with"
                        + Environment.NewLine
                        + "converted Resource cost 3 or lower to its"
@@ -640,7 +641,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.CantTouchMe,
                      Name = "Can't Touch Me",
                      Unique = false,
-                     Type = (int)Enum.CardType.Maneuver,
+                     Type = (int)CardTypeEnum.Maneuver,
                      Ability = "Conflict action, Use target Agent:"
                        + Environment.NewLine
                        + "Move target friendly Agent and a"
@@ -658,7 +659,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.HardTimes,
                      Name = "Hard Times",
                      Unique = false,
-                     Type = (int)Enum.CardType.Maneuver,
+                     Type = (int)CardTypeEnum.Maneuver,
                      Ability = "Attach this card to a Mission. Increase all"
                        + Environment.NewLine
                        + "Talent requirements on this Mission by 1."
@@ -674,7 +675,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.TwistofFate,
                      Name = "Twist of Fate",
                      Unique = false,
-                     Type = (int)Enum.CardType.Maneuver,
+                     Type = (int)CardTypeEnum.Maneuver,
                      Ability = "Change a Talent requirement on a"
                        + Environment.NewLine
                        + "Mission until the end of round.",
@@ -686,7 +687,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.ScorchedEarthTactic,
                      Name = "Scorched Earth Tactic",
                      Unique = false,
-                     Type = (int)Enum.CardType.Maneuver,
+                     Type = (int)CardTypeEnum.Maneuver,
                      Ability = "Destroy all Agents"
                        + Environment.NewLine
                        + "on target Mission.",
@@ -698,7 +699,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.PoliticalDelegation,
                      Name = "Political Delegation",
                      Unique = false,
-                     Type = (int)Enum.CardType.Maneuver,
+                     Type = (int)CardTypeEnum.Maneuver,
                      Ability = "Choose up to 3 Agents,"
                        + Environment.NewLine
                        + "they gain [Diplomacy] until the"
@@ -712,7 +713,7 @@ namespace SolarisRec.Persistence.Configuration
                      Id = (int)Enum.CardId.PoliticalAcademy,
                      Name = "Political Academy",
                      Unique = false,
-                     Type = (int)Enum.CardType.Construction,
+                     Type = (int)CardTypeEnum.Construction,
                      Ability = "Preparing."
                        + Environment.NewLine
                        + "[This card enters play Used.]"
@@ -735,7 +736,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MartianDiplomat,
                     Name = "Martian Diplomat",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 0,
                     HealthValue = 2,
                     Ability = "Use: Choose a Talent on another Agent"
@@ -751,7 +752,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CrimsonGrenadier,
                     Name = "Crimson Grenadier",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 1,
                     HealthValue = 1,
                     Ability = "Reaction: After this Agent leaves"
@@ -769,7 +770,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CrimsonLegionInfantry,
                     Name = "Crimson Legion Infantry",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 1,
                     HealthValue = 1,
                     Ability = "Reaction: After this Agent leaves play,"
@@ -787,7 +788,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.SpecialOps,
                     Name = "Special Ops",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 1,
                     Ability = "Reaction, [Ma]: After this Agent is"
@@ -809,7 +810,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CrimsonShockTroops,
                     Name = "Crimson Shock Troops",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "[Ma][A1]: This Agent gains"
@@ -823,7 +824,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CrimsonLegionScout,
                     Name = "Crimson Legion Scout",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 1,
                     Ability = "Reaction: After this Agent leaves play,"
@@ -839,7 +840,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.SergeantJoseph,
                     Name = "Sergeant Joseph",
                     Unique = true,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 3,
                     Ability = "Reaction: After this Agent deals"
@@ -857,7 +858,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ChefuMilitia,
                     Name = "Chefu Militia",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "[Ma][Ma][A1]: Deal 1 damage"
@@ -871,7 +872,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.TarakanGuard,
                     Name = "Tarakan Guard",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 2,
                     Ability = "[Ma][Ma]: This Agent gains [Military]"
@@ -885,7 +886,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ChameleonCorps,
                     Name = "Chameleon Corps",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 3,
                     Ability = "[A2]: This Agent gains a Talent of"
@@ -901,7 +902,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ExplosiveExpert,
                     Name = "Explosive Expert",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "Reaction: After this Agent is deployed"
@@ -917,7 +918,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.SupplyLineOfficer,
                     Name = "Supply Line Officer",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 4,
                     HealthValue = 3,
                     Ability = "Reaction: After this Agent is deployed"
@@ -935,7 +936,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.IrharenVeteran,
                     Name = "Irharen Veteran",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 4,
                     HealthValue = 3,
                     Ability = "[Ma][Ma][A2]: Deal 2 damage"
@@ -949,7 +950,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.GeneralRwanda,
                     Name = "General Rwanda",
                     Unique = true,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 6,
                     Ability = "Reaction: After this Agent is deployed to"
@@ -965,7 +966,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Headshot,
                     Name = "Headshot",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Hasty"
                         + Environment.NewLine
                         + "[If you play this card during the"
@@ -981,7 +982,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.PreparedAmbush,
                     Name = "Prepared Ambush",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Conflict Maneuver"
                         + Environment.NewLine
                         + "Use an Agent: Deal its attack value to"
@@ -995,7 +996,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.UnexpectedCourage,
                     Name = "Unexpected Courage",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Conflict Maneuver"
                         + Environment.NewLine
                         + "Target friendly Agent deals its attack value to"
@@ -1009,7 +1010,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.DevotedLearning,
                     Name = "Devoted Learning",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Reaction: After completing a Mission,"
                         + Environment.NewLine
                         + "draw 3 cards."
@@ -1023,7 +1024,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MartianEducation,
                     Name = "Martian Education",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Target Agent gains a Talent of your"
                         + Environment.NewLine
                         + "choice until the end of the phase.",
@@ -1035,7 +1036,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Aftermath,
                     Name = "Aftermath",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Reaction: After completing a Mission,"
                         + Environment.NewLine
                         + "deal 3 damage to target Agent in play.",
@@ -1047,7 +1048,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ChemicalWarfare,
                     Name = "Chemical Warfare",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Deal 1 damage to each Agent on a Mission.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "067"
@@ -1057,7 +1058,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.WarPropaganda,
                     Name = "War Propaganda",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Reaction: After you claim a Mission,"
                         + Environment.NewLine
                         + "instead of your opponent, you put the new"
@@ -1071,7 +1072,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.OlympusUniversity,
                     Name = "Olympus University",
                     Unique = true,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "Use: Target Agent gains a"
                         + Environment.NewLine
                         + "Talent of your choice"
@@ -1090,7 +1091,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MercurianRecruiter,
                     Name = "Mercurian Recruiter",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 0,
                     HealthValue = 1,
                     Ability = "Preparing."
@@ -1106,7 +1107,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ApollodorusMerc,
                     Name = "Apollodorus Merc",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "[A2]: Take control of this Agent."
@@ -1120,7 +1121,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.NewDallasSapper,
                     Name = "New Dallas Sapper",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "Use, [Me][Me][A2]: Destroy target"
@@ -1134,7 +1135,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.SecondGenColonist,
                     Name = "Second Gen. Colonist",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 1,
                     HealthValue = 2,
                     Ability = "Reaction: After this Agent enters"
@@ -1150,7 +1151,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.NoahtheArchitect,
                     Name = "Noah, the Architect",
                     Unique = true,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 4,
                     Ability = "Spend 1 influence: Gain"
@@ -1166,7 +1167,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MiningBeliever,
                     Name = "MiningBeliever",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 2,
                     Ability = "[Me][Me]: This Agent gains [Mining]"
@@ -1180,7 +1181,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.NewDallasOpportunist,
                     Name = "New Dallas Opportunist",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 3,
                     Ability = "Reaction, [A2]: After this Agent"
@@ -1196,7 +1197,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CalorisBasinTrader,
                     Name = "Caloris Basin Trader",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 3,
                     Ability = "Reaction: After you have 0 ready"
@@ -1212,7 +1213,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.AMU,
                     Name = "A.M.U.",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 4,
                     HealthValue = 3,
                     Ability = "[Me][Me][A2]: Gain +1/+1 until the"
@@ -1226,7 +1227,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.OutcastSmuggler,
                     Name = "Outcast Smuggler",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "Reaction: After this Agent enters"
@@ -1242,7 +1243,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MiningWalker,
                     Name = "Mining Walker",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 0,
                     HealthValue = 5,
                     Ability = "Use: Gain 1 Influence.",
@@ -1254,7 +1255,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.BobbyMcKendrickTheBoss,
                     Name = "Bobby McKendrick, The Boss",
                     Unique = true,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 4,
                     HealthValue = 5,
                     Ability = "Reaction: At the start of the"
@@ -1270,7 +1271,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CombatSteroids,
                     Name = "Combat Steroids",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Target Agent gains +2/+2"
                         + Environment.NewLine
                         + "until the end of the Conflict round.",
@@ -1282,7 +1283,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.GiveUporGetUp,
                     Name = "Give Up or Get Up!",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Ready target Agent on a Mission.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "083"
@@ -1292,7 +1293,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MercifulLoan,
                     Name = "Merciful Loan",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Reaction: After your opponent plays a card, you"
                         + Environment.NewLine
                         + "may pay the card's converted Resource cost"
@@ -1308,7 +1309,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.NabuInsurancePolicy,
                     Name = "Nabu Insurance Policy",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "You can only play this card if you have 3 or more"
                         + Environment.NewLine
                         + "ready Resource cards."
@@ -1324,7 +1325,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.InvestmentintheFuture,
                     Name = "Investment in the Future",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Syndicate maneuver"
                         + Environment.NewLine
                         + "Put a Resource card of your"
@@ -1338,7 +1339,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.RecycleEverythingthatShines,
                     Name = "Recycle Everything that Shines",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Syndicate maneuver"
                         + Environment.NewLine
                         + "Put a Mercury Resource"
@@ -1352,7 +1353,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.PlannedDemolition,
                     Name = "Planned Demolition",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Syndicate maneuver"
                         + Environment.NewLine
                         + "Destroy target Construction",
@@ -1364,7 +1365,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.BadQualityFuelCells,
                     Name = "Bad Quality Fuel Cells",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Syndicate maneuver"
                         + Environment.NewLine
                         + "Target Shuttle cannot be deployed this"
@@ -1378,7 +1379,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CalorStorage,
                     Name = "Calor Storage",
                     Unique = false,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "This card can't have more than"
                         + Environment.NewLine
                         + "3 material counters on it."
@@ -1398,7 +1399,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ApollodorusDock,
                     Name = "Apollodorus Dock",
                     Unique = true,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "Use, [Me][A1]:"
                         + Environment.NewLine
                         + "Draw 1 card.",
@@ -1410,7 +1411,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.WalkingFactory,
                     Name = "Walking Factory",
                     Unique = false,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "[A2]: Gain 1 Influence."
                         + Environment.NewLine
                         + "[Limit once per phase.]",
@@ -1422,7 +1423,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.GearingStation,
                     Name = "Gearing Station",
                     Unique = false,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "Reaction, Use: At the start of the"
                         + Environment.NewLine
                         + "Conflict phase target Agent gains"
@@ -1441,7 +1442,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.DataMiner,
                     Name = "Data Miner",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 0,
                     HealthValue = 2,
                     Ability = "Use: Discard the"
@@ -1455,7 +1456,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.OrdinaryServitor,
                     Name = "Ordinary Servitor",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "Archive."
@@ -1471,7 +1472,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.SinlapParasyte,
                     Name = "Sinlap Parasyte",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 0,
                     HealthValue = 2,
                     Ability = "Conflict action, Use: Take control of"
@@ -1493,7 +1494,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.OracleDroid,
                     Name = "Oracle Droid",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "Reaction: After this Agent enters play"
@@ -1509,7 +1510,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.EbonyFranth,
                     Name = "Ebony Franth",
                     Unique = true,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 4,
                     Ability = "Reaction: After this Agent deals"
@@ -1527,7 +1528,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.BattleDroid,
                     Name = "Battle Droid",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 3,
                     Ability = "Archive."
@@ -1543,7 +1544,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.LigeiaDeveloper,
                     Name = "Ligeia Developer",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "Reaction: At the start of the Conflict"
@@ -1559,7 +1560,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.XanaduLeadLibrarian,
                     Name = "Xanadu Lead Librarian",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 3,
                     Ability = "Reaction: After this Agent enters play"
@@ -1579,7 +1580,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.LazarusProtocol,
                     Name = "Lazarus Protocol",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 0,
                     HealthValue = 0,
                     Ability = "Archive."
@@ -1603,7 +1604,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CyborgBodyguard,
                     Name = "Cyborg Bodyguard",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 4,
                     Ability = "Archive."
@@ -1619,7 +1620,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.BhavyaAdministrator,
                     Name = "Bhavya, Administrator",
                     Unique = true,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 5,
                     Ability = "Reaction: After this agent deals"
@@ -1635,7 +1636,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.IllusionalDistraction,
                     Name = "Illusional Distraction",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Reaction: After an Agent is dealt attack"
                         + Environment.NewLine
                         + "damage, that Agent loses all of its"
@@ -1649,7 +1650,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.FatigueoftheFlesh,
                     Name = "Fatigue of the Flesh",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Archive."
                         + Environment.NewLine
                         + "[You can play this card as a Resource from your discard pile.]"
@@ -1665,7 +1666,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.InterplanetaryAssist,
                     Name = "Interplanetary Assist",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Use target Agent:"
                         + Environment.NewLine
                         + "Ready another target Agent.",
@@ -1677,7 +1678,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.SuddenTurnaround,
                     Name = "Sudden Turnaround",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Conflict action: Ready target non-Unique"
                         + Environment.NewLine
                         + "enemy Agent with converted Resource"
@@ -1695,7 +1696,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.SilenceYourMind,
                     Name = "Silence Your Mind",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Archive."
                         + Environment.NewLine
                         + "[You can play this card as a Resource from your discard pile.]"
@@ -1711,7 +1712,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.DataBreach,
                     Name = "Data Breach",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Target opponent reveals their hand."
                         + Environment.NewLine
                         + "You choose a card from it."
@@ -1725,7 +1726,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MindOverride,
                     Name = "Mind Override",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Archive."
                         + Environment.NewLine
                         + "Choose a non-Unique Agent in play,"
@@ -1741,7 +1742,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.WipetheMind,
                     Name = "Wipe the Mind",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Target Agent loses a Talent of your"
                         + Environment.NewLine
                         + "choice until the end of the round.",
@@ -1753,7 +1754,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.SearchingtheArchives,
                     Name = "Searching the Archives",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Archive."
                         + Environment.NewLine
                         + "Search your discard pile for an Agent"
@@ -1767,7 +1768,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.AncientDrives,
                     Name = "Ancient Drives",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Discard the top 5 cards"
                         + Environment.NewLine
                         + "of your deck.",
@@ -1779,7 +1780,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.DataMine,
                     Name = "Data Mine",
                     Unique = false,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "Reaction: After this card enters play put 4"
                         + Environment.NewLine
                         + "memory counters on it."
@@ -1797,7 +1798,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.XanaduMemoryVault,
                     Name = "Xanadu Memory Vault",
                     Unique = true,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "Use: Put 1 corruption counter on this card."
                         + Environment.NewLine
                         + "Use: Take control of an Agent with converted"
@@ -1813,7 +1814,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CyberBankOfTitan,
                     Name = "Cyber Bank of Titan",
                     Unique = true,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "Forced Reaction: After this card enters play put the top 5 cards of your deck under it face down"
                         + Environment.NewLine
                         + "[You may look at these cards any time.]"
@@ -1832,7 +1833,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.DisguisedCrew,
                     Name = "Disguised Crew",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 1,
                     HealthValue = 1,
                     Ability = "Covert."
@@ -1848,7 +1849,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.DustAddict,
                     Name = "Dust Addict",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "Forced Reaction: Destroy this"
@@ -1862,7 +1863,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.DisciplineofNight,
                     Name = "Discipline of Night",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 1,
                     Ability = "Covert."
@@ -1878,7 +1879,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.EvidenceAnalyst,
                     Name = "Evidence Analyst",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "[V]: This Agent gains a Talent of your"
@@ -1894,7 +1895,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.QuasimDaher,
                     Name = "Quasim Daher",
                     Unique = true,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 3,
                     Ability = "Reaction: After a friendly Agent"
@@ -1910,7 +1911,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.IshtarAssociate,
                     Name = "Ishtar Associate",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 3,
                     Ability = "[V][V][A1]: In the Conflict phase,"
@@ -1926,7 +1927,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.TravelingMerchant,
                     Name = "Traveling Merchant",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 2,
                     HealthValue = 2,
                     Ability = "Use: When this Agent is on a"
@@ -1942,7 +1943,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.HiddenCell,
                     Name = "Hidden Cell",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 2,
                     Ability = "Covert."
@@ -1958,7 +1959,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MaatMonsSupervisor,
                     Name = "Maat Mons Supervisor",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 4,
                     Ability = "Reaction: After a friendly Agent"
@@ -1974,7 +1975,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.FailedExperiment,
                     Name = "Failed Experiment",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 6,
                     HealthValue = 1,
                     Ability = "[V][V][A2]: Prevent all damage"
@@ -1988,7 +1989,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Mole,
                     Name = "Mole",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 2,
                     Ability = "Covert."
@@ -2006,7 +2007,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.FamedNavigator,
                     Name = "Famed Navigator",
                     Unique = false,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 3,
                     Ability = "Reaction, Use: If this is the only Agent"
@@ -2024,7 +2025,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.VioletThorn,
                     Name = "Violet Thorn",
                     Unique = true,
-                    Type = (int)Enum.CardType.Agent,
+                    Type = (int)CardTypeEnum.Agent,
                     AttackValue = 3,
                     HealthValue = 4,
                     Ability = "Reaction: After this Agent completes a"
@@ -2040,7 +2041,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.UnexpectedExpenses,
                     Name = "Unexpected Expenses",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,                    
+                    Type = (int)CardTypeEnum.Maneuver,                    
                     Ability = "Reaction: Cancel target card,"
                         + Environment.NewLine
                         + "unless the controlling player pays [A2].",
@@ -2052,7 +2053,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.FailedProject,
                     Name = "Failed Project",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Syndicate maneuver"
                         + Environment.NewLine
                         + "Reaction: Cancel target card.",
@@ -2064,7 +2065,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ActofAggression,
                     Name = "Act of Aggression",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Reaction: After a friendly Agent with"
                         + Environment.NewLine
                         + "Covert enters play, it deals its attack"
@@ -2078,7 +2079,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ForgedTravelLog,
                     Name = "Forged Travel Log",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Reaction: After the Shuttle dials are"
                         + Environment.NewLine
                         + "revealed, change the number on a"
@@ -2092,7 +2093,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.IntelGathering,
                     Name = "Intel Gathering",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Search the top 5 cards of your deck"
                         + Environment.NewLine
                         + "for a card and put it into your hand."
@@ -2106,7 +2107,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ToxicBlood,
                     Name = "Toxic Blood",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Reaction: After a friendly Agent is dealt"
                         + Environment.NewLine
                         + "damage from an enemy Agent,"
@@ -2122,7 +2123,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.HologramTrick,
                     Name = "Hologram Trick",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Reaction: Prevent all damage"
                         + Environment.NewLine
                         + "from one source on an Agent.",
@@ -2134,7 +2135,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ImOutofHere,
                     Name = "I'm Out of Here!",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Conflict maneuver"
                         + Environment.NewLine
                         + "Move target friendly Agent to"
@@ -2148,7 +2149,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Misinformation,
                     Name = "Misinformation",
                     Unique = false,
-                    Type = (int)Enum.CardType.Maneuver,
+                    Type = (int)CardTypeEnum.Maneuver,
                     Ability = "Rearrange all friendly Agents"
                         + Environment.NewLine
                         + "in your Shuttles.",
@@ -2160,7 +2161,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.InfiltrationAcademy,
                     Name = "Infiltration Academy",
                     Unique = false,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "Use: You may play an Agent in this"
                         + Environment.NewLine
                         + "phase as a Maneuver.",
@@ -2172,7 +2173,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.TheShadowDistrict,
                     Name = "The Shadow District",
                     Unique = true,
-                    Type = (int)Enum.CardType.Construction,
+                    Type = (int)CardTypeEnum.Construction,
                     Ability = "Reaction, Use: After a friendly Agent"
                         + Environment.NewLine
                         + "enters play in the Conflict phase,"
@@ -2191,7 +2192,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ReconIntel,
                     Name = "Recon Intel",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Draw 2 cards then discard 1.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "142"
@@ -2201,7 +2202,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Deconstruction,
                     Name = "Deconstruction",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Destroy target Construction.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "143"
@@ -2211,7 +2212,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MissionSwap,
                     Name = "Mission Swap",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Choose target Mission in the Mission Row, switch that Mission with one from"
                         + Environment.NewLine
                         + "your Mission Deck- [The other one goes back to its owner's Mission Deck.]",
@@ -2223,7 +2224,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.IndustrialSabotage,
                     Name = "Industrial Sabotage",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Destroy target Resource card.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "145"
@@ -2233,7 +2234,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.PeaceAgreement,
                     Name = "Peace Agreement",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Each player gains 3 Influence.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "146"
@@ -2243,7 +2244,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CollapsingStocks,
                     Name = "Collapsing Stocks",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Each player loses 4 Influence.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "147"
@@ -2253,7 +2254,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ServerOverload,
                     Name = "Server Overload",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Draw 1 card, target opponent discards 1 card.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "148"
@@ -2263,7 +2264,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Framing,
                     Name = "Framing",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Destroy target Agent with converted Resource cost 3 or lower.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "149"
@@ -2273,7 +2274,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Wiretapping,
                     Name = "Wiretapping",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Target player reveals their hand. You choose a card from it."
                         + Environment.NewLine
                         + "That player discards that card.",
@@ -2285,7 +2286,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CarefulPlanning,
                     Name = "Careful Planning",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Put a Resource card of your choice into play.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "151"
@@ -2295,7 +2296,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.ResourceOperation,
                     Name = "Resource Operation",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Put an Agent into your Shuttle area from your discard pile with"
                         + Environment.NewLine
                         + "converted Resource cost 3 or less.",
@@ -2307,7 +2308,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.MyWay,
                     Name = "My Way!",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "After you claim this Mission, instead of your opponent, you put"
                         + Environment.NewLine
                         + "the new Mission from your Mission Deck into play.",
@@ -2319,7 +2320,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.CallinginFavors,
                     Name = "Calling in Favors",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "You may spend up to 3 Influence to draw that many cards.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "154"
@@ -2329,7 +2330,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.LevelthePlayingField,
                     Name = "Level the Playing Field",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Destroy all Agents in play.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "155"
@@ -2339,7 +2340,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Mustering,
                     Name = "Mustering",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Put an Agent into your Shuttle area from your hand.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "156"
@@ -2349,7 +2350,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Seduction,
                     Name = "Seduction",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Take control of target non-Unique Agent.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "157"
@@ -2359,7 +2360,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.WithdrawFunds,
                     Name = "Withdraw Funds",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Choose up to 2 Maneuver cards from your discard pile"
                         + Environment.NewLine
                         + "and put them into your hand.",
@@ -2371,7 +2372,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.Redistribution,
                     Name = "Redistribution",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Discard your hand then draw 5 cards.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "159"
@@ -2381,7 +2382,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.SearchforLostKnowledge,
                     Name = "Search for Lost Knowledge",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Draw 1 card. Gain 2 Influence.",
                     ExpansionId = (int)Enum.Expansion.SoItBegins,
                     ExpansionSerialNumber = "160"
@@ -2391,7 +2392,7 @@ namespace SolarisRec.Persistence.Configuration
                     Id = (int)Enum.CardId.PlanetaryPolitics,
                     Name = "Planetary Politics",
                     Unique = false,
-                    Type = (int)Enum.CardType.Mission,
+                    Type = (int)CardTypeEnum.Mission,
                     Ability = "Target player discards 1 card from their hand."
                         + Environment.NewLine
                         + "Gain 2 Influence.",

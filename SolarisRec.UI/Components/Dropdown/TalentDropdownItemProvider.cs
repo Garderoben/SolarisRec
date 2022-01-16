@@ -11,11 +11,11 @@ namespace SolarisRec.UI.Components.Dropdown
     internal class TalentDropdownItemProvider : ITalentDropdownItemProvider
     {
         private readonly IProvideTalentService provideTalentService;
-        private readonly IMapToDropdownItem<Talent, DropdownItem> domainToDropdownMapper;
+        private readonly IMapToDropdownItem<Core.Talent.Talent, DropdownItem> domainToDropdownMapper;
 
         public TalentDropdownItemProvider(
             IProvideTalentService provideTalentService,
-            IMapToDropdownItem<Talent, DropdownItem> domainToDropdownMapper)
+            IMapToDropdownItem<Core.Talent.Talent, DropdownItem> domainToDropdownMapper)
         {
             this.provideTalentService = provideTalentService ?? throw new ArgumentNullException(nameof(provideTalentService));
             this.domainToDropdownMapper = domainToDropdownMapper ?? throw new ArgumentNullException(nameof(domainToDropdownMapper));

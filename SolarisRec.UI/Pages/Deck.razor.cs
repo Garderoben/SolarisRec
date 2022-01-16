@@ -3,6 +3,7 @@ using Microsoft.JSInterop;
 using MudBlazor;
 using SolarisRec.Core.Card;
 using SolarisRec.Core.Card.Processes.PrimaryPorts;
+using SolarisRec.Core.CardType;
 using SolarisRec.UI.Components.Dropdown;
 using SolarisRec.UI.UIModels;
 using SolarisRec.UI.Utility;
