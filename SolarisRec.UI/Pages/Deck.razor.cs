@@ -1,15 +1,17 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using MudBlazor;
-using SolarisRec.Core.Card;
+using CoreCard = SolarisRec.Core.Card;
 using SolarisRec.Core.Card.Processes.PrimaryPorts;
 using SolarisRec.Core.CardType;
 using SolarisRec.UI.Components.Dropdown;
+using SolarisRec.UI.Mappers;
 using SolarisRec.UI.UIModels;
 using SolarisRec.UI.Utility;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SolarisRec.UI.Providers;
 
 namespace SolarisRec.UI.Pages
 {
@@ -32,7 +34,8 @@ namespace SolarisRec.UI.Pages
         //todo: move usings
         //todo: use for instead of foreach when using mappers
 
-        [Inject] private IProvideCardService ProvideCardService { get; set; }
+        [Inject] private ICardProvider CardProvider { get; set; }
+        [Inject] private IMapToUIModel<CoreCard.Card, Card> CardToUIModelMapper { get; set; }
         [Inject] private IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }
         [Inject] private ITalentDropdownItemProvider TalentDropdownItemProvider { get; set; }
         [Inject] private ICardTypeDropdownProvider CardTypeDropdownItemProvider { get; set; }
@@ -76,7 +79,7 @@ namespace SolarisRec.UI.Pages
         private List<DropdownItem> ConvertedResourceCostDropdownItems = new();
         private SelectedValues SelectedConvertedResourceCosts = new();        
 
-        private Filter Filter { get; set; } = new Filter();        
+        private CoreCard.CardFilter Filter { get; set; } = new CoreCard.CardFilter();        
 
         protected override void OnParametersSet()
         {
@@ -128,7 +131,7 @@ namespace SolarisRec.UI.Pages
             await table.ReloadServerData();
         }
 
-        private async Task<TableData<Card>> GetCardsFiltered(TableState state)
+        private async Task<TableData<UIModels.Card>> GetCardsFiltered(TableState state)
         {
             state.PageSize = state.PageSize == DEFAULT_FROM_MUD_BLAZOR ? DEFAULT_PAGE_SIZE : state.PageSize;
             table.SetRowsPerPage(state.PageSize);
@@ -145,7 +148,7 @@ namespace SolarisRec.UI.Pages
 
             if (reload)
             {
-                Cards = await ProvideCardService.GetCardsFiltered(Filter);
+                Cards = await CardProvider.GetCardsFiltered(Filter);
             }
 
             return new TableData<Card>
@@ -153,7 +156,7 @@ namespace SolarisRec.UI.Pages
                 Items = Cards,
                 TotalItems = Filter.MatchingCardCount
             };
-        }
+        }        
 
         public void UpdateImageSrc(Card card)
         {

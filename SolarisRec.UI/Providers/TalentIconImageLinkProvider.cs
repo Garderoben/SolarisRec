@@ -1,4 +1,4 @@
-﻿using SolarisRec.Core.Card;
+﻿using SolarisRec.UI.UIModels;
 using System;
 using Enums = SolarisRec.Core.Card.Enums;
 
