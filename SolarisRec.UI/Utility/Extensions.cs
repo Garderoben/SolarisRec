@@ -14,7 +14,7 @@ namespace SolarisRec.UI.Utility
         {
             int upperLimit = card.Type == CardTypeConstants.Mission ? MISSION : MAX_COUNT;
 
-            var itemToModify = deckItems.FirstOrDefault(d => d.Name == card.Name);
+            var itemToModify = deckItems.FirstOrDefault(d => d.Card.Name == card.Name);
 
             if (itemToModify != null)
             {
@@ -25,13 +25,13 @@ namespace SolarisRec.UI.Utility
             }
             else
             {
-                deckItems.Add(new DeckItem { Name = card.Name, Quantity = 1, ImageSrc = card.ImageSrc});
+                deckItems.Add(new DeckItem { Quantity = 1, Card = card});                
             }
         }
 
         public static void RemoveCard(this DeckItem deckItem, List<DeckItem> deckItems)
         {
-            var itemToModify = deckItems.FirstOrDefault(d => d.Name == deckItem.Name);
+            var itemToModify = deckItems.FirstOrDefault(d => d.Card.Name == deckItem.Card.Name);
 
             if(itemToModify == null)
             {
