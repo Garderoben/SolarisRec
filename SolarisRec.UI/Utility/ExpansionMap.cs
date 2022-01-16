@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using SolarisRec.Core.Card;
+using System.Collections.Generic;
 
-namespace SolarisRec.Core.Card
+namespace SolarisRec.UI.Utility
 {
     internal static class ExpansionMap
     {

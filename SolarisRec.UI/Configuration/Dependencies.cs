@@ -8,6 +8,7 @@ using SolarisRec.UI.Mappers;
 using SolarisRec.UI.Providers;
 using SolarisRec.UI.UIModels;
 using SolarisRec.UI.Utility;
+using CoreCard = SolarisRec.Core.Card;
 
 namespace SolarisRec.UI.Configuration
 {
@@ -36,7 +37,11 @@ namespace SolarisRec.UI.Configuration
 
                 .AddTransient<IDeckGenerator, DeckGenerator>()
                 .AddTransient<IFileSaveService, FileSaveService>()
-                
+
+                .AddTransient<ICardProvider, CardProvider>()
+                .AddTransient<IMapToUIModel<CoreCard.Card, Card>, Mappers.ToUIModel.CardMapper>()
+                .AddTransient<IMapToUIModel<CoreCard.Talent, Talent>, Mappers.ToUIModel.TalentMapper>()
+                .AddTransient<IMapToUIModel<CoreCard.Cost, Cost>, Mappers.ToUIModel.CostMapper>()
                 ;
         }       
     }

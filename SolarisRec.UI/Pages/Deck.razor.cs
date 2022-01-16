@@ -1,14 +1,16 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using MudBlazor;
-using SolarisRec.Core.Card;
-using SolarisRec.Core.Card.Processes.PrimaryPorts;
+using CoreCard = SolarisRec.Core.Card;
+using SolarisRec.Core.CardType;
 using SolarisRec.UI.Components.Dropdown;
+using SolarisRec.UI.Mappers;
 using SolarisRec.UI.UIModels;
 using SolarisRec.UI.Utility;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SolarisRec.UI.Providers;
 
 namespace SolarisRec.UI.Pages
 {
@@ -20,8 +22,7 @@ namespace SolarisRec.UI.Pages
 
         //todo: CodeCleanup
         //todo: cardtype string, enum? how should I treat it? 
-        //todo: UIModel for card? FactionInformation: what is UI specific, what is domain specific?
-        //todo: differentiate between UIModels and Helper models?
+        //todo: FactionInformation: what is UI specific, what is domain specific?       
         //todo: check why UI has/needs reference to Persistence and fix
         //todo: clear filters shold reset sorting?
         //todo: adjust grid header/rows
@@ -30,8 +31,11 @@ namespace SolarisRec.UI.Pages
         //todo: naming etc service, generator, provider etc
         //todo: move usings
         //todo: use for instead of foreach when using mappers
+        //todo: converted resource cost???
+        //todo: <MudTableSortLabel SortBy="new Func<TaskItemDisplayModel, object>(x => x.Name)"></MudTableSortLabel>
 
-        [Inject] private IProvideCardService ProvideCardService { get; set; }
+        [Inject] private ICardProvider CardProvider { get; set; }
+        [Inject] private IMapToUIModel<CoreCard.Card, Card> CardToUIModelMapper { get; set; }
         [Inject] private IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }
         [Inject] private ITalentDropdownItemProvider TalentDropdownItemProvider { get; set; }
         [Inject] private ICardTypeDropdownProvider CardTypeDropdownItemProvider { get; set; }
@@ -45,6 +49,10 @@ namespace SolarisRec.UI.Pages
         private const int MAX_MISSION_SIZE = 5;
 
         private MudTable<Card> table;
+        private MudTable<DeckItem> mainDeck;
+        private MudTable<DeckItem> tacticalDeck;
+        private MudTable<DeckItem> missionDeck;
+
         private MudMultiSelectDropdown factionDropdown;
         private MudMultiSelectDropdown cardTypeDropdown;
         private MudMultiSelectDropdown crcDropdown;
@@ -55,7 +63,7 @@ namespace SolarisRec.UI.Pages
 
         private bool reload = true;
         private int mainDeckCardCount => MainDeck.Select(d => d.Quantity).Sum();
-        //private int mainDeckAgentCount => MainDeck.Where(d => d.).Select(d => d.Quantity).Sum();
+        private int mainDeckAgentCount => MainDeck.Where(d => d.Card.Type == nameof(CardTypeConstants.Agent)).Select(d => d.Quantity).Sum();
 
         private string ImgSrc { get; set; } = @"../Assets/0Cardback.jpg";
         private readonly int[] pageSizeOption = { 4, 6, 8, 50 };
@@ -65,17 +73,17 @@ namespace SolarisRec.UI.Pages
         private List<DeckItem> TacticalDeck { get; set; } = new List<DeckItem>();
 
         private List<DropdownItem> FactionDropdownItems = new();
-        private SelectedValues SelectedFactions = new ();
+        private SelectedValues SelectedFactions = new();
         private List<DropdownItem> TalentDropdownItems = new();
-        private SelectedValues SelectedTalents = new ();
+        private SelectedValues SelectedTalents = new();
         private List<DropdownItem> CardTypeDropdownItems = new();
-        private SelectedValues SelectedCardTypes = new ();
-        private List<DropdownItem> KeywordDropdownItems = new();    
+        private SelectedValues SelectedCardTypes = new();
+        private List<DropdownItem> KeywordDropdownItems = new();
         private SelectedValues SelectedKeywords = new();
         private List<DropdownItem> ConvertedResourceCostDropdownItems = new();
-        private SelectedValues SelectedConvertedResourceCosts = new();        
+        private SelectedValues SelectedConvertedResourceCosts = new();
 
-        private Filter Filter { get; set; } = new Filter();        
+        private CoreCard.CardFilter Filter { get; set; } = new CoreCard.CardFilter();
 
         protected override void OnParametersSet()
         {
@@ -83,7 +91,7 @@ namespace SolarisRec.UI.Pages
 
             SelectedFactions.PropertyChanged += async (sender, e) =>
             {
-                if(reload)
+                if (reload)
                     await InvokeAsync(ApplyDropdownFilters);
             };
 
@@ -109,7 +117,7 @@ namespace SolarisRec.UI.Pages
             {
                 if (reload)
                     await InvokeAsync(ApplyDropdownFilters);
-            };            
+            };
         }
 
         protected override async Task OnInitializedAsync()
@@ -118,8 +126,8 @@ namespace SolarisRec.UI.Pages
             FactionDropdownItems = await FactionDropdownItemProvider.ProvideDropdownItems();
             TalentDropdownItems = await TalentDropdownItemProvider.ProvideDropdownItems();
             CardTypeDropdownItems = await CardTypeDropdownItemProvider.ProvideDropdownItems();
-            KeywordDropdownItems = await  KeywordDropdownItemProvider.ProvideDropdownItems();            
-            ConvertedResourceCostDropdownItems = await ConvertedResourceCostDropdownItemProvider.ProvideDropdownItems();            
+            KeywordDropdownItems = await KeywordDropdownItemProvider.ProvideDropdownItems();
+            ConvertedResourceCostDropdownItems = await ConvertedResourceCostDropdownItemProvider.ProvideDropdownItems();
         }
 
         private async Task ApplyDropdownFilters()
@@ -144,7 +152,7 @@ namespace SolarisRec.UI.Pages
 
             if (reload)
             {
-                Cards = await ProvideCardService.GetCardsFiltered(Filter);
+                Cards = await CardProvider.GetCardsFiltered(Filter);
             }
 
             return new TableData<Card>
@@ -152,7 +160,7 @@ namespace SolarisRec.UI.Pages
                 Items = Cards,
                 TotalItems = Filter.MatchingCardCount
             };
-        }
+        }        
 
         public void UpdateImageSrc(Card card)
         {
@@ -161,7 +169,7 @@ namespace SolarisRec.UI.Pages
 
         public void UpdateImageSrc(DeckItem deckItem)
         {
-            ImgSrc = deckItem.ImageSrc;
+            ImgSrc = deckItem.Card.ImageSrc;
         }
 
         private async Task OnSearchByName(string searchTerm)
@@ -197,23 +205,42 @@ namespace SolarisRec.UI.Pages
             await table.ReloadServerData();
         }
 
-        private void AddToDeck(TableRowClickEventArgs<Card> card)
+        private async Task AddToDeck(TableRowClickEventArgs<Card> card)
         {
             bool isMission = card.Item.Type == nameof(CardTypeConstants.Mission);
 
             if (card.MouseEventArgs.CtrlKey)
             {
                 card.Item.AddCard(TacticalDeck);
+                TacticalDeck = TacticalDeck
+                    .OrderBy(d => d.Card.Factions)
+                    .ThenBy(d => d.Card.Type)
+                    .ThenBy(d => d.Card.ConvertedResourceCost)
+                    .ThenBy(d => d.Card.Name)
+                    .ToList();
+                await tacticalDeck.ReloadServerData();
                 return;
             }
 
             if (isMission && MissionDeck.Count < MAX_MISSION_SIZE)
             {
                 card.Item.AddCard(MissionDeck);
+                MissionDeck = MissionDeck
+                    .OrderBy(d => d.Card.Talents.Select(t => t.Quantity).Sum())
+                    .ThenBy(d => d.Card.Name)
+                    .ToList();
+                await missionDeck.ReloadServerData();
                 return;
             } 
             
             card.Item.AddCard(MainDeck);
+            MainDeck = MainDeck
+                .OrderBy(d => d.Card.Factions)
+                .ThenBy(d => d.Card.Type)
+                .ThenBy(d => d.Card.ConvertedResourceCost)
+                .ThenBy(d => d.Card.Name)
+                .ToList();
+            await mainDeck.ReloadServerData();
         }
 
         private void RemoveFromDeck(TableRowClickEventArgs<DeckItem> deckItem)
@@ -233,7 +260,7 @@ namespace SolarisRec.UI.Pages
 
         private async Task Export()
         {
-            var deck = DeckGenerator.Generate(MainDeck, TacticalDeck, MissionDeck);
+            var deck = DeckGenerator.Generate(MainDeck, MissionDeck, TacticalDeck);
 
             var stream = StringToStreamConverter.Convert(deck);           
 

@@ -3,9 +3,9 @@ using SolarisRec.UI.UIModels;
 
 namespace SolarisRec.UI.Mappers.ToDropdownItems
 {
-    internal class TalentMapper : IMapToDropdownItem<Talent, DropdownItem>
+    internal class TalentMapper : IMapToDropdownItem<Core.Talent.Talent, DropdownItem>
     {
-        public DropdownItem Map(Talent input)
+        public DropdownItem Map(Core.Talent.Talent input)
         {
             return new DropdownItem
             {

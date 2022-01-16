@@ -1,6 +1,6 @@
-﻿namespace SolarisRec.Core.Card.Enums
+﻿namespace SolarisRec.Core.CardType
 {
-    public enum CardType
+    public enum CardTypeEnum
     {
         Agent = 1,
         Construction = 2,

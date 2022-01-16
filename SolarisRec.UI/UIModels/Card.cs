@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using SolarisRec.UI.Utility;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace SolarisRec.Core.Card
+namespace SolarisRec.UI.UIModels
 {
     public class Card
     {
@@ -26,6 +28,10 @@ namespace SolarisRec.Core.Card
 
         public List<Cost> Costs { get; set; }
 
-        public List<Talent> Talents { get; set; }        
+        public List<Talent> Talents { get; set; }
+
+        public string ImageSrc => $@"..\Assets\Expansions\{ExpansionMap.Map(ExpansionName)}\{ExpansionSerialNumber}.jpg";
+
+        public int ConvertedResourceCost => Costs.Select(c => c.Quantity).Sum();
     }
 }

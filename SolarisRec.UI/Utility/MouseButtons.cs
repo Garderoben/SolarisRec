@@ -1,4 +1,4 @@
-﻿namespace SolarisRec.UI.UIModels
+﻿namespace SolarisRec.UI.Utility
 {
     public static class MouseButtons
     {

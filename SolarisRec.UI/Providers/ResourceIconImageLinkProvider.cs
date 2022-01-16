@@ -1,5 +1,5 @@
-﻿using SolarisRec.Core.Card;
-using SolarisRec.Core.Card.Enums;
+﻿using SolarisRec.Core.Card.Enums;
+using SolarisRec.UI.UIModels;
 using System;
 
 namespace SolarisRec.UI.Provdiders

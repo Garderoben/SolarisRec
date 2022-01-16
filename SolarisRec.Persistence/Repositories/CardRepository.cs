@@ -70,7 +70,7 @@ namespace SolarisRec.Persistence.Repositories
             return result;
         }
 
-        public async Task<List<Card>> GetCardsFiltered(Filter filter)
+        public async Task<List<Card>> GetCardsFiltered(CardFilter filter)
         {
             var result = new List<Card>();
 

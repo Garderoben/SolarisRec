@@ -2,7 +2,7 @@
 
 namespace SolarisRec.Core.Card
 {
-    public class Filter
+    public class CardFilter
     {
         public string Name { get; set; } = string.Empty;
 
