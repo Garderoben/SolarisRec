@@ -222,7 +222,7 @@ namespace SolarisRec.UI.Pages
                 return;
             }
 
-            if (isMission && MissionDeck.Count < MAX_MISSION_SIZE)
+            if (isMission)
             {
                 card.Item.AddCard(MissionDeck);
                 MissionDeck = MissionDeck
