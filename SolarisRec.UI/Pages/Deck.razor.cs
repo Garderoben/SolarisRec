@@ -34,8 +34,7 @@ namespace SolarisRec.UI.Pages
         //todo: converted resource cost???
         //todo: <MudTableSortLabel SortBy="new Func<TaskItemDisplayModel, object>(x => x.Name)"></MudTableSortLabel>
 
-        [Inject] private ICardProvider CardProvider { get; set; }
-        [Inject] private IMapToUIModel<CoreCard.Card, Card> CardToUIModelMapper { get; set; }
+        [Inject] private ICardProvider CardProvider { get; set; }        
         [Inject] private IFactionDropdownItemProvider FactionDropdownItemProvider { get; set; }
         [Inject] private ITalentDropdownItemProvider TalentDropdownItemProvider { get; set; }
         [Inject] private ICardTypeDropdownProvider CardTypeDropdownItemProvider { get; set; }
