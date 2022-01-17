@@ -106,15 +106,12 @@
         </MudTable>
     </MudItem>
 
-    <MudItem id="PictureAndCommands" xs="2">
-
-        <MudItem>
-            <img src="@(ImgSrc)" width=200 height=300>
-        </MudItem>
+    <MudItem id="PictureAndCommands" xs="4">
+       
+        <img src="@(ImgSrc)" width=200 height=300>      
 
         <MudIconButton Icon="@Icons.Material.Filled.Print" Color="Color.Inherit" OnClick="Export"></MudIconButton>
-
-        <MudItem>
+       
             <MudText>Missions (@MissionDeck.Select(d => d.Quantity).Sum())</MudText>
             <MudTable Items="@MissionDeck"
                       T="DeckItem"
@@ -137,8 +134,7 @@
                         <MudTd DataLabel="Name" Style="width: 200px;">@context.Card.Name</MudTd>
                     </MudContainer>
                 </RowTemplate>
-            </MudTable>
-        </MudItem>
+            </MudTable>       
     </MudItem>
 
     <MudItem id="Decks" xs="2">
