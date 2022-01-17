@@ -48,14 +48,14 @@
                               IconSize="Size.Medium" Class="mt-0" Label="Search by ability" @ref="searchByAbility"></MudTextField>
             </ToolBarContent>
             <ColGroup>
-                <col style="width: 50px;"/>
-                <col style="width: 50px;"/>
-                <col style="width: 50px;"/>
-                <col style="width: 30px;"/>
-                <col style="width: 30px;"/>
-                <col style="width: 10px;"/>
-                <col style="width: 10px;"/>
-                <col style="width: 490px;"/>
+                <col style="width: 50px;" />
+                <col style="width: 50px;" />
+                <col style="width: 50px;" />
+                <col style="width: 30px;" />
+                <col style="width: 30px;" />
+                <col style="width: 10px;" />
+                <col style="width: 10px;" />
+                <col style="width: 490px;" />
             </ColGroup>
             <HeaderContent>
 
@@ -106,89 +106,91 @@
         </MudTable>
     </MudItem>
 
-    <MudItem id="PictureAndCommands" xs="2">
-       
-        <img src="@(ImgSrc)" width=200 height=300>      
+    <MudItem id="PictureAndCommands" xs="4">
+        <MudGrid>
 
-        <MudIconButton Icon="@Icons.Material.Filled.Print" Color="Color.Inherit" OnClick="Export"></MudIconButton>
-       
-            <MudText>Missions (@MissionDeck.Select(d => d.Quantity).Sum())</MudText>
-            <MudTable Items="@MissionDeck"
-                      T="DeckItem"
-                      OnRowClick="RemoveFromMissionDeck"
-                      Hover="true"
-                      Breakpoint="Breakpoint.Sm"
-                      Style="float: left; width: 220px;"
-                      Dense="true"
-                      @ref="missionDeck">
+            <MudItem xs="12" md="6">
+                <img src="@(ImgSrc)" width=200 height=300>
 
-                <HeaderContent>
-                    <MudContainer>
-                        <MudTh Style="width: 10px;"></MudTh>
-                        <MudTh Style="width: 200px; text-align:right">Name</MudTh>
-                    </MudContainer>
-                </HeaderContent>
-                <RowTemplate>
-                    <MudContainer @onmouseover="@(() => UpdateImageSrc(context))">
-                        <MudTd DataLabel="Quantity" Style="width: 10px;">@context.Quantity</MudTd>
-                        <MudTd DataLabel="Name" Style="width: 200px;">@context.Card.Name</MudTd>
-                    </MudContainer>
-                </RowTemplate>
-            </MudTable>       
+                <MudIconButton Icon="@Icons.Material.Filled.Print" Color="Color.Inherit" OnClick="Export"></MudIconButton>
+
+                <MudText>Missions (@MissionDeck.Select(d => d.Quantity).Sum())</MudText>
+                <MudTable Items="@MissionDeck"
+                          T="DeckItem"
+                          OnRowClick="RemoveFromMissionDeck"
+                          Hover="true"
+                          Breakpoint="Breakpoint.Sm"
+                          Style="float: left; width: 220px;"
+                          Dense="true"
+                          @ref="missionDeck">
+
+                    <HeaderContent>
+                        <MudContainer>
+                            <MudTh Style="width: 10px;"></MudTh>
+                            <MudTh Style="width: 200px; text-align:right">Name</MudTh>
+                        </MudContainer>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudContainer @onmouseover="@(() => UpdateImageSrc(context))">
+                            <MudTd DataLabel="Quantity" Style="width: 10px;">@context.Quantity</MudTd>
+                            <MudTd DataLabel="Name" Style="width: 200px;">@context.Card.Name</MudTd>
+                        </MudContainer>
+                    </RowTemplate>
+                </MudTable>
+            </MudItem>
+
+            <MudItem xs="12" md="6">
+                <MudText> Main deck (@mainDeckCardCount / @mainDeckAgentCount A)</MudText>
+                <MudTable Items="@MainDeck"
+                          T="DeckItem"
+                          OnRowClick="RemoveFromDeck"
+                          Hover="true"
+                          Breakpoint="Breakpoint.Sm"
+                          Style="float: left; width: 220px;"
+                          Dense="true"
+                          @ref="mainDeck">
+                    <HeaderContent>
+                        <MudContainer>
+                            <MudTh Style="width: 10px;"></MudTh>
+                            <MudTh Style="width: 200px; text-align:right">Name</MudTh>
+                        </MudContainer>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudContainer @onmouseover="@(() => UpdateImageSrc(context))">
+                            <MudTd DataLabel="Quantity" Style="width: 10px;">@context.Quantity</MudTd>
+                            <MudTd DataLabel="Name" Style="width: 200px;">@context.Card.Name</MudTd>
+                        </MudContainer>
+                    </RowTemplate>
+                </MudTable>
+
+                <MudText>Tactical Deck (@TacticalDeck.Select(d => d.Quantity).Sum())</MudText>
+                <MudTable Items="@TacticalDeck"
+                          T="DeckItem"
+                          OnRowClick="RemoveFromSideboard"
+                          Hover="true"
+                          Breakpoint="Breakpoint.Sm"
+                          Style="float: left; width: 220px;"
+                          Dense="true"
+                          @ref="tacticalDeck">
+
+                    <HeaderContent>
+                        <MudContainer>
+                            <MudTh Style="width: 10px;"></MudTh>
+                            <MudTh Style="width: 200px; text-align:right">Name</MudTh>
+                        </MudContainer>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudContainer @onmouseover="@(() => UpdateImageSrc(context))">
+                            <MudTd DataLabel="Quantity" Style="width: 10px;">@context.Quantity</MudTd>
+                            <MudTd DataLabel="Name" Style="width: 200px;">@context.Card.Name</MudTd>
+                        </MudContainer>
+                    </RowTemplate>
+                </MudTable>
+            </MudItem>
+
+        </MudGrid>
     </MudItem>
 
-    <MudItem id="Decks" xs="2">
-        <MudItem>
-            <MudText> Main deck (@mainDeckCardCount / @mainDeckAgentCount A)</MudText>
-            <MudTable Items="@MainDeck"
-                      T="DeckItem"
-                      OnRowClick="RemoveFromDeck"
-                      Hover="true"
-                      Breakpoint="Breakpoint.Sm"
-                      Style="float: left; width: 220px;"
-                      Dense="true"
-                      @ref="mainDeck">
 
-                <HeaderContent>
-                    <MudContainer>
-                        <MudTh Style="width: 10px;"></MudTh>
-                        <MudTh Style="width: 200px; text-align:right">Name</MudTh>
-                    </MudContainer>
-                </HeaderContent>
-                <RowTemplate>
-                    <MudContainer @onmouseover="@(() => UpdateImageSrc(context))">
-                        <MudTd DataLabel="Quantity" Style="width: 10px;">@context.Quantity</MudTd>
-                        <MudTd DataLabel="Name" Style="width: 200px;">@context.Card.Name</MudTd>
-                    </MudContainer>
-                </RowTemplate>
-            </MudTable>
-        </MudItem>
-
-        <MudItem>
-            <MudText>Tactical Deck (@TacticalDeck.Select(d => d.Quantity).Sum())</MudText>
-            <MudTable Items="@TacticalDeck"
-                      T="DeckItem"
-                      OnRowClick="RemoveFromSideboard"
-                      Hover="true"
-                      Breakpoint="Breakpoint.Sm"
-                      Style="float: left; width: 220px;"
-                      Dense="true"
-                      @ref="tacticalDeck">
-
-                <HeaderContent>
-                    <MudContainer>
-                        <MudTh Style="width: 10px;"></MudTh>
-                        <MudTh Style="width: 200px; text-align:right">Name</MudTh>
-                    </MudContainer>
-                </HeaderContent>
-                <RowTemplate>
-                    <MudContainer @onmouseover="@(() => UpdateImageSrc(context))">
-                        <MudTd DataLabel="Quantity" Style="width: 10px;">@context.Quantity</MudTd>
-                        <MudTd DataLabel="Name" Style="width: 200px;">@context.Card.Name</MudTd>
-                    </MudContainer>
-                </RowTemplate>
-            </MudTable>
-        </MudItem>
-    </MudItem>
 
 </MudGrid>
