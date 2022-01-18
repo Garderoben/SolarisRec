@@ -1,36 +1,51 @@
 ﻿@page "/deck"
 
 @using SolarisRec.UI.Components.Dropdown
+@using SolarisRec.UI.Components
 @using SolarisRec.UI.Provdiders
 @using SolarisRec.UI.UIModels
 
-<MudGrid id="Dropdowns">
-    <MudItem>
-        <MudMultiSelectDropdown @ref="factionDropdown" DropdownItems="FactionDropdownItems" Dense="true"
-                                Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected" />
+
+<MudAppBar DisableGutters="true" Class="solaris-filter-deck z-2" ToolBarClass="mt-auto">
+    <MudContainer MaxWidth="MaxWidth.Large">
+        <MudPaper id="Dropdowns" Class="d-flex px-4 solaris-sticky solaris-no-input-border">
+                <MudMultiSelectDropdown @ref="factionDropdown" DropdownItems="FactionDropdownItems" Dense="true"
+                                        Label="Factions" @bind-SelectedValues="@SelectedFactions.Selected"/>
+        
+                <MudMultiSelectDropdown @ref="cardTypeDropdown" DropdownItems="CardTypeDropdownItems" Dense="true"
+                                        Label="Card Type" @bind-SelectedValues="@SelectedCardTypes.Selected"/>
+        
+                <MudMultiSelectDropdown @ref="crcDropdown" DropdownItems="ConvertedResourceCostDropdownItems" Dense="true"
+                                        Label="Converted Cost" @bind-SelectedValues="@SelectedConvertedResourceCosts.Selected"/>
+        
+                <MudMultiSelectDropdown @ref="talentsDropdown" DropdownItems="TalentDropdownItems" Dense="true"
+                                        Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected"/>
+        
+                <MudMultiSelectDropdown @ref="keywordDropown" DropdownItems="KeywordDropdownItems" Dense="true"
+                                        Label="Keyword" @bind-SelectedValues="@SelectedKeywords.Selected"/>
+                <MudSpacer/>
+                <MudButton OnClick="ClearFilters">Clear Filters</MudButton>
+            </MudPaper>
+    </MudContainer>
+</MudAppBar>
+<MudGrid Spacing="0">
+    <MudItem xs="9" Class="d-flex flex-wrap pt-16">
+        @foreach (var card in Cards)
+            {
+                <DeckCard Card="card"/>
+            }
     </MudItem>
-    <MudItem>
-        <MudMultiSelectDropdown @ref="cardTypeDropdown" DropdownItems="CardTypeDropdownItems" Dense="true"
-                                Label="Card Type" @bind-SelectedValues="@SelectedCardTypes.Selected" />
-    </MudItem>
-    <MudItem>
-        <MudMultiSelectDropdown @ref="crcDropdown" DropdownItems="ConvertedResourceCostDropdownItems" Dense="true"
-                                Label="Converted Cost" @bind-SelectedValues="@SelectedConvertedResourceCosts.Selected" />
-    </MudItem>
-    <MudItem>
-        <MudMultiSelectDropdown @ref="talentsDropdown" DropdownItems="TalentDropdownItems" Dense="true"
-                                Label="Talents" @bind-SelectedValues="@SelectedTalents.Selected" />
-    </MudItem>
-    <MudItem>
-        <MudMultiSelectDropdown @ref="keywordDropown" DropdownItems="KeywordDropdownItems" Dense="true"
-                                Label="Keyword" @bind-SelectedValues="@SelectedKeywords.Selected" />
-    </MudItem>
-    <MudItem>
-        <MudButton OnClick="ClearFilters">Clear Filters</MudButton>
+    <MudItem xs="3">
+        <MudPaper Class="solaris-sticky mt-16" MinHeight="70vh">
+            
+        </MudPaper>
     </MudItem>
 </MudGrid>
 
-<MudGrid>
+
+
+
+<MudGrid Style="margin-top:500px;">
 
     <MudItem id="CardSearch" xs="8">
         <MudTable Items="@Cards"

@@ -1,0 +1,52 @@
+@using SolarisRec.UI.UIModels
+@using SolarisRec.UI.Provdiders
+
+<MudPaper Elevation="0" Class="solaris-card">
+    <img src="@($"../Assets/Cards/{Card.Factions.ToLower()}.png")" width="285" height="100%">
+    <div class="solaris-card-data">
+        <div class="relative mud-height-full mud-width-full">
+            <div class="solaris-card-data-container name">
+                <MudText Typo="Typo.subtitle1">@Card.Name</MudText>
+            </div>
+            <div class="solaris-card-data-container cost">
+                @for (int i = 0; i < @Card.Costs.Count; i++)
+                {
+                    for (int j = 0; j < @Card.Costs[i].Quantity; j++)
+                    {
+                        <img class="solaris-hex" src="@ResourceIconImageLinkProvider.Provide(@Card.Costs[i])">
+                    }
+                }
+            </div>
+            <div class="solaris-card-data-container talent">
+                @for (int i = 0; i < @Card.Talents.Count; i++)
+                {
+                    for (int j = 0; j < @Card.Talents[i].Quantity; j++)
+                    {
+                        <img class="solaris-hex" src="@TalentIconImageLinkProvider.Provide(@Card.Talents[i])">
+                    }
+                }
+            </div>
+            <div class="solaris-card-data-container details">
+                @if (!string.IsNullOrWhiteSpace(Card.AttackValue) && !string.IsNullOrWhiteSpace(Card.HealthValue))
+                {
+                    <div class="solaris-card-details values">
+                        <MudText Typo="Typo.h6" Color="Color.Primary">@Card.AttackValue</MudText>
+                        <MudText Typo="Typo.h6" Color="Color.Primary">@Card.HealthValue</MudText>
+                    </div>
+                }
+                <div class="solaris-card-details text">
+                    <MudText Typo="Typo.body2" Align="Align.Center">
+                        @Card.Ability
+                    </MudText>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</MudPaper>
+
+@code {
+
+    [Parameter] public Card Card { get; set; }
+
+}

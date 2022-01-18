@@ -1,13 +1,26 @@
-﻿<MudAppBar Elevation="3">
-	<MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" 
-				   OnClick="async () => await OnSidebarToggled.InvokeAsync()" />
-	<MudSpacer />
-	@if (isLightMode)
-	{
-		<MudIconButton Icon="@Icons.Material.Filled.Brightness4" Color="Color.Inherit" OnClick="ToggleTheme" />
-	}
-	else
-	{
-		<MudIconButton Icon="@Icons.Material.Filled.Brightness5" Color="Color.Inherit" OnClick="ToggleTheme" />
-	}
+﻿<MudAppBar Elevation="0" Class="mt-4 mt-lg-6" ToolBarClass="px-sm-6 px-md-12 px-lg-16">
+	<NavLink href="/" target="_self" class="d-flex align-center">
+		<MudAvatar Size="Size.Large" Image="assets/LogoWHITE.png" Class="mud-transparent"/>
+		<MudText Typo="Typo.h5" Color="Color.Primary" Class="mx-6">SolarisRec</MudText>
+	</NavLink>
+	<div class="d-flex">
+		<MudNavLink Class="solaris-navlink" Href="/deck" Match="NavLinkMatch.Prefix">Deck</MudNavLink>
+        <MudMenu ActivationEvent="@MouseEvent.MouseOver" AnchorOrigin="Origin.BottomLeft" TransformOrigin="Origin.TopLeft">
+            <ActivatorContent>
+                <MudNavLink Class="solaris-navlink" Href="/FactionInfo/" Match="NavLinkMatch.Prefix">Factions</MudNavLink>
+            </ActivatorContent>
+            <ChildContent>
+                <MudNavMenu Dense="true" Color="Color.Info">
+                    <MudNavLink Href="/FactionInfo/Belt" Match="NavLinkMatch.Prefix" Icon="@Icons.Filled.Attribution">Belt</MudNavLink>
+                    <MudNavLink Href="/FactionInfo/Mars" Match="NavLinkMatch.Prefix" Icon="@Icons.Filled.Attribution">Mars</MudNavLink>
+                    <MudNavLink Href="/FactionInfo/Mercury" Match="NavLinkMatch.Prefix" Icon="@Icons.Filled.Attribution">Mercury</MudNavLink>
+                    <MudNavLink Href="/FactionInfo/Earth" Match="NavLinkMatch.Prefix" Icon="@Icons.Filled.Attribution">Earth</MudNavLink>
+                    <MudNavLink Href="/FactionInfo/Titan" Match="NavLinkMatch.Prefix" Icon="@Icons.Filled.Attribution">Titan</MudNavLink>
+                    <MudNavLink Href="/FactionInfo/Venus" Match="NavLinkMatch.Prefix" Icon="@Icons.Filled.Attribution">Venus</MudNavLink>
+                </MudNavMenu>
+            </ChildContent>
+        </MudMenu>
+	</div>
+	<MudSpacer/>
+	<MudIconButton Icon="@GetThemeModeIcon()" Color="Color.Inherit" OnClick="OnThemeToggled"/>
 </MudAppBar>

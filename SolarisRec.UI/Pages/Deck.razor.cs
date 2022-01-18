@@ -139,7 +139,7 @@ namespace SolarisRec.UI.Pages
             state.PageSize = state.PageSize == DEFAULT_FROM_MUD_BLAZOR ? DEFAULT_PAGE_SIZE : state.PageSize;
             table.SetRowsPerPage(state.PageSize);
 
-            Filter.PageSize = state.PageSize;
+            Filter.PageSize = 1000;
             Filter.Page = state.Page + 1;
             Filter.Factions = SelectedFactions.Selected.Select(f => f.Id).ToList();
             Filter.Talents = SelectedTalents.Selected.Select(t => t.Id).ToList();

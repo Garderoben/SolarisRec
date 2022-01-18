@@ -1,15 +1,12 @@
 ﻿@inherits LayoutComponentBase
 
+<MudThemeProvider Theme="_currentTheme" IsDarkMode="@isDarkMode" />
+
 <MudLayout>
-	<AppBar OnSidebarToggled="ToggleSidebar" OnThemeToggled="ToggleTheme" />
-
-	<NavMenu SideBarOpen="_sidebarOpen" />
-
-	<MudMainContent Class="pt-16 px-16">
-		<MudContainer Class="mt-6">
+	<AppBar OnThemeToggled="ToggleTheme" IsDarkMode="@isDarkMode" />
+	<MudMainContent>
+		<MudContainer Class="relative" MaxWidth="MaxWidth.Large">
 			@Body
 		</MudContainer>
 	</MudMainContent>
 </MudLayout>
-
-<MudThemeProvider Theme="_currentTheme" />

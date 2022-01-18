@@ -2,26 +2,28 @@
 using MudBlazor;
 using SolarisRec.UI.Providers;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace SolarisRec.UI.Shared
 {
     public partial class AppBar
     {
-		private bool isLightMode = false;
-		private MudTheme currentTheme = new MudTheme();
-
+	    [Parameter]
+		public bool IsDarkMode { get; set; }
+		
 		[Parameter]
-		public EventCallback OnSidebarToggled { get; set; }
-		[Parameter]
-		public EventCallback<MudTheme> OnThemeToggled { get; set; }
+		public EventCallback<MouseEventArgs> OnThemeToggled { get; set; }
 
-		private async Task ToggleTheme()
+		private string GetThemeModeIcon()
 		{
-			isLightMode = !isLightMode;
-
-			currentTheme = !isLightMode ? MyMudThemeProvider.GenerateDarkTheme() :MyMudThemeProvider.GenerateLightTheme();
-
-			await OnThemeToggled.InvokeAsync(currentTheme);
-		}		
-	}
+			if (IsDarkMode)
+			{
+				return Icons.Material.Filled.Brightness5;
+			}
+			else
+			{
+				return Icons.Material.Filled.Brightness4;
+			}
+		}
+    }
 }

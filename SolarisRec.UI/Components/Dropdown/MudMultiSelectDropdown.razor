@@ -1,10 +1,8 @@
 ﻿@using SolarisRec.UI.UIModels
 
-<MudPaper Elevation="3">
-    <MudSelect T="DropdownItem" Label="@Label" MultiSelection="true" SelectedValuesChanged="SelectionChanged" @ref="mudSelect" Dense="Dense">
-        @foreach (var item in DropdownItems)
-        {
-            <MudSelectItem T="DropdownItem" Value="@item">@item.Name</MudSelectItem>
-        }
-    </MudSelect>
-</MudPaper>
+<MudSelect T="DropdownItem" Label="@Label" MultiSelection="true" Variant="Variant.Outlined" SelectedValuesChanged="SelectionChanged" @ref="mudSelect" Dense="Dense" Class="mt-0">
+    @foreach (var item in DropdownItems)
+    {
+        <MudSelectItem T="DropdownItem" Value="@item">@item.Name</MudSelectItem>
+    }
+</MudSelect>
